@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="789ecbed500047e390814e77e3df5a2c" Name="Diagram1">
+        <EntityTypeShape EntityType="ModelLibCajaBanco.cxc_recibos" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.empresa_depositos" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.empresa_grupo" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.empresa_sucursal" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.sistema" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.usuarios" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.cxc_medio_pago" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelLibCajaBanco.pos_arqueo" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="ModelLibCajaBanco.cxc_medio_pago_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelLibCajaBanco.cxc_recibos_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelLibCajaBanco.empresa_sucursal_ibfk_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

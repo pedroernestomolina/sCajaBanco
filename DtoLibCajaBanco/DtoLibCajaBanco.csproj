@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD7C131F-4ECB-4B81-BAC6-718C1B57DDD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DtoLibCajaBanco</RootNamespace>
+    <AssemblyName>DtoLibCajaBanco</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Deposito\Ficha.cs" />
+    <Compile Include="Deposito\Resumen.cs" />
+    <Compile Include="EmpresaGrupo\Ficha.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte\Analisis\VentaDiaria\Ficha.cs" />
+    <Compile Include="Reporte\Analisis\VentaDiaria\Filtro.cs" />
+    <Compile Include="Reporte\Analisis\VentaPorCierre\Ficha.cs" />
+    <Compile Include="Reporte\Analisis\VentaPorCierre\Filtro.cs" />
+    <Compile Include="Reporte\Analisis\VentaProducto\Ficha.cs" />
+    <Compile Include="Reporte\Analisis\VentaProducto\Filtro.cs" />
+    <Compile Include="Reporte\Analisis\VentaPromedio\Ficha.cs" />
+    <Compile Include="Reporte\Analisis\VentaPromedio\Filtro.cs" />
+    <Compile Include="Reporte\Habladores\Ficha.cs" />
+    <Compile Include="Reporte\Habladores\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\ArqueoCajaPos\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\CobranzaDiaria\Data.cs" />
+    <Compile Include="Reporte\Movimiento\CobranzaDiaria\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\CobranzaDiaria\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\CobranzaDiaria\Movimiento.cs" />
+    <Compile Include="Reporte\Movimiento\FacturaDetalle\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\FacturaDetalle\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\Inventario\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\Inventario\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenDiarioVentaSucursal\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenDiarioVentaSucursal\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenVentaSucursal\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenVentaSucursal\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenVenta\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\ResumenVenta\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\VentaPorCliente\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\VentaPorCliente\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\VentasPorProductoSucursal\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\VentasPorProductoSucursal\Filtro.cs" />
+    <Compile Include="Reporte\Movimiento\VentasPorProducto\Ficha.cs" />
+    <Compile Include="Reporte\Movimiento\VentasPorProducto\Filtro.cs" />
+    <Compile Include="Sucursal\Ficha.cs" />
+    <Compile Include="Sucursal\Resumen.cs" />
+    <Compile Include="Usuario\Ficha.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reporte\Documento\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

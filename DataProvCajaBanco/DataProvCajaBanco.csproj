@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B6A9B93-CD4A-4E56-A127-5B11467FB0DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataProvCajaBanco</RootNamespace>
+    <AssemblyName>DataProvCajaBanco</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataProv.cs" />
+    <Compile Include="Data\Deposito.cs" />
+    <Compile Include="Data\EmpresaGrupo.cs" />
+    <Compile Include="Data\ReporteMovimiento.cs" />
+    <Compile Include="Data\Sucursal.cs" />
+    <Compile Include="Data\Usuario.cs" />
+    <Compile Include="Infra\IData.cs" />
+    <Compile Include="Infra\IDeposito.cs" />
+    <Compile Include="Infra\IEmpresaGrupo.cs" />
+    <Compile Include="Infra\IReporteMovimiento.cs" />
+    <Compile Include="Infra\ISucursal.cs" />
+    <Compile Include="Infra\IUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DtoLibCajaBanco\DtoLibCajaBanco.csproj">
+      <Project>{cd7c131f-4ecb-4b81-bac6-718c1b57ddd5}</Project>
+      <Name>DtoLibCajaBanco</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DtoLib\DtoLib.csproj">
+      <Project>{6c7d4f6e-9c35-43fe-81f7-ff1922110832}</Project>
+      <Name>DtoLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOB\OOB.csproj">
+      <Project>{613c8395-afc1-4b33-b44c-f6130e495f71}</Project>
+      <Name>OOB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceCajaBanco\ServiceCajaBanco.csproj">
+      <Project>{67653f1a-b76a-4feb-8d68-9e886e5f4cdd}</Project>
+      <Name>ServiceCajaBanco</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

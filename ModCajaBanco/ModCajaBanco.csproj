@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0C33B21-F311-4FEB-B571-C4EFD961EC7C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModCajaBanco</RootNamespace>
+    <AssemblyName>ModCajaBanco</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="MySql.Data, Version=6.8.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.1\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.1\Assemblies\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion.cs" />
+    <Compile Include="Habladores\data.cs" />
+    <Compile Include="Habladores\Gestion.cs" />
+    <Compile Include="Habladores\HabladoresFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Habladores\HabladoresFrm.Designer.cs">
+      <DependentUpon>HabladoresFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Msg.cs" />
+    <Compile Include="Helpers\Utilitis.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Analisis\dataFiltro.cs" />
+    <Compile Include="Reportes\Analisis\dsAnalisis1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAnalisis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Analisis\FiltrarFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Analisis\FiltrarFrm.Designer.cs">
+      <DependentUpon>FiltrarFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Analisis\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\IGestion.cs" />
+    <Compile Include="Reportes\Analisis\VentaDiaria\data.cs" />
+    <Compile Include="Reportes\Analisis\VentaDiaria\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\VentaPorCierre\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\VentaProducto\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\VentaPromedio\Gestion.cs" />
+    <Compile Include="Reportes\Hablador\dsHablador1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHablador.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Hablador\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\ArqueoCajaPos.cs" />
+    <Compile Include="Reportes\Movimientos\CobranzaDiaria\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\dsMovimiento.cs">
+      <DependentUpon>dsMovimiento.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\dsMovimiento1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMovimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\FiltroFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\FiltroFrm.Designer.cs">
+      <DependentUpon>FiltroFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\Gestion.cs" />
+    <Compile Include="Reportes\Movimientos\ResumenInventario\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\ResumenVentaDiarioSucursal\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\ResumenVentaSucursal\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\ResumenVenta\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\VentaDetalle\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\VentaPorCliente\data.cs" />
+    <Compile Include="Reportes\Movimientos\VentaPorCliente\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\VentaPorProducto\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\VentaProductoSucursal\GestionRep.cs" />
+    <Compile Include="Reportes\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Habladores\HabladoresFrm.resx">
+      <DependentUpon>HabladoresFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\Analisis\FiltrarFrm.resx">
+      <DependentUpon>FiltrarFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentaDiaria.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentaPorCierre.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentaProducto.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentaPromedio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Hablador\Hablador.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ArqueoVentaPos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\CobranzaDiaria.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\FiltroFrm.resx">
+      <DependentUpon>FiltroFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenInventario.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVenta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentaDetalle.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentaDiarioSuc.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentaPrd.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentaPrdSuc.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentaSuc.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\ResumenVentCliente.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\Analisis\dsAnalisis.xsc">
+      <DependentUpon>dsAnalisis.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Analisis\dsAnalisis.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAnalisis1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Analisis\dsAnalisis.xss">
+      <DependentUpon>dsAnalisis.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Hablador\dsHablador.xsc">
+      <DependentUpon>dsHablador.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Hablador\dsHablador.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHablador1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Hablador\dsHablador.xss">
+      <DependentUpon>dsHablador.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Movimientos\dsMovimiento.xsc">
+      <DependentUpon>dsMovimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Movimientos\dsMovimiento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMovimiento1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Movimientos\dsMovimiento.xss">
+      <DependentUpon>dsMovimiento.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Conf.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\administrador.png" />
+    <Content Include="Imagenes\automatizacion.jpg" />
+    <Content Include="Imagenes\bt_alerta.png" />
+    <Content Include="Imagenes\bt_asignar.png" />
+    <Content Include="Imagenes\bt_borrar.png" />
+    <Content Include="Imagenes\bt_buscar.png" />
+    <Content Include="Imagenes\bt_campana.png" />
+    <Content Include="Imagenes\bt_consulta.png" />
+    <Content Include="Imagenes\bt_costo.png" />
+    <Content Include="Imagenes\bt_documento.png" />
+    <Content Include="Imagenes\bt_dollar.png" />
+    <Content Include="Imagenes\bt_editar_32.png" />
+    <Content Include="Imagenes\bt_editar_48.png" />
+    <Content Include="Imagenes\bt_editar_ficha.png" />
+    <Content Include="Imagenes\bt_eliminar.png" />
+    <Content Include="Imagenes\bt_enEspera.png" />
+    <Content Include="Imagenes\bt_exchange.png" />
+    <Content Include="Imagenes\bt_exchange_32.png" />
+    <Content Include="Imagenes\bt_exchange_48.png" />
+    <Content Include="Imagenes\bt_gestion.png" />
+    <Content Include="Imagenes\bt_grafico.png" />
+    <Content Include="Imagenes\bt_guardar %282%29.png" />
+    <Content Include="Imagenes\bt_guardar.png" />
+    <Content Include="Imagenes\bt_historico_32.png" />
+    <Content Include="Imagenes\bt_imagen.png" />
+    <Content Include="Imagenes\bt_imagen_2.png" />
+    <Content Include="Imagenes\bt_imprimir.png" />
+    <Content Include="Imagenes\bt_imprimir_2.png" />
+    <Content Include="Imagenes\bt_imprimir_3.png" />
+    <Content Include="Imagenes\bt_limpiar.png" />
+    <Content Include="Imagenes\bt_limpiar_2.png" />
+    <Content Include="Imagenes\bt_limpiar_3.png" />
+    <Content Include="Imagenes\bt_lista.png" />
+    <Content Include="Imagenes\bt_mobil_notification.png" />
+    <Content Include="Imagenes\bt_mov.png" />
+    <Content Include="Imagenes\bt_mov_2.png" />
+    <Content Include="Imagenes\bt_notificacion.png" />
+    <Content Include="Imagenes\bt_ok_2.png" />
+    <Content Include="Imagenes\bt_ok_3.png" />
+    <Content Include="Imagenes\bt_price.png" />
+    <Content Include="Imagenes\bt_proceso.png" />
+    <Content Include="Imagenes\bt_proveedor.png" />
+    <Content Include="Imagenes\bt_qr.png" />
+    <Content Include="Imagenes\bt_salida.png" />
+    <Content Include="Imagenes\bt_salida_2.png" />
+    <Content Include="Imagenes\bt_setup.png" />
+    <Content Include="Imagenes\bt_status.png" />
+    <Content Include="Imagenes\bt_sumar.png" />
+    <Content Include="Imagenes\bt_sumar_2.png" />
+    <Content Include="Imagenes\bt_usuario %282%29.png" />
+    <Content Include="Imagenes\bt_usuario.png" />
+    <Content Include="Imagenes\bt_visor.png" />
+    <Content Include="Imagenes\bt_warehouse.png" />
+    <Content Include="Imagenes\carpeta.png" />
+    <Content Include="Imagenes\desMarcarTodos.png" />
+    <Content Include="Imagenes\dollar.png" />
+    <Content Include="Imagenes\fecha_derecha.png" />
+    <Content Include="Imagenes\flecha_izquierda.png" />
+    <Content Include="Imagenes\icon_setup.png" />
+    <Content Include="Imagenes\inventario.jpg" />
+    <Content Include="Imagenes\inventario_2.jpg" />
+    <Content Include="Imagenes\libro.png" />
+    <Content Include="Imagenes\Machine-learning-1024x682.jpg" />
+    <Content Include="Imagenes\mobile.ico" />
+    <Content Include="Imagenes\seleccionTodos.png" />
+    <Content Include="Imagenes\sinImagen.png" />
+    <Content Include="Imagenes\TOOLS.ico" />
+    <Content Include="Imagenes\transferencia.png" />
+    <Content Include="Imagenes\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProvCajaBanco\DataProvCajaBanco.csproj">
+      <Project>{3b6a9b93-cd4a-4e56-a127-5b11467fb0da}</Project>
+      <Name>DataProvCajaBanco</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOB\OOB.csproj">
+      <Project>{613c8395-afc1-4b33-b44c-f6130e495f71}</Project>
+      <Name>OOB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{613C8395-AFC1-4B33-B44C-F6130E495F71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OOB</RootNamespace>
+    <AssemblyName>OOB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enumerados.cs" />
+    <Compile Include="LibCajaBanco\Deposito\Ficha.cs" />
+    <Compile Include="LibCajaBanco\EmpresaGrupo\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPorCierre\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPorCierre\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaProducto\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaProducto\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPromedio\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPromedio\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Habladores\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Habladores\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ArqueoCajaPos\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\CobranzaDiaria\Data.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\CobranzaDiaria\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\CobranzaDiaria\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\CobranzaDiaria\Movimiento.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenInventario\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenInventario\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaDetalle\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaDetalle\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaDiarioSucursal\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaDiarioSucursal\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaPorCliente\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaPorCliente\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaPorProducto\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaPorProducto\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaProductoSucursal\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaProductoSucursal\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaSucursal\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaSucursal\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVenta\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVenta\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Sucursal\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Usuario\Ficha.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resultado.cs" />
+    <Compile Include="ResultadoAuto.cs" />
+    <Compile Include="ResultadoEntidad.cs" />
+    <Compile Include="ResultadoId.cs" />
+    <Compile Include="ResultadoLista.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
