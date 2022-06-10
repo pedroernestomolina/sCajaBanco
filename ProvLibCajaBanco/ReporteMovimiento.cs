@@ -109,6 +109,7 @@ namespace ProvLibCajaBanco
                                     msubtotal = s.msubtotal,
                                     mtotal = s.mtotal,
                                     cntdivisa = s.cnt_divisa,
+                                    cntdivisaUsu = s.cnt_divisa_usuario,
                                 };
                                 return rt;
                             }).ToList();

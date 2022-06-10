@@ -36,7 +36,7 @@ namespace DataProvCajaBanco.Data
                 {
                     list = r01.Lista.Select(s =>
                     {
-                        return new OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha ()
+                        return new OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha()
                         {
                             autoCierre = s.autoCierre,
                             autoUsuario = s.autoUsuario,
@@ -62,6 +62,7 @@ namespace DataProvCajaBanco.Data
                             motros = s.motros,
                             msubtotal = s.msubtotal,
                             mtotal = s.mtotal,
+                            cntDivisaUsu = s.cntdivisaUsu,
                         };
                     }).ToList();
                 }

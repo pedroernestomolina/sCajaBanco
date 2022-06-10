@@ -39,6 +39,7 @@ namespace ModCajaBanco.Reportes.Movimientos
                 r["efectivo"] = it.efectivo ;
                 r["divisa"] = it.divisa;
                 r["cntdivisa"] = it.cntDivisa;
+                r["cntdivisaUsu"] = it.cntDivisaUsu;
                 r["tarjeta"] = it.tarjeta;
                 r["otros"] = it.otros;
                 r["firma"] = it.firma;

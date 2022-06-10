@@ -23,6 +23,7 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos
         public decimal efectivo { get; set; }
         public decimal divisa { get; set; }
         public decimal cntDivisa { get; set; }
+        public decimal cntDivisaUsu { get; set; }
         public decimal tarjeta { get; set; }
         public decimal otros { get; set; }
         public decimal firma { get; set; }

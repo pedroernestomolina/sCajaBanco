@@ -6,49 +6,52 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.87239cm</Width>
+              <Width>0.83006cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.53385cm</Width>
+              <Width>1.49152cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.08903cm</Width>
+              <Width>1.0467cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.017cm</Width>
+              <Width>1.97467cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.0584cm</Width>
+              <Width>2.01607cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.07423cm</Width>
+              <Width>2.0319cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.07423cm</Width>
+              <Width>2.0319cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.34396cm</Width>
+              <Width>1.01059cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.07423cm</Width>
+              <Width>1.01059cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.33248cm</Width>
+              <Width>2.0319cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.79382cm</Width>
+              <Width>2.29015cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.79382cm</Width>
+              <Width>1.75149cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.79382cm</Width>
+              <Width>1.75149cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.84674cm</Width>
+              <Width>1.75149cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.79382cm</Width>
+              <Width>1.80441cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75149cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -309,7 +312,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cnt</Value>
+                              <Value>Cnt/Sist</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -322,6 +325,41 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cn/Usu</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -847,6 +885,38 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="cntDivisaUsu">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!cntDivisaUsu.Value</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>cntDivisaUsu</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="tarjeta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -1351,6 +1421,44 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                          <Width>2pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!cntDivisaUsu.Value)</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1937,6 +2045,44 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox30">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!cntDivisaUsu.Value)</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox30</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                          <Width>2pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox52">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -2503,6 +2649,44 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox45">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!cntDivisaUsu.Value)</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox45</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                          <Width>3pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox64">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -2793,13 +2977,14 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.66614cm</Size>
+                <Size>1.62381cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox1">
                     <CanGrow>true</CanGrow>
@@ -2837,7 +3022,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.74892cm</Size>
+                    <Size>0.70659cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox3">
                         <CanGrow>true</CanGrow>
@@ -2891,7 +3076,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.66614cm</Size>
+                <Size>1.62381cm</Size>
                 <CellContents>
                   <Textbox Name="Fecha">
                     <CanGrow>true</CanGrow>
@@ -2938,7 +3123,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.74892cm</Size>
+                    <Size>0.70659cm</Size>
                     <CellContents>
                       <Textbox Name="Sucursal1">
                         <CanGrow>true</CanGrow>
@@ -2982,9 +3167,9 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.74892cm</Size>
+                    <Size>0.70659cm</Size>
                     <CellContents>
-                      <Textbox Name="Textbox69">
+                      <Textbox Name="Textbox70">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -3001,7 +3186,7 @@
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox69</rd:DefaultName>
+                        <rd:DefaultName>Textbox70</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -3021,7 +3206,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1.66614cm</Size>
+                <Size>1.62381cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox19">
                     <CanGrow>true</CanGrow>
@@ -3057,7 +3242,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.74892cm</Size>
+                    <Size>0.70659cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox21">
                         <CanGrow>true</CanGrow>
@@ -3066,7 +3251,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value />
+                                <Value>Total</Value>
                                 <Style>
                                   <FontSize>6pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
@@ -3111,7 +3296,7 @@
     <Height>3.26171in</Height>
     <Style />
   </Body>
-  <Width>11.68293in</Width>
+  <Width>11.58474in</Width>
   <Page>
     <PageHeader>
       <Height>2.72521cm</Height>
@@ -3474,10 +3659,14 @@
           <DataField>cierre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="cntDivisaUsu">
+          <DataField>cntDivisaUsu</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsMovimiento</rd:DataSetName>
-        <rd:SchemaPath>D:\Proyectos FoxSystem\CompraVentaFront\ModInventario\ReporteMovimiento\dsMovimiento.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\vFox\CajaBanco\sCajaBanco\ModCajaBanco\Reportes\Movimientos\dsMovimiento.xsd</rd:SchemaPath>
         <rd:TableName>ArqueoVentaPos</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

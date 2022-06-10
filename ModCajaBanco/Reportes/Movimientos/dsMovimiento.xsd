@@ -33,6 +33,7 @@
               <xs:element name="diferencia" msprop:Generator_ColumnVarNameInTable="columndiferencia" msprop:Generator_ColumnPropNameInRow="diferencia" msprop:Generator_ColumnPropNameInTable="diferenciaColumn" msprop:Generator_UserColumnName="diferencia" type="xs:decimal" minOccurs="0" />
               <xs:element name="cntDivisa" msprop:Generator_ColumnVarNameInTable="columncntDivisa" msprop:Generator_ColumnPropNameInRow="cntDivisa" msprop:Generator_ColumnPropNameInTable="cntDivisaColumn" msprop:Generator_UserColumnName="cntDivisa" type="xs:decimal" minOccurs="0" />
               <xs:element name="cierre" msprop:Generator_ColumnVarNameInTable="columncierre" msprop:Generator_ColumnPropNameInRow="cierre" msprop:Generator_ColumnPropNameInTable="cierreColumn" msprop:Generator_UserColumnName="cierre" type="xs:string" minOccurs="0" />
+              <xs:element name="cntDivisaUsu" msprop:Generator_ColumnVarNameInTable="columncntDivisaUsu" msprop:Generator_ColumnPropNameInRow="cntDivisaUsu" msprop:Generator_ColumnPropNameInTable="cntDivisaUsuColumn" msprop:Generator_UserColumnName="cntDivisaUsu" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

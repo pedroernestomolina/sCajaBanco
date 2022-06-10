@@ -35,6 +35,7 @@ namespace DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos
         public decimal motros { get; set; }
         public decimal msubtotal { get; set; }
         public decimal mtotal { get; set; }
+        public decimal cntdivisaUsu { get; set; }
 
     }
 
