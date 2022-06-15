@@ -29,6 +29,11 @@ namespace ModCajaBanco.Reportes.Movimientos
             var ds = new dsMovimiento();
             foreach (var it in _arqueos.OrderBy(o=>o.fecha).ThenBy(o=>o.sucursal).ThenBy(o=>o.autoCierre).ToList())
             {
+                var _tasaCambio = 0m;
+                if (it.cntDivisa > 0) 
+                {
+                    _tasaCambio = it.divisa / it.cntDivisa;
+                } 
                 DataRow r = ds.Tables["ArqueoVentaPos"].NewRow();
                 r["cierre"] = it.autoCierre;
                 r["sucursal"] = it.sucursal;
@@ -48,6 +53,7 @@ namespace ModCajaBanco.Reportes.Movimientos
                 r["mdivisa"] = it.mdivisa;
                 r["mtarjeta"] = it.mtarjeta;
                 r["motros"] = it.motros;
+                r["tasaCambio"] = _tasaCambio;
                 ds.Tables["ArqueoVentaPos"].Rows.Add(r);
             }
 
