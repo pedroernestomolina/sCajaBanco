@@ -176,6 +176,7 @@ namespace DataProvCajaBanco.Data
                             total = s.total,
                             usuarioCodigo = s.usuarioCodigo,
                             usuarioNombre = s.usuarioNombre,
+                            estatusAnulado= s.estatusAnulado
                         };
                     }).ToList();
                 }

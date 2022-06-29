@@ -252,8 +252,8 @@ namespace ProvLibCajaBanco
                     var sql = "SELECT codigo_usuario as usuarioCodigo, usuario as usuarioNombre, fecha, " +
                         "hora, documento, razon_social as clienteNombre,ci_rif as clienteRif, total, " +
                         "signo, tipo, serie, renglones, documento_nombre documentoNombre, " +
-                        "condicion_pago as condicionPago, (descuento1+descuento2) as descuento, auto " +
-                        "FROM ventas where fecha>=@desde and fecha<=@hasta and codigo_sucursal=@codigoSucursal and estatus_anulado='0'";
+                        "condicion_pago as condicionPago, (descuento1+descuento2) as descuento, auto, estatus_anulado as estatusAnulado " +
+                        "FROM ventas where fecha>=@desde and fecha<=@hasta and codigo_sucursal=@codigoSucursal";
 
                     var p1 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p2 = new MySql.Data.MySqlClient.MySqlParameter();

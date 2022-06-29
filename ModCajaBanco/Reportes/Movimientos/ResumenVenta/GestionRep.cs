@@ -29,6 +29,15 @@ namespace ModCajaBanco.Reportes.Movimientos.ResumenVenta
             var ds = new dsMovimiento();
             foreach (var it in data.OrderBy(o=>o.fecha).ThenBy(o=>o.documento).ToList())
             {
+                var monto = it.total * it.signo;
+                var dscto = it.descuento;
+                var estatus = "";
+                if (it.esAnulado) 
+                {
+                    monto = 0m;
+                    dscto = 0m;
+                    estatus = "ANULADO";
+                }
                 DataRow r = ds.Tables["ResumenVent"].NewRow();
                 r["fechaHora"] = it.fecha.ToShortDateString()+", "+it.hora;
                 r["documentoNro"] = it.documento;
@@ -36,9 +45,10 @@ namespace ModCajaBanco.Reportes.Movimientos.ResumenVenta
                 r["usuarioEstacion"] = it.usuarioCodigo.Trim()+"("+it.usuarioNombre.Trim()+"), "+Environment.NewLine+it.estacion;
                 r["cliente"] = it.clienteRif.Trim()+", "+it.clienteNombre.Trim();
                 r["renglones"] = it.renglones.ToString("n0");
-                r["descuento"] = it.descuento;
-                r["total"] = it.total*it.signo;
+                r["descuento"] = dscto;
+                r["total"] = monto;
                 r["condicionPago"] = it.condicionPago;
+                r["estatus"] = estatus;
                 ds.Tables["ResumenVent"].Rows.Add(r);
             }
 

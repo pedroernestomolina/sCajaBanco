@@ -213,7 +213,7 @@ namespace ModCajaBanco
                     sucursalNombre= r00.Entidad.nombre;
                 }
 
-                var r01 = Sistema.MyData.Reporte_ResumenVenta (filtro);
+                var r01 = Sistema.MyData.Reporte_ResumenVenta(filtro);
                 if (r01.Result == OOB.Enumerados.EnumResult.isError)
                 {
                     Helpers.Msg.Error(r01.Mensaje);
