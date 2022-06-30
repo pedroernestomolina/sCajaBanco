@@ -2,7 +2,7 @@
 <Configuracion>
   <Servidor>
     <Instancia>localhost</Instancia>
-    <Catalogo>pita</Catalogo>
-    <ActivarComoSucursal>no</ActivarComoSucursal>
+    <Catalogo>mscala</Catalogo>
+    <ActivarComoSucursal>Si</ActivarComoSucursal>
   </Servidor>
 </Configuracion>

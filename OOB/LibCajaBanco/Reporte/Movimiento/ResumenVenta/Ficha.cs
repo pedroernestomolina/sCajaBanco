@@ -28,6 +28,7 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta
         public string condicionPago { get; set; }
         public string estacion { get; set; }
         public string estatusAnulado { get; set; }
+        public decimal tasaCambio { get; set; }
         public bool esAnulado { get { return estatusAnulado == "1"; } }
 
     }

@@ -28,6 +28,7 @@ namespace DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta
         public decimal descuento { get; set; }
         public string condicionPago { get; set; }
         public string estatusAnulado { get; set; }
+        public decimal tasaCambio { get; set; }
         public string estacion 
         {
             get 

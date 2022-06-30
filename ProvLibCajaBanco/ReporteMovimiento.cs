@@ -249,11 +249,15 @@ namespace ProvLibCajaBanco
             {
                 using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
                 {
-                    var sql = "SELECT codigo_usuario as usuarioCodigo, usuario as usuarioNombre, fecha, " +
-                        "hora, documento, razon_social as clienteNombre,ci_rif as clienteRif, total, " +
-                        "signo, tipo, serie, renglones, documento_nombre documentoNombre, " +
-                        "condicion_pago as condicionPago, (descuento1+descuento2) as descuento, auto, estatus_anulado as estatusAnulado " +
-                        "FROM ventas where fecha>=@desde and fecha<=@hasta and codigo_sucursal=@codigoSucursal";
+                    var sql = @"SELECT codigo_usuario as usuarioCodigo, usuario as usuarioNombre, fecha, 
+                        hora, documento, razon_social as clienteNombre,ci_rif as clienteRif, total, 
+                        signo, tipo, serie, renglones, 
+                        documento_nombre documentoNombre, 
+                        condicion_pago as condicionPago, 
+                        (descuento1+descuento2) as descuento, 
+                        auto, estatus_anulado as estatusAnulado, 
+                        factor_cambio as tasaCambio 
+                        FROM ventas where fecha>=@desde and fecha<=@hasta and codigo_sucursal=@codigoSucursal";
 
                     var p1 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p2 = new MySql.Data.MySqlClient.MySqlParameter();

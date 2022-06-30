@@ -49,6 +49,7 @@ namespace ModCajaBanco.Reportes.Movimientos.ResumenVenta
                 r["total"] = monto;
                 r["condicionPago"] = it.condicionPago;
                 r["estatus"] = estatus;
+                r["tasaCambio"] = it.tasaCambio;
                 ds.Tables["ResumenVent"].Rows.Add(r);
             }
 

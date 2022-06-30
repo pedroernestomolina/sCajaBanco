@@ -1548,6 +1548,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             private global::System.Data.DataColumn columnestatus;
             
+            private global::System.Data.DataColumn columntasaCambio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ResumenVentDataTable() {
@@ -1663,6 +1665,14 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tasaCambioColumn {
+                get {
+                    return this.columntasaCambio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1698,7 +1708,7 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ResumenVentRow AddResumenVentRow(string fechaHora, string documentoNro, string documentoNombre, string usuarioEstacion, string cliente, string renglones, decimal descuento, decimal total, string condicionPago, string estatus) {
+            public ResumenVentRow AddResumenVentRow(string fechaHora, string documentoNro, string documentoNombre, string usuarioEstacion, string cliente, string renglones, decimal descuento, decimal total, string condicionPago, string estatus, decimal tasaCambio) {
                 ResumenVentRow rowResumenVentRow = ((ResumenVentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fechaHora,
@@ -1710,7 +1720,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                         descuento,
                         total,
                         condicionPago,
-                        estatus};
+                        estatus,
+                        tasaCambio};
                 rowResumenVentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowResumenVentRow);
                 return rowResumenVentRow;
@@ -1743,6 +1754,7 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 this.columntotal = base.Columns["total"];
                 this.columncondicionPago = base.Columns["condicionPago"];
                 this.columnestatus = base.Columns["estatus"];
+                this.columntasaCambio = base.Columns["tasaCambio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1768,6 +1780,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 base.Columns.Add(this.columncondicionPago);
                 this.columnestatus = new global::System.Data.DataColumn("estatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestatus);
+                this.columntasaCambio = new global::System.Data.DataColumn("tasaCambio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntasaCambio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5938,6 +5952,22 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal tasaCambio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableResumenVent.tasaCambioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tasaCambio\' in table \'ResumenVent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenVent.tasaCambioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfechaHoraNull() {
                 return this.IsNull(this.tableResumenVent.fechaHoraColumn);
             }
@@ -6054,6 +6084,18 @@ namespace ModCajaBanco.Reportes.Movimientos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetestatusNull() {
                 this[this.tableResumenVent.estatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstasaCambioNull() {
+                return this.IsNull(this.tableResumenVent.tasaCambioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettasaCambioNull() {
+                this[this.tableResumenVent.tasaCambioColumn] = global::System.Convert.DBNull;
             }
         }
         
