@@ -754,18 +754,24 @@ namespace ModCajaBanco
                     filtro.codigoSucursal = r00.Entidad.codigo;
                     sucursalNombre = r00.Entidad.nombre;
                 }
-
                 var r01 = Sistema.MyData.Reporte_ResumenVenta(filtro);
                 if (r01.Result == OOB.Enumerados.EnumResult.isError)
                 {
                     Helpers.Msg.Error(r01.Mensaje);
                     return;
                 }
-
                 if (r01.Lista != null)
                 {
                     if (r01.Lista.Count > 0)
                     {
+                        // TODO : INDICAR LISTA DE SUCURSAL CON VENTAS AL MAYOR PARA CUANDO SE CHEQEUE LA ENUMERACION PARA SALTO DE FACTURA NO HAYA NINGUN PROBLEMA
+                        if ((new[] { "03","12","14","15", "16", "17" }.Contains(filtro.codigoSucursal))) // todos los documentos una misma estacion, es para verificar salto de numero documento 
+                        {
+                            foreach (var rg in r01.Lista)
+                            {
+                                rg.estacion = "";
+                            }
+                        }
                         var xl = r01.Lista.GroupBy(g => new { g.estacion, g.tipo }).Select(t => t).ToList();
                         foreach (var t in xl)
                         {
