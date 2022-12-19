@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.31479cm</Width>
+              <Width>2.38748cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.77268cm</Width>
+              <Width>1.7cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.02375cm</Width>
@@ -346,7 +346,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>*</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -711,7 +711,7 @@
                             <TextRun>
                               <Value>=Fields!fechaHora.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1234,25 +1234,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox41">
+                    <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!descuento.Value)</Value>
+                              <Value />
                               <Style>
                                 <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1571,25 +1570,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox60">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!descuento.Value)</Value>
+                              <Value />
                               <Style>
                                 <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox60</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1868,7 +1866,7 @@
         <DataSetName>ResumenVent</DataSetName>
         <Top>0.02645cm</Top>
         <Height>3cm</Height>
-        <Width>20.96223cm</Width>
+        <Width>20.96224cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

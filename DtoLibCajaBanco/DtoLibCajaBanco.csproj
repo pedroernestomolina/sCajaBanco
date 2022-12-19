@@ -75,6 +75,8 @@
     <Compile Include="Reporte\Movimiento\VentasPorProductoSucursal\Filtro.cs" />
     <Compile Include="Reporte\Movimiento\VentasPorProducto\Ficha.cs" />
     <Compile Include="Reporte\Movimiento\VentasPorProducto\Filtro.cs" />
+    <Compile Include="Reporte\Utilidad\General\Ficha.cs" />
+    <Compile Include="Reporte\Utilidad\General\Filtro.cs" />
     <Compile Include="Sucursal\Ficha.cs" />
     <Compile Include="Sucursal\Resumen.cs" />
     <Compile Include="Usuario\Ficha.cs" />

@@ -74,6 +74,8 @@
     <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVentaSucursal\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVenta\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Movimiento\ResumenVenta\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Utilidad\General\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Utilidad\General\Filtro.cs" />
     <Compile Include="LibCajaBanco\Sucursal\Ficha.cs" />
     <Compile Include="LibCajaBanco\Usuario\Ficha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

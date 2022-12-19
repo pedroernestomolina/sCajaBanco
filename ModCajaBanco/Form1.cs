@@ -69,7 +69,6 @@ namespace ModCajaBanco
         {
             ReporteResumenVenta();
         }
-
         private void ReporteResumenVenta()
         {
             _controlador.ReporteResumenVenta();
@@ -179,7 +178,6 @@ namespace ModCajaBanco
         {
             ReporteResumenVentaSaltoFactura();
         }
-
         private void ReporteResumenVentaSaltoFactura()
         {
             _controlador.ReporteResumenVentaSaltoFactura();
@@ -213,6 +211,15 @@ namespace ModCajaBanco
         private void ReporteResumenVentaporCliente()
         {
             _controlador.ReporteResumenVentaporCliente();
+        }
+
+        private void TSM_UTILIDAD_GENERAL_Click(object sender, EventArgs e)
+        {
+            ReporteUtilidadGeneral();
+        }
+        private void ReporteUtilidadGeneral()
+        {
+            _controlador.ReporteUtilidadGeneral();
         }
     
     }

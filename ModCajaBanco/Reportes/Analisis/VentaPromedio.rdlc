@@ -9,19 +9,25 @@
               <Width>4.22976cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.37704cm</Width>
+              <Width>1.19183cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.90143cm</Width>
+              <Width>1.2529cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.47136cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.93541cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21893cm</Width>
+              <Width>1.2529cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.76914cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.06318cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.5861cm</Width>
@@ -32,7 +38,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.99688cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -79,7 +85,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dias/Tr</Value>
+                              <Value>Dias</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Transc</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -115,7 +134,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cnt/Mov</Value>
+                              <Value>Cnt</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Mov</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -144,6 +176,55 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Venta </Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>(Bs)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox32">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -151,7 +232,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Venta $</Value>
+                              <Value>Venta </Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>($)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -187,7 +281,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cnt/Mov/Prom</Value>
+                              <Value>Cnt/Mov</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Prom</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -252,6 +359,42 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Tasa Prom</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -259,7 +402,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Item Stock</Value>
+                              <Value>Item </Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Stock</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -295,7 +451,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Costo Stock</Value>
+                              <Value>Costo </Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Stock</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -428,6 +597,39 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox53">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -511,6 +713,39 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox55</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -698,6 +933,40 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="ventaBs">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ventaBs.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ventaBs</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="venta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -784,6 +1053,40 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ventaPromedio</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="tasaPromedio">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!tasaPromedio.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Format>n4</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>tasaPromedio</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -977,6 +1280,42 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox18">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!ventaBs.Value)</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Gray</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox46">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -1084,6 +1423,40 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Gray</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -1158,6 +1531,8 @@
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -1276,8 +1651,8 @@
         <DataSetName>VentaPromedio</DataSetName>
         <Top>0.14111cm</Top>
         <Left>0.26141cm</Left>
-        <Height>2.4cm</Height>
-        <Width>18.94347cm</Width>
+        <Height>2.79688cm</Height>
+        <Width>20.67823cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1288,7 +1663,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.65526in</Width>
+  <Width>8.3388in</Width>
   <Page>
     <PageHeader>
       <Height>3.51896cm</Height>
@@ -1311,7 +1686,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.67055cm</Top>
-          <Left>18.08072cm</Left>
+          <Left>19.81547cm</Left>
           <Height>0.6cm</Height>
           <Width>1.12417cm</Width>
           <Style>
@@ -1340,7 +1715,7 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>0.67055cm</Top>
-          <Left>15.14266cm</Left>
+          <Left>16.87741cm</Left>
           <Height>0.6cm</Height>
           <Width>1.33702cm</Width>
           <ZIndex>1</ZIndex>
@@ -1369,7 +1744,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Left>13.10127cm</Left>
+          <Left>14.83602cm</Left>
           <Height>0.6cm</Height>
           <Width>6.10361cm</Width>
           <ZIndex>2</ZIndex>
@@ -1399,7 +1774,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox66</rd:DefaultName>
           <Top>0.67055cm</Top>
-          <Left>16.77134cm</Left>
+          <Left>18.50609cm</Left>
           <Height>0.6cm</Height>
           <Width>1.01833cm</Width>
           <ZIndex>3</ZIndex>
@@ -1429,7 +1804,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox66</rd:DefaultName>
           <Top>0.67055cm</Top>
-          <Left>13.10127cm</Left>
+          <Left>14.83602cm</Left>
           <Height>0.6cm</Height>
           <Width>1.865cm</Width>
           <ZIndex>4</ZIndex>
@@ -1447,7 +1822,7 @@
           <Top>3.4484cm</Top>
           <Left>0.26141cm</Left>
           <Height>0cm</Height>
-          <Width>18.94347cm</Width>
+          <Width>20.67823cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -1508,9 +1883,9 @@
           </Paragraphs>
           <rd:DefaultName>Filtros</rd:DefaultName>
           <Top>2.13995cm</Top>
-          <Left>11.0559cm</Left>
+          <Left>11.05591cm</Left>
           <Height>1.16734cm</Height>
-          <Width>8.14898cm</Width>
+          <Width>9.88373cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -1602,10 +1977,18 @@
           <DataField>costoStock</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="tasaPromedio">
+          <DataField>tasaPromedio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ventaBs">
+          <DataField>ventaBs</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsAnalisis</rd:DataSetName>
-        <rd:SchemaPath>D:\Proyectos FoxSystem\CompraVentaFront\ModCajaBanco\Reportes\Analisis\dsAnalisis.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\vFox\CajaBanco\sCajaBanco\ModCajaBanco\Reportes\Analisis\dsAnalisis.xsd</rd:SchemaPath>
         <rd:TableName>VentaPromedio</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

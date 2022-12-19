@@ -42,10 +42,11 @@ namespace ModCajaBanco.Reportes.Movimientos.ResumenVenta
                 r["fechaHora"] = it.fecha.ToShortDateString()+", "+it.hora;
                 r["documentoNro"] = it.documento;
                 r["documentoNombre"] = it.documentoNombre;
-                r["usuarioEstacion"] = it.usuarioCodigo.Trim()+"("+it.usuarioNombre.Trim()+"), "+Environment.NewLine+it.estacion;
+                //r["usuarioEstacion"] = it.usuarioCodigo.Trim()+"("+it.usuarioNombre.Trim()+"), "+Environment.NewLine+it.estacion;
+                r["usuarioEstacion"] = "";
                 r["cliente"] = it.clienteRif.Trim()+", "+it.clienteNombre.Trim();
                 r["renglones"] = it.renglones.ToString("n0");
-                r["descuento"] = dscto;
+                r["descuento"] = it.dsctoPorcentaje1;
                 r["total"] = monto;
                 r["condicionPago"] = it.condicionPago;
                 r["estatus"] = estatus;

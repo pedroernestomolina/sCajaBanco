@@ -12,7 +12,8 @@ namespace DataProvCajaBanco.Data
     public partial class DataProv: IData
     {
 
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> CajaBanco_ArqueoCajaPos(OOB.LibCajaBanco.Reporte.Movimiento.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
+            CajaBanco_ArqueoCajaPos(OOB.LibCajaBanco.Reporte.Movimiento.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha>();
 
@@ -71,8 +72,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Ficha> Reporte_ResumenInventario(OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Ficha> 
+            Reporte_ResumenInventario(OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Ficha>();
 
@@ -132,8 +133,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha> Reporte_ResumenVenta(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha> 
+            Reporte_ResumenVenta(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha>();
 
@@ -164,6 +165,7 @@ namespace DataProvCajaBanco.Data
                             clienteRif = s.clienteRif,
                             condicionPago = s.condicionPago,
                             descuento = s.descuento,
+                            dsctoPorcentaje1=s.dsctoPorcentaje1,
                             documento = s.documento,
                             documentoNombre = s.documentoNombre,
                             estacion = s.estacion,
@@ -186,8 +188,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Habladores.Ficha> Reporte_Habladores(OOB.LibCajaBanco.Reporte.Habladores.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Habladores.Ficha> 
+            Reporte_Habladores(OOB.LibCajaBanco.Reporte.Habladores.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Habladores.Ficha>();
 
@@ -233,8 +235,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Ficha> Reporte_ResumenVentaDetalle(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Ficha> 
+            Reporte_ResumenVentaDetalle(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Ficha>();
 
@@ -284,8 +286,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Ficha> Reporte_ResumenVentaPorProducto(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Ficha> 
+            Reporte_ResumenVentaPorProducto(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Ficha>();
 
@@ -327,8 +329,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha> Reporte_ResumenVentaSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha> 
+            Reporte_ResumenVentaSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha>();
 
@@ -370,8 +372,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaProductoSucursal.Ficha> Reporte_ResumenVentaProductoSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaProductoSucursal.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaProductoSucursal.Ficha> 
+            Reporte_ResumenVentaProductoSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaProductoSucursal.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaProductoSucursal.Ficha>();
 
@@ -415,8 +417,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha> Reporte_CobranzaDiaria(OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Filtro filtro)
+        public OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha> 
+            Reporte_CobranzaDiaria(OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Filtro filtro)
         {
             var rt = new OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha>();
 
@@ -502,8 +504,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Ficha> Reporte_ResumenVentaDiarioSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Ficha> 
+            Reporte_ResumenVentaDiarioSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Ficha>();
 
@@ -552,8 +554,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Ficha> Reporte_ResumenVentaPorClient(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Ficha> 
+            Reporte_ResumenVentaPorClient(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Ficha>();
 
@@ -600,8 +602,8 @@ namespace DataProvCajaBanco.Data
 
 
         // ANALISIS
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> Reporte_Analisis_VentaPromedio(OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
+            Reporte_Analisis_VentaPromedio(OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha>();
 
@@ -646,8 +648,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaProducto.Ficha> Reporte_Analisis_VentaProducto(OOB.LibCajaBanco.Reporte.Analisis.VentaProducto.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaProducto.Ficha> 
+            Reporte_Analisis_VentaProducto(OOB.LibCajaBanco.Reporte.Analisis.VentaProducto.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaProducto.Ficha>();
 
@@ -687,8 +689,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha> Reporte_Analisis_VentaDiaria(OOB.LibCajaBanco.Reporte.Analisis.VentaDiaria.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha> 
+            Reporte_Analisis_VentaDiaria(OOB.LibCajaBanco.Reporte.Analisis.VentaDiaria.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha>();
 
@@ -726,8 +728,8 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha> Reporte_Analisis_VentaPorCierre(OOB.LibCajaBanco.Reporte.Analisis.VentaPorCierre.Filtro filtro)
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha> 
+            Reporte_Analisis_VentaPorCierre(OOB.LibCajaBanco.Reporte.Analisis.VentaPorCierre.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha>();
 
@@ -773,6 +775,44 @@ namespace DataProvCajaBanco.Data
             }
             rt.Lista = list;
 
+            return rt;
+        }
+        //UTILIDAD
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Utilidad.General.Ficha> 
+            Reporte_Utilidad_General(OOB.LibCajaBanco.Reporte.Utilidad.General.Filtro filtro)
+        {
+            var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Utilidad.General.Ficha>();
+            var filtroDTO = new DtoLibCajaBanco.Reporte.Utilidad.General.Filtro()
+            {
+                desde = filtro.desde,
+                hasta = filtro.hasta,
+            };
+            var r01 = MyData.Reporte_Utilidad_General(filtroDTO);
+            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            {
+                rt.Mensaje = r01.Mensaje;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+                return rt;
+            }
+            var list = new List<OOB.LibCajaBanco.Reporte.Utilidad.General.Ficha>();
+            if (r01.Lista != null)
+            {
+                if (r01.Lista.Count > 0)
+                {
+                    list = r01.Lista.Select(s =>
+                    {
+                        return new OOB.LibCajaBanco.Reporte.Utilidad.General.Ficha()
+                        {
+                            bono = s.bono,
+                            codSuc = s.codSuc,
+                            costo = s.costo,
+                            nombreSuc = s.nombreSuc,
+                            venta = s.venta,
+                        };
+                    }).ToList();
+                }
+            }
+            rt.Lista = list;
             return rt;
         }
 

@@ -24,6 +24,8 @@
               <xs:element name="dias" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" minOccurs="0" />
               <xs:element name="itemStock" msprop:Generator_ColumnVarNameInTable="columnitemStock" msprop:Generator_ColumnPropNameInRow="itemStock" msprop:Generator_ColumnPropNameInTable="itemStockColumn" msprop:Generator_UserColumnName="itemStock" type="xs:decimal" minOccurs="0" />
               <xs:element name="costoStock" msprop:Generator_ColumnVarNameInTable="columncostoStock" msprop:Generator_ColumnPropNameInRow="costoStock" msprop:Generator_ColumnPropNameInTable="costoStockColumn" msprop:Generator_UserColumnName="costoStock" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tasaPromedio" msprop:Generator_ColumnVarNameInTable="columntasaPromedio" msprop:Generator_ColumnPropNameInRow="tasaPromedio" msprop:Generator_ColumnPropNameInTable="tasaPromedioColumn" msprop:Generator_UserColumnName="tasaPromedio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ventaBs" msprop:Generator_ColumnVarNameInTable="columnventaBs" msprop:Generator_ColumnPropNameInRow="ventaBs" msprop:Generator_ColumnPropNameInTable="ventaBsColumn" msprop:Generator_UserColumnName="ventaBs" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

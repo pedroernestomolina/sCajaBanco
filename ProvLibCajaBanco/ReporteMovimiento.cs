@@ -30,7 +30,8 @@ namespace ProvLibCajaBanco
             public string nombreMedio { get; set; }
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> CajaBanco_ArqueoCajaPos(DtoLibCajaBanco.Reporte.Movimiento.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
+            CajaBanco_ArqueoCajaPos(DtoLibCajaBanco.Reporte.Movimiento.Filtro filtro)
         {
             var result = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha>();
 
@@ -154,7 +155,8 @@ namespace ProvLibCajaBanco
             }
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.Inventario.Ficha> Reporte_InventarioResumen(DtoLibCajaBanco.Reporte.Movimiento.Inventario.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.Inventario.Ficha> 
+            Reporte_InventarioResumen(DtoLibCajaBanco.Reporte.Movimiento.Inventario.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.Inventario.Ficha>();
 
@@ -241,7 +243,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha> Reporte_VentaResumen(DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha> 
+            Reporte_VentaResumen(DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVenta.Ficha>();
 
@@ -255,6 +258,7 @@ namespace ProvLibCajaBanco
                         documento_nombre documentoNombre, 
                         condicion_pago as condicionPago, 
                         (descuento1+descuento2) as descuento, 
+                        descuento1p as dsctoPorcentaje1,
                         auto, estatus_anulado as estatusAnulado, 
                         factor_cambio as tasaCambio 
                         FROM ventas where fecha>=@desde and fecha<=@hasta and codigo_sucursal=@codigoSucursal";
@@ -283,7 +287,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Habladores.Ficha> Reporte_Habladores(DtoLibCajaBanco.Reporte.Habladores.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Habladores.Ficha> 
+            Reporte_Habladores(DtoLibCajaBanco.Reporte.Habladores.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Habladores.Ficha>();
 
@@ -316,7 +321,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha> Reporte_VentaDetalle(DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha>
+            Reporte_VentaDetalle(DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha>();
 
@@ -355,7 +361,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProducto.Ficha> Reporte_VentaPorProducto(DtoLibCajaBanco.Reporte.Movimiento.VentasPorProducto.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProducto.Ficha> 
+            Reporte_VentaPorProducto(DtoLibCajaBanco.Reporte.Movimiento.VentasPorProducto.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProducto.Ficha>();
 
@@ -401,7 +408,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha> Reporte_ResumenVentaSucursal(DtoLibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha> 
+            Reporte_ResumenVentaSucursal(DtoLibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenVentaSucursal.Ficha>();
 
@@ -455,7 +463,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProductoSucursal.Ficha> Reporte_VentaPorProductoSucursal(DtoLibCajaBanco.Reporte.Movimiento.VentasPorProductoSucursal.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProductoSucursal.Ficha> 
+            Reporte_VentaPorProductoSucursal(DtoLibCajaBanco.Reporte.Movimiento.VentasPorProductoSucursal.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentasPorProductoSucursal.Ficha>();
 
@@ -646,7 +655,8 @@ namespace ProvLibCajaBanco
         //    return rt;
         //}
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Ficha> Reporte_ResumenDiarioVentaSucursal(DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Ficha> 
+            Reporte_ResumenDiarioVentaSucursal(DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Ficha>();
 
@@ -703,7 +713,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha> Reporte_CobranzaDiara(DtoLibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Filtro filtro)
+        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha> 
+            Reporte_CobranzaDiara(DtoLibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Movimiento.CobranzaDiaria.Ficha>();
 
@@ -802,7 +813,8 @@ namespace ProvLibCajaBanco
             return rt;
         }
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Ficha> Reporte_VentaPorCliente(DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Ficha> 
+            Reporte_VentaPorCliente(DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Ficha>();
 
@@ -853,7 +865,8 @@ namespace ProvLibCajaBanco
         ////
 
 
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> Reporte_Analisis_VentaPromedio(DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
+            Reporte_Analisis_VentaPromedio(DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha>();
 
@@ -926,8 +939,8 @@ namespace ProvLibCajaBanco
 
             return rt;
         }
-
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaProducto.Ficha> Reporte_Analisis_VentaProducto(DtoLibCajaBanco.Reporte.Analisis.VentaProducto.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaProducto.Ficha> 
+            Reporte_Analisis_VentaProducto(DtoLibCajaBanco.Reporte.Analisis.VentaProducto.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaProducto.Ficha>();
 
@@ -975,8 +988,8 @@ namespace ProvLibCajaBanco
 
             return rt;
         }
-
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha> Reporte_Analisis_VentaDiaria(DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha> 
+            Reporte_Analisis_VentaDiaria(DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Ficha>();
 
@@ -1011,8 +1024,8 @@ namespace ProvLibCajaBanco
 
             return rt;
         }
-
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha> Reporte_Analisis_VentaPorCierre(DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha> 
+            Reporte_Analisis_VentaPorCierre(DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha>();
 
@@ -1048,6 +1061,65 @@ namespace ProvLibCajaBanco
                 rt.Result = DtoLib.Enumerados.EnumResult.isError;
             }
 
+            return rt;
+        }
+
+
+        //UTILIDAD
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha> 
+            Reporte_Utilidad_General(DtoLibCajaBanco.Reporte.Utilidad.General.Filtro filtro)
+        {
+            var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>();
+
+            try
+            {
+                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+                {
+                    var p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+                    var p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+
+
+                    var sql_1 = @"select 
+                                    c1.codSuc,
+                                    c1.nombreSuc,
+                                    c1.venta,
+                                    c1.bono,
+                                    c1.costo
+                                from 
+                                    (
+                                        select
+                                            eSuc.codigo as codSuc, 
+                                            eSuc.nombre as nombreSuc,
+                                            sum(monto_divisa*signo) as venta,
+                                            sum(monto_bono_en_divisa_por_pago_divisa*signo) as bono,
+                                            (
+                                                select 
+                                                    sum(((vd.costo_und*cantidad_und)/v.factor_cambio)/((v.porct_bono_por_pago_divisa/100)+1)*v.signo) as coto
+                                                FROM ventas_detalle as vd
+                                                join ventas as v on v.auto=vd.auto_documento
+                                                join productos as p on p.auto=vd.auto_producto
+                                                where v.fecha>=@desde 
+                                                        and v.fecha<=@hasta
+                                                        and v.codigo_sucursal=codSuc
+                                                        and v.estatus_anulado='0'
+                                            ) as costo
+                                        FROM ventas as v
+                                            join empresa_sucursal as eSuc on eSuc.codigo=v.codigo_sucursal
+                                            where fecha>=@desde
+                                            and fecha<=@hasta
+                                            and estatus_anulado='0'
+                                        group by codigo_sucursal
+                                    ) as c1";
+                    var sql = sql_1 ;
+                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>(sql, p1, p2).ToList();
+                    rt.Lista = ldata;
+                }
+            }
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = DtoLib.Enumerados.EnumResult.isError;
+            }
             return rt;
         }
 

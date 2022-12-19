@@ -144,6 +144,12 @@
     <Compile Include="Reportes\Reporte.Designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Utilidad\dsUtilidad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsUtilidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Utilidad\General\Gestion.cs" />
     <Compile Include="Sistema.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -215,6 +221,9 @@
     <EmbeddedResource Include="Reportes\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Utilidad\UtGeneral.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -257,6 +266,17 @@
     </None>
     <None Include="Reportes\Movimientos\dsMovimiento.xss">
       <DependentUpon>dsMovimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Utilidad\dsUtilidad.xsc">
+      <DependentUpon>dsUtilidad.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Utilidad\dsUtilidad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsUtilidad.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Utilidad\dsUtilidad.xss">
+      <DependentUpon>dsUtilidad.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -347,6 +367,7 @@
       <Name>OOB</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

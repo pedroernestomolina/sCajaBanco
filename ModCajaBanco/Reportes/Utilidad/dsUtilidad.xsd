@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsUtilidad" targetNamespace="http://tempuri.org/dsUtilidad.xsd" xmlns:mstns="http://tempuri.org/dsUtilidad.xsd" xmlns="http://tempuri.org/dsUtilidad.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsUtilidad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsUtilidad" msprop:Generator_UserDSName="dsUtilidad">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="general" msprop:Generator_TableClassName="generalDataTable" msprop:Generator_TableVarName="tablegeneral" msprop:Generator_RowChangedName="generalRowChanged" msprop:Generator_TablePropName="general" msprop:Generator_RowDeletingName="generalRowDeleting" msprop:Generator_RowChangingName="generalRowChanging" msprop:Generator_RowEvHandlerName="generalRowChangeEventHandler" msprop:Generator_RowDeletedName="generalRowDeleted" msprop:Generator_RowClassName="generalRow" msprop:Generator_UserTableName="general" msprop:Generator_RowEvArgName="generalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sucursal" msprop:Generator_ColumnVarNameInTable="columnsucursal" msprop:Generator_ColumnPropNameInRow="sucursal" msprop:Generator_ColumnPropNameInTable="sucursalColumn" msprop:Generator_UserColumnName="sucursal" type="xs:string" minOccurs="0" />
+              <xs:element name="venta" msprop:Generator_ColumnVarNameInTable="columnventa" msprop:Generator_ColumnPropNameInRow="venta" msprop:Generator_ColumnPropNameInTable="ventaColumn" msprop:Generator_UserColumnName="venta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="bono" msprop:Generator_ColumnVarNameInTable="columnbono" msprop:Generator_ColumnPropNameInRow="bono" msprop:Generator_ColumnPropNameInTable="bonoColumn" msprop:Generator_UserColumnName="bono" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo" msprop:Generator_ColumnVarNameInTable="columncosto" msprop:Generator_ColumnPropNameInRow="costo" msprop:Generator_ColumnPropNameInTable="costoColumn" msprop:Generator_UserColumnName="costo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="utilidad" msprop:Generator_ColumnVarNameInTable="columnutilidad" msprop:Generator_ColumnPropNameInRow="utilidad" msprop:Generator_ColumnPropNameInTable="utilidadColumn" msprop:Generator_UserColumnName="utilidad" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

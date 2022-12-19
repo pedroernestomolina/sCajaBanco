@@ -402,6 +402,10 @@ namespace ModCajaBanco.Reportes.Analisis {
             
             private global::System.Data.DataColumn columncostoStock;
             
+            private global::System.Data.DataColumn columntasaPromedio;
+            
+            private global::System.Data.DataColumn columnventaBs;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public VentaPromedioDataTable() {
@@ -509,6 +513,22 @@ namespace ModCajaBanco.Reportes.Analisis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tasaPromedioColumn {
+                get {
+                    return this.columntasaPromedio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ventaBsColumn {
+                get {
+                    return this.columnventaBs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -544,7 +564,7 @@ namespace ModCajaBanco.Reportes.Analisis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaPromedioRow AddVentaPromedioRow(int cntMov, int cntMovPromedio, decimal venta, decimal ventaPromedio, string sucursal, string fecha, int dias, decimal itemStock, decimal costoStock) {
+            public VentaPromedioRow AddVentaPromedioRow(int cntMov, int cntMovPromedio, decimal venta, decimal ventaPromedio, string sucursal, string fecha, int dias, decimal itemStock, decimal costoStock, decimal tasaPromedio, decimal ventaBs) {
                 VentaPromedioRow rowVentaPromedioRow = ((VentaPromedioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         cntMov,
@@ -555,7 +575,9 @@ namespace ModCajaBanco.Reportes.Analisis {
                         fecha,
                         dias,
                         itemStock,
-                        costoStock};
+                        costoStock,
+                        tasaPromedio,
+                        ventaBs};
                 rowVentaPromedioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVentaPromedioRow);
                 return rowVentaPromedioRow;
@@ -587,6 +609,8 @@ namespace ModCajaBanco.Reportes.Analisis {
                 this.columndias = base.Columns["dias"];
                 this.columnitemStock = base.Columns["itemStock"];
                 this.columncostoStock = base.Columns["costoStock"];
+                this.columntasaPromedio = base.Columns["tasaPromedio"];
+                this.columnventaBs = base.Columns["ventaBs"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,6 +634,10 @@ namespace ModCajaBanco.Reportes.Analisis {
                 base.Columns.Add(this.columnitemStock);
                 this.columncostoStock = new global::System.Data.DataColumn("costoStock", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncostoStock);
+                this.columntasaPromedio = new global::System.Data.DataColumn("tasaPromedio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntasaPromedio);
+                this.columnventaBs = new global::System.Data.DataColumn("ventaBs", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnventaBs);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1889,6 +1917,38 @@ namespace ModCajaBanco.Reportes.Analisis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal tasaPromedio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVentaPromedio.tasaPromedioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tasaPromedio\' in table \'VentaPromedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPromedio.tasaPromedioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ventaBs {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVentaPromedio.ventaBsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ventaBs\' in table \'VentaPromedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPromedio.ventaBsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscntMovNull() {
                 return this.IsNull(this.tableVentaPromedio.cntMovColumn);
             }
@@ -1993,6 +2053,30 @@ namespace ModCajaBanco.Reportes.Analisis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcostoStockNull() {
                 this[this.tableVentaPromedio.costoStockColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstasaPromedioNull() {
+                return this.IsNull(this.tableVentaPromedio.tasaPromedioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettasaPromedioNull() {
+                this[this.tableVentaPromedio.tasaPromedioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsventaBsNull() {
+                return this.IsNull(this.tableVentaPromedio.ventaBsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetventaBsNull() {
+                this[this.tableVentaPromedio.ventaBsColumn] = global::System.Convert.DBNull;
             }
         }
         

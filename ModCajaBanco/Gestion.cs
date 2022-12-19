@@ -764,18 +764,22 @@ namespace ModCajaBanco
                 {
                     if (r01.Lista.Count > 0)
                     {
-                        // TODO : INDICAR LISTA DE SUCURSAL CON VENTAS AL MAYOR PARA CUANDO SE CHEQEUE LA ENUMERACION PARA SALTO DE FACTURA NO HAYA NINGUN PROBLEMA
-                        if ((new[] { "03","12","14","15", "16", "17" }.Contains(filtro.codigoSucursal))) // todos los documentos una misma estacion, es para verificar salto de numero documento 
+                        //// TODO : INDICAR LISTA DE SUCURSAL CON VENTAS AL MAYOR PARA CUANDO SE CHEQEUE LA ENUMERACION PARA SALTO DE FACTURA NO HAYA NINGUN PROBLEMA
+                        //if ((new[] { "03","12","14","15", "16", "17", "0B" }.Contains(filtro.codigoSucursal))) // todos los documentos una misma estacion, es para verificar salto de numero documento 
+                        //{
+                        //    foreach (var rg in r01.Lista)
+                        //    {
+                        //        rg.estacion = "";
+                        //    }
+                        //}
+                        foreach (var rg in r01.Lista)
                         {
-                            foreach (var rg in r01.Lista)
-                            {
-                                rg.estacion = "";
-                            }
+                            rg.estacion = "";
                         }
                         var xl = r01.Lista.GroupBy(g => new { g.estacion, g.tipo }).Select(t => t).ToList();
                         foreach (var t in xl)
                         {
-                            var d = r01.Lista.First(w=>w.estacion==t.Key.estacion.ToString() && w.tipo==t.Key.tipo.ToString());
+                            var d = r01.Lista.OrderBy(o=>o.documento).First(w=>w.estacion==t.Key.estacion.ToString() && w.tipo==t.Key.tipo.ToString());
                             if (d != null) 
                             {
                                 var x = int.Parse(d.documento);
@@ -885,6 +889,32 @@ namespace ModCajaBanco
             }
         }
 
+        public void ReporteUtilidadGeneral()
+        {
+            _filtroGestion.Inicializa();
+            _filtroGestion.setHabilitarPorFecha(true);
+            _filtroGestion.setHabilitarSucursal(false);
+            _filtroGestion.setHabilitarDeposito(false);
+            _filtroGestion.Inicia();
+            if (_filtroGestion.IsFiltroOk)
+            {
+                var filtro = new OOB.LibCajaBanco.Reporte.Utilidad.General.Filtro()
+                {
+                    desde = _filtroGestion.desdeFecha,
+                    hasta = _filtroGestion.hastaFecha,
+                };
+                var r01 = Sistema.MyData.Reporte_Utilidad_General(filtro);
+                if (r01.Result == OOB.Enumerados.EnumResult.isError)
+                {
+                    Helpers.Msg.Error(r01.Mensaje);
+                    return;
+                }
+                //var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString() +
+                //    Environment.NewLine + "Sucursal: " + sucursalNombre;
+                var rp1 = new Reportes.Utilidad.General.Gestion(r01.Lista, "");
+                rp1.Generar();
+            }
+        }
     }
 
 }

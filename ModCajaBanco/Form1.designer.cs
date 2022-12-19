@@ -47,6 +47,7 @@
             this.TSM_REPORTES_VENTA_RESUMEN_SALTO_FACT = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_REPORTES_VENTA_DETALLE = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_REPORTES_VENTA_POR_PRODUCTO = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_REPORTES_VENTA_POR_CLIENTE = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.TSM_REPORTES_RESUMEN_VENTA_SUCURSAL = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_REPORTES_RESUMEN_VENTA_DIARIO_SUCURSAL = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.L_VERSION = new System.Windows.Forms.Label();
-            this.TSM_REPORTES_VENTA_POR_CLIENTE = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.TSM_UTILIDAD_GENERAL = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -267,6 +269,13 @@
             this.TSM_REPORTES_VENTA_POR_PRODUCTO.Text = "Ventas Por Producto";
             this.TSM_REPORTES_VENTA_POR_PRODUCTO.Click += new System.EventHandler(this.TSM_REPORTES_VENTA_POR_PRODUCTO_Click);
             // 
+            // TSM_REPORTES_VENTA_POR_CLIENTE
+            // 
+            this.TSM_REPORTES_VENTA_POR_CLIENTE.Name = "TSM_REPORTES_VENTA_POR_CLIENTE";
+            this.TSM_REPORTES_VENTA_POR_CLIENTE.Size = new System.Drawing.Size(263, 22);
+            this.TSM_REPORTES_VENTA_POR_CLIENTE.Text = "Ventas Por Cliente";
+            this.TSM_REPORTES_VENTA_POR_CLIENTE.Click += new System.EventHandler(this.TSM_REPORTES_VENTA_POR_CLIENTE_Click);
+            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
@@ -320,7 +329,9 @@
             this.TSM_ANALISIS_Ventas_PRODUCTO,
             this.TSM_ANALISIS_Ventas_Diaria,
             this.toolStripMenuItem4,
-            this.TSM_ANALISIS_Ventas_Por_Cierre});
+            this.TSM_ANALISIS_Ventas_Por_Cierre,
+            this.toolStripMenuItem5,
+            this.TSM_UTILIDAD_GENERAL});
             this.TSM_ANALISIS_Ventas.Name = "TSM_ANALISIS_Ventas";
             this.TSM_ANALISIS_Ventas.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas.Text = "Ventas";
@@ -328,33 +339,33 @@
             // TSM_ANALISIS_Ventas_PROMEDIO
             // 
             this.TSM_ANALISIS_Ventas_PROMEDIO.Name = "TSM_ANALISIS_Ventas_PROMEDIO";
-            this.TSM_ANALISIS_Ventas_PROMEDIO.Size = new System.Drawing.Size(126, 22);
+            this.TSM_ANALISIS_Ventas_PROMEDIO.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas_PROMEDIO.Text = "Promedio";
             this.TSM_ANALISIS_Ventas_PROMEDIO.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_PROMEDIO_Click);
             // 
             // TSM_ANALISIS_Ventas_PRODUCTO
             // 
             this.TSM_ANALISIS_Ventas_PRODUCTO.Name = "TSM_ANALISIS_Ventas_PRODUCTO";
-            this.TSM_ANALISIS_Ventas_PRODUCTO.Size = new System.Drawing.Size(126, 22);
+            this.TSM_ANALISIS_Ventas_PRODUCTO.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas_PRODUCTO.Text = "Producto";
             this.TSM_ANALISIS_Ventas_PRODUCTO.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_PRODUCTO_Click);
             // 
             // TSM_ANALISIS_Ventas_Diaria
             // 
             this.TSM_ANALISIS_Ventas_Diaria.Name = "TSM_ANALISIS_Ventas_Diaria";
-            this.TSM_ANALISIS_Ventas_Diaria.Size = new System.Drawing.Size(126, 22);
+            this.TSM_ANALISIS_Ventas_Diaria.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas_Diaria.Text = "Diaria";
             this.TSM_ANALISIS_Ventas_Diaria.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_Diaria_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(123, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(149, 6);
             // 
             // TSM_ANALISIS_Ventas_Por_Cierre
             // 
             this.TSM_ANALISIS_Ventas_Por_Cierre.Name = "TSM_ANALISIS_Ventas_Por_Cierre";
-            this.TSM_ANALISIS_Ventas_Por_Cierre.Size = new System.Drawing.Size(126, 22);
+            this.TSM_ANALISIS_Ventas_Por_Cierre.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas_Por_Cierre.Text = "Por Cierre";
             this.TSM_ANALISIS_Ventas_Por_Cierre.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_Por_Cierre_Click);
             // 
@@ -458,12 +469,17 @@
             this.L_VERSION.Text = "Ver 1.0.0.0";
             this.L_VERSION.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // TSM_REPORTES_VENTA_POR_CLIENTE
+            // toolStripMenuItem5
             // 
-            this.TSM_REPORTES_VENTA_POR_CLIENTE.Name = "TSM_REPORTES_VENTA_POR_CLIENTE";
-            this.TSM_REPORTES_VENTA_POR_CLIENTE.Size = new System.Drawing.Size(263, 22);
-            this.TSM_REPORTES_VENTA_POR_CLIENTE.Text = "Ventas Por Cliente";
-            this.TSM_REPORTES_VENTA_POR_CLIENTE.Click += new System.EventHandler(this.TSM_REPORTES_VENTA_POR_CLIENTE_Click);
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(149, 6);
+            // 
+            // TSM_UTILIDAD_GENERAL
+            // 
+            this.TSM_UTILIDAD_GENERAL.Name = "TSM_UTILIDAD_GENERAL";
+            this.TSM_UTILIDAD_GENERAL.Size = new System.Drawing.Size(152, 22);
+            this.TSM_UTILIDAD_GENERAL.Text = "Utilidad";
+            this.TSM_UTILIDAD_GENERAL.Click += new System.EventHandler(this.TSM_UTILIDAD_GENERAL_Click);
             // 
             // Form1
             // 
@@ -538,6 +554,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_Ventas_Por_Cierre;
         private System.Windows.Forms.ToolStripMenuItem TSM_REPORTES_VENTA_POR_CLIENTE;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem TSM_UTILIDAD_GENERAL;
 
     }
 
