@@ -815,6 +815,44 @@ namespace DataProvCajaBanco.Data
             rt.Lista = list;
             return rt;
         }
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha> 
+            Reporte_Analisis_VentaPorTasa(OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro)
+        {
+            var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>();
+            var filtroDTO = new DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro()
+            {
+                desde = filtro.desde,
+                hasta = filtro.hasta,
+            };
+            var r01 = MyData.Reporte_Aalisis_VentasPorTasa(filtroDTO);
+            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            {
+                rt.Mensaje = r01.Mensaje;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+                return rt;
+            }
+            var list = new List<OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>();
+            if (r01.Lista != null)
+            {
+                if (r01.Lista.Count > 0)
+                {
+                    list = r01.Lista.Select(s =>
+                    {
+                        return new OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha()
+                        {
+                            cnt = s.cnt,
+                            codSuc = s.codSuc,
+                            descSuc = s.descSuc,
+                            factor = s.factor,
+                            fecha = s.fecha,
+                            monto = s.monto,
+                        };
+                    }).ToList();
+                }
+            }
+            rt.Lista = list;
+            return rt;
+        }
 
     }
 

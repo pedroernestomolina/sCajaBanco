@@ -47,6 +47,8 @@
     <Compile Include="Reporte\Analisis\VentaDiaria\Filtro.cs" />
     <Compile Include="Reporte\Analisis\VentaPorCierre\Ficha.cs" />
     <Compile Include="Reporte\Analisis\VentaPorCierre\Filtro.cs" />
+    <Compile Include="Reporte\Analisis\VentaPorTasa\Ficha.cs" />
+    <Compile Include="Reporte\Analisis\VentaPorTasa\Filtro.cs" />
     <Compile Include="Reporte\Analisis\VentaProducto\Ficha.cs" />
     <Compile Include="Reporte\Analisis\VentaProducto\Filtro.cs" />
     <Compile Include="Reporte\Analisis\VentaPromedio\Ficha.cs" />

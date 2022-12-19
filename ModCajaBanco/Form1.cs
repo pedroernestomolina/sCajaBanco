@@ -221,6 +221,10 @@ namespace ModCajaBanco
         {
             _controlador.ReporteUtilidadGeneral();
         }
+        private void TSM_ANALISIS_VENTAS_TASA_DIVISA_Click(object sender, EventArgs e)
+        {
+            _controlador.ReporteAnalisisVentasPorTasa();
+        }
     
     }
 

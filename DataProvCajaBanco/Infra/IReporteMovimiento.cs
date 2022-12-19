@@ -46,6 +46,9 @@ namespace DataProvCajaBanco.Infra
         //UTILIDAD
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Utilidad.General.Ficha>
             Reporte_Utilidad_General(OOB.LibCajaBanco.Reporte.Utilidad.General.Filtro filtro);
+        OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>
+            Reporte_Analisis_VentaPorTasa(OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro);
+
     }
 
 }

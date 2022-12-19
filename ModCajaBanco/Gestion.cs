@@ -915,6 +915,33 @@ namespace ModCajaBanco
                 rp1.Generar();
             }
         }
+        public void ReporteAnalisisVentasPorTasa()
+        {
+            _filtroGestion.Inicializa();
+            _filtroGestion.setHabilitarPorFecha(true);
+            _filtroGestion.setHabilitarSucursal(false);
+            _filtroGestion.setHabilitarDeposito(false);
+            _filtroGestion.Inicia();
+            if (_filtroGestion.IsFiltroOk)
+            {
+                var filtro = new OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro()
+                {
+                    desde = _filtroGestion.desdeFecha,
+                    hasta = _filtroGestion.hastaFecha,
+                };
+                var r01 = Sistema.MyData.Reporte_Analisis_VentaPorTasa(filtro);
+                if (r01.Result == OOB.Enumerados.EnumResult.isError)
+                {
+                    Helpers.Msg.Error(r01.Mensaje);
+                    return;
+                }
+                //var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString() +
+                //    Environment.NewLine + "Sucursal: " + sucursalNombre;
+                var rp1 = new Reportes.Analisis.VentaPorTasa.Gestion(r01.Lista, "");
+                rp1.Generar();
+            }
+        }
+
     }
 
 }

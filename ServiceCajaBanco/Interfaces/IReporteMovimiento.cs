@@ -46,6 +46,8 @@ namespace ServiceCajaBanco.Interfaces
         //UTILIDAD
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>
             Reporte_Utilidad_General(DtoLibCajaBanco.Reporte.Utilidad.General.Filtro filtro);
+        DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>
+            Reporte_Aalisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro);
     }
 
 }

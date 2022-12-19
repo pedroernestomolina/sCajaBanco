@@ -96,7 +96,10 @@ namespace ServiceCajaBanco.MyService
         {
             return ServiceProv.Reporte_Utilidad_General(filtro);
         }
-
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha> Reporte_Aalisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro)
+        {
+            return ServiceProv.Reporte_Analisis_VentasPorTasa(filtro);
+        }
     }
 
 }

@@ -1122,7 +1122,41 @@ namespace ProvLibCajaBanco
             }
             return rt;
         }
-
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha> 
+            Reporte_Analisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro)
+        {
+            var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>();
+            try
+            {
+                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+                {
+                    var p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+                    var p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+                    var sql_1 = @"select 
+                                    sum(monto_divisa*signo) as monto, 
+                                    count(*) as cnt,
+                                    factor_cambio as factor,
+                                    fecha, 
+                                    codigo_sucursal as codSuc,
+                                    eSuc.nombre as descSuc
+                                from ventas as v
+                                join empresa_sucursal as eSuc on eSuc.codigo=v.codigo_sucursal
+                                where fecha>=@desde
+                                        and fecha<=@hasta
+                                        and estatus_anulado='0'
+                                group by fecha, codigo_sucursal, factor";
+                    var sql = sql_1;
+                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>(sql, p1, p2).ToList();
+                    rt.Lista = ldata;
+                }
+            }
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = DtoLib.Enumerados.EnumResult.isError;
+            }
+            return rt;
+        }
     }
 
 }

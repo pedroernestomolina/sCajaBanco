@@ -103,6 +103,7 @@
     <Compile Include="Reportes\Analisis\VentaDiaria\data.cs" />
     <Compile Include="Reportes\Analisis\VentaDiaria\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaPorCierre\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\VentaPorTasa\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaProducto\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaPromedio\Gestion.cs" />
     <Compile Include="Reportes\Hablador\dsHablador1.Designer.cs">
@@ -174,6 +175,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Analisis\VentaPorCierre.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentaPorTasa.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Analisis\VentaProducto.rdlc">
