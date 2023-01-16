@@ -72,12 +72,15 @@ namespace ModCajaBanco.Reportes.Analisis.VentaPromedio
 
             foreach (var xg in list.OrderByDescending(o=>o.fecha).ThenByDescending(o=>o.ventaDivisa).ToList())
             {
-                var _tasaProm = xg.venta / xg.ventaDivisa;
+                var _venta = (xg.venta - xg.bono);
+                var _ventaDivisa = (xg.ventaDivisa - xg.bonoDivisa);
+                var _tasaProm = _venta / _ventaDivisa;
+
                 DataRow r = ds.Tables["VentaPromedio"].NewRow();
                 r["cntMov"] = xg.cntMov;
                 r["cntMovPromedio"] = xg.cntMovPromedio;
-                r["ventaBs"] = xg.venta;
-                r["venta"] = xg.ventaDivisa;
+                r["ventaBs"] = _venta;
+                r["venta"] = _ventaDivisa;
                 r["ventaPromedio"] = xg.ventaPromedio;
                 r["sucursal"] = xg.sucursal ;
                 r["fecha"] = xg.ano+"/"+xg.mes;

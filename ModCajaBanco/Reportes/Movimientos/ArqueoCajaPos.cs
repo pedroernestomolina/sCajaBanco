@@ -54,6 +54,7 @@ namespace ModCajaBanco.Reportes.Movimientos
                 r["mtarjeta"] = it.mtarjeta;
                 r["motros"] = it.motros;
                 r["tasaCambio"] = _tasaCambio;
+                r["mRecoger"] = it.efectivo + it.tarjeta +it.divisa;
                 ds.Tables["ArqueoVentaPos"].Rows.Add(r);
             }
 

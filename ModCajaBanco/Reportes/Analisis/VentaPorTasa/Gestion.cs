@@ -48,7 +48,7 @@ namespace ModCajaBanco.Reportes.Analisis.VentaPorTasa
 
             var Rds = new List<ReportDataSource>();
             var pmt = new List<ReportParameter>();
-            //pmt.Add(new ReportParameter("Filtros", _filtro));
+            pmt.Add(new ReportParameter("FILTROS", _filtro));
             Rds.Add(new ReportDataSource("VentaPorTasa", ds.Tables["VentaPorTasa"]));
 
             var frp = new Reporte();

@@ -43,18 +43,20 @@ namespace ModCajaBanco.Reportes.Utilidad.General
 
             foreach (var xg in list.OrderBy(o => o.nombreSuc).ToList())
             {
+                var v = xg.venta - xg.bono;
+                var u = v - xg.costo;
                 DataRow r = ds.Tables["general"].NewRow();
                 r["sucursal"] = xg.nombreSuc.Trim() + "/" + xg.codSuc.Trim();
-                r["venta"] = xg.venta;
+                r["venta"] = v;
                 r["bono"] = xg.bono;
                 r["costo"] = xg.costo;
-                r["utilidad"] = xg.venta - (xg.bono + xg.costo);
+                r["utilidad"] = u;
                 ds.Tables["general"].Rows.Add(r);
             }
 
             var Rds = new List<ReportDataSource>();
             var pmt = new List<ReportParameter>();
-            //pmt.Add(new ReportParameter("Filtros", _filtro));
+            pmt.Add(new ReportParameter("FILTROS", _filtro));
             Rds.Add(new ReportDataSource("general", ds.Tables["general"]));
 
             var frp = new Reporte();

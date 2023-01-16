@@ -909,9 +909,8 @@ namespace ModCajaBanco
                     Helpers.Msg.Error(r01.Mensaje);
                     return;
                 }
-                //var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString() +
-                //    Environment.NewLine + "Sucursal: " + sucursalNombre;
-                var rp1 = new Reportes.Utilidad.General.Gestion(r01.Lista, "");
+                var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString();
+                var rp1 = new Reportes.Utilidad.General.Gestion(r01.Lista, filtros);
                 rp1.Generar();
             }
         }
@@ -935,9 +934,8 @@ namespace ModCajaBanco
                     Helpers.Msg.Error(r01.Mensaje);
                     return;
                 }
-                //var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString() +
-                //    Environment.NewLine + "Sucursal: " + sucursalNombre;
-                var rp1 = new Reportes.Analisis.VentaPorTasa.Gestion(r01.Lista, "");
+                var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString();
+                var rp1 = new Reportes.Analisis.VentaPorTasa.Gestion(r01.Lista, filtros);
                 rp1.Generar();
             }
         }

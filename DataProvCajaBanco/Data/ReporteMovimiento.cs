@@ -11,7 +11,6 @@ namespace DataProvCajaBanco.Data
 
     public partial class DataProv: IData
     {
-
         public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
             CajaBanco_ArqueoCajaPos(OOB.LibCajaBanco.Reporte.Movimiento.Filtro filtro)
         {
@@ -640,6 +639,8 @@ namespace DataProvCajaBanco.Data
                             ventaDivisa = s.ventaDivisa,
                             cntItemStock = s.cntItemStock,
                             costoStock = s.costoStock,
+                            bono = s.bono,
+                            bonoDivisa = s.bonoDivisa,
                         };
                     }).ToList();
                 }
@@ -853,7 +854,6 @@ namespace DataProvCajaBanco.Data
             rt.Lista = list;
             return rt;
         }
-
     }
 
 }

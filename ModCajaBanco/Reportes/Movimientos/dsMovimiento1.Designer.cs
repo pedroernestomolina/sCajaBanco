@@ -704,6 +704,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             private global::System.Data.DataColumn columntasaCambio;
             
+            private global::System.Data.DataColumn columnmRecoger;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ArqueoVentaPosDataTable() {
@@ -899,6 +901,14 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mRecogerColumn {
+                get {
+                    return this.columnmRecoger;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -954,7 +964,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                         decimal cntDivisa1, 
                         string cierre, 
                         decimal cntDivisaUsu, 
-                        decimal tasaCambio) {
+                        decimal tasaCambio, 
+                        decimal mRecoger) {
                 ArqueoVentaPosRow rowArqueoVentaPosRow = ((ArqueoVentaPosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Sucursal,
@@ -976,7 +987,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                         cntDivisa1,
                         cierre,
                         cntDivisaUsu,
-                        tasaCambio};
+                        tasaCambio,
+                        mRecoger};
                 rowArqueoVentaPosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArqueoVentaPosRow);
                 return rowArqueoVentaPosRow;
@@ -1019,6 +1031,7 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 this.columncierre = base.Columns["cierre"];
                 this.columncntDivisaUsu = base.Columns["cntDivisaUsu"];
                 this.columntasaCambio = base.Columns["tasaCambio"];
+                this.columnmRecoger = base.Columns["mRecoger"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1064,6 +1077,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 base.Columns.Add(this.columncntDivisaUsu);
                 this.columntasaCambio = new global::System.Data.DataColumn("tasaCambio", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntasaCambio);
+                this.columnmRecoger = new global::System.Data.DataColumn("mRecoger", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmRecoger);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5326,6 +5341,22 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal mRecoger {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableArqueoVentaPos.mRecogerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mRecoger\' in table \'ArqueoVentaPos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArqueoVentaPos.mRecogerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSucursalNull() {
                 return this.IsNull(this.tableArqueoVentaPos.SucursalColumn);
             }
@@ -5562,6 +5593,18 @@ namespace ModCajaBanco.Reportes.Movimientos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettasaCambioNull() {
                 this[this.tableArqueoVentaPos.tasaCambioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmRecogerNull() {
+                return this.IsNull(this.tableArqueoVentaPos.mRecogerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmRecogerNull() {
+                this[this.tableArqueoVentaPos.mRecogerColumn] = global::System.Convert.DBNull;
             }
         }
         

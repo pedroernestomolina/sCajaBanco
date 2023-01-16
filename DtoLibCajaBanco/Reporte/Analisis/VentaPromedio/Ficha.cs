@@ -10,7 +10,6 @@ namespace DtoLibCajaBanco.Reporte.Analisis.VentaPromedio
     
     public class Ficha
     {
-
         public int cntMov { get; set; }
         public decimal venta { get; set; }
         public decimal ventaDivisa { get; set; }
@@ -21,7 +20,8 @@ namespace DtoLibCajaBanco.Reporte.Analisis.VentaPromedio
         public int dias { get; set; }
         public decimal cntItemStock { get; set; }
         public decimal costoStock { get; set; }
-
+        public decimal bono { get; set; }
+        public decimal bonoDivisa { get; set; }
     }
 
 }

@@ -891,7 +891,11 @@ namespace ProvLibCajaBanco
 
                     var xsql_4=@" group by v.codigo_sucursal, es.nombre, v.mes_relacion, v.ano_relacion, es.autodepositoprincipal ";
 
-                    var xsql_2 =@"SELECT count(*) as cntMov, sum(v.total*v.signo) as venta, sum(v.monto_divisa*v.signo) as ventaDivisa, 
+                    var xsql_2 = @"SELECT count(*) as cntMov, 
+                                                sum(v.total*v.signo) as venta, 
+                                                sum(v.monto_divisa*v.signo) as ventaDivisa, 
+                                                sum(v.monto_bono_por_pago_divisa*v.signo) as bono,
+                                                sum(v.monto_bono_en_divisa_por_pago_divisa*v.signo) as bonoDivisa,
                                                 v.codigo_sucursal as codSucursal, 
                                                 v.mes_relacion as mes, 
                                                 v.ano_relacion as ano, 
@@ -905,7 +909,7 @@ namespace ProvLibCajaBanco
                                                         join productos as p on pd.auto_producto=p.auto    
                                                         where pd.auto_deposito=es.autodepositoprincipal AND pd.fisica<>0 and p.estatus='Activo' and p.categoria<>'Bien de Servicio' 
                                                 ) as costoStock  
-                                        FROM ventas v join empresa_sucursal es on es.codigo=v.codigo_sucursal "+xsql_3+xsql_4;
+                                        FROM ventas v join empresa_sucursal es on es.codigo=v.codigo_sucursal " + xsql_3+xsql_4;
                     
                     var xsql_1 =@"select v2.*, 
                                         (
