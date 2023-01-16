@@ -47,7 +47,8 @@ namespace ModCajaBanco.Reportes.Utilidad.General
                 var u = v - xg.costo;
                 DataRow r = ds.Tables["general"].NewRow();
                 r["sucursal"] = xg.nombreSuc.Trim() + "/" + xg.codSuc.Trim();
-                r["venta"] = v;
+                r["venta"] = xg.venta;
+                r["ventaNeta"] = v;
                 r["bono"] = xg.bono;
                 r["costo"] = xg.costo;
                 r["utilidad"] = u;

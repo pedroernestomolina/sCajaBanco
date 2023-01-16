@@ -289,6 +289,8 @@ namespace ModCajaBanco.Reportes.Utilidad {
             
             private global::System.Data.DataColumn columnutilidad;
             
+            private global::System.Data.DataColumn columnventaNeta;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public generalDataTable() {
@@ -364,6 +366,14 @@ namespace ModCajaBanco.Reportes.Utilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ventaNetaColumn {
+                get {
+                    return this.columnventaNeta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace ModCajaBanco.Reportes.Utilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public generalRow AddgeneralRow(string sucursal, decimal venta, decimal bono, decimal costo, decimal utilidad) {
+            public generalRow AddgeneralRow(string sucursal, decimal venta, decimal bono, decimal costo, decimal utilidad, decimal ventaNeta) {
                 generalRow rowgeneralRow = ((generalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sucursal,
                         venta,
                         bono,
                         costo,
-                        utilidad};
+                        utilidad,
+                        ventaNeta};
                 rowgeneralRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgeneralRow);
                 return rowgeneralRow;
@@ -434,6 +445,7 @@ namespace ModCajaBanco.Reportes.Utilidad {
                 this.columnbono = base.Columns["bono"];
                 this.columncosto = base.Columns["costo"];
                 this.columnutilidad = base.Columns["utilidad"];
+                this.columnventaNeta = base.Columns["ventaNeta"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +461,8 @@ namespace ModCajaBanco.Reportes.Utilidad {
                 base.Columns.Add(this.columncosto);
                 this.columnutilidad = new global::System.Data.DataColumn("utilidad", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnutilidad);
+                this.columnventaNeta = new global::System.Data.DataColumn("ventaNeta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnventaNeta);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -671,6 +685,22 @@ namespace ModCajaBanco.Reportes.Utilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ventaNeta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablegeneral.ventaNetaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ventaNeta\' in table \'general\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegeneral.ventaNetaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssucursalNull() {
                 return this.IsNull(this.tablegeneral.sucursalColumn);
             }
@@ -727,6 +757,18 @@ namespace ModCajaBanco.Reportes.Utilidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetutilidadNull() {
                 this[this.tablegeneral.utilidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsventaNetaNull() {
+                return this.IsNull(this.tablegeneral.ventaNetaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetventaNetaNull() {
+                this[this.tablegeneral.ventaNetaColumn] = global::System.Convert.DBNull;
             }
         }
         
