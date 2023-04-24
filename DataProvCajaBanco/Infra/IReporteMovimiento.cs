@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataProvCajaBanco.Infra
 {
-    
     public interface IReporteMovimiento
     {
-
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha > 
             CajaBanco_ArqueoCajaPos(OOB.LibCajaBanco.Reporte.Movimiento.Filtro filtro);
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenInventario.Ficha> 
@@ -33,7 +31,6 @@ namespace DataProvCajaBanco.Infra
             Reporte_ResumenVentaDiarioSucursal(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDiarioSucursal.Filtro filtro);
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Ficha> 
             Reporte_ResumenVentaPorClient(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorCliente.Filtro filtro);
-
         //ANALISIS
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
             Reporte_Analisis_VentaPromedio(OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro);
@@ -48,7 +45,8 @@ namespace DataProvCajaBanco.Infra
             Reporte_Utilidad_General(OOB.LibCajaBanco.Reporte.Utilidad.General.Filtro filtro);
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>
             Reporte_Analisis_VentaPorTasa(OOB.LibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro);
-
+        // ANALISIS POR MEDIO DE PAGO 
+        OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>
+            Reporte_Analisis_PorMediosPago(OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro);
     }
-
 }

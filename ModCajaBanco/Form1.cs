@@ -11,10 +11,8 @@ using System.Windows.Forms;
 
 namespace ModCajaBanco
 {
-
     public partial class Form1 : Form
     {
-
         private Gestion _controlador;
 
 
@@ -225,7 +223,14 @@ namespace ModCajaBanco
         {
             _controlador.ReporteAnalisisVentasPorTasa();
         }
-    
-    }
 
+        private void TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_Click(object sender, EventArgs e)
+        {
+            AnalisisVentasPorMedioPago();
+        }
+        private void AnalisisVentasPorMedioPago()
+        {
+            _controlador.AnalisisVentasPorMedioPago();
+        }
+    }
 }

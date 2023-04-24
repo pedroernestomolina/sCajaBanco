@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace ServiceCajaBanco.Interfaces
 {
-
     public interface IReporteMovimiento
     {
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
@@ -32,7 +31,6 @@ namespace ServiceCajaBanco.Interfaces
             Reporte_ResumenDiarioVentaSucursal(DtoLibCajaBanco.Reporte.Movimiento.ResumenDiarioVentaSucursal.Filtro filtro);
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Ficha> 
             Reporte_VentaPorCliente(DtoLibCajaBanco.Reporte.Movimiento.VentaPorCliente.Filtro filtro);
-
         //ANALISIS
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
             Reporte_Analisis_VentaPromedio(DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro);
@@ -42,12 +40,13 @@ namespace ServiceCajaBanco.Interfaces
             Reporte_Analisis_VentaDiaria(DtoLibCajaBanco.Reporte.Analisis.VentaDiaria.Filtro filtro);
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Ficha> 
             Reporte_Analisis_VentaPorCierre(DtoLibCajaBanco.Reporte.Analisis.VentaPorCierre.Filtro filtro);
-
         //UTILIDAD
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>
             Reporte_Utilidad_General(DtoLibCajaBanco.Reporte.Utilidad.General.Filtro filtro);
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha>
             Reporte_Aalisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro);
+        // ANALISIS POR MEDIO DE PAGO 
+        DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>
+            Reporte_Analisis_PorMediosPago(DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro);
     }
-
 }

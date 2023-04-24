@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace ProvLibCajaBanco
 {
-
     public partial class Provider : ILibCajaBanco.IProvider
     {
-
         public class pag
         {
             public decimal monto { get; set; }
@@ -860,11 +858,7 @@ namespace ProvLibCajaBanco
 
             return rt;
         }
-
-
         ////
-
-
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
             Reporte_Analisis_VentaPromedio(DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
         {
@@ -1067,8 +1061,6 @@ namespace ProvLibCajaBanco
 
             return rt;
         }
-
-
         //UTILIDAD
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha> 
             Reporte_Utilidad_General(DtoLibCajaBanco.Reporte.Utilidad.General.Filtro filtro)
@@ -1161,6 +1153,47 @@ namespace ProvLibCajaBanco
             }
             return rt;
         }
+        //
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha> 
+            Reporte_Analisis_PorMediosPago(DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro)
+        {
+            var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>();
+            try
+            {
+                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+                {
+                    var p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+                    var p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+                    var sql_1 = @"SELECT 
+                                    empSuc.auto as autoSuc,
+                                    empSuc.codigo as codigoSuc,
+                                    empSuc.nombre as descSuc,
+                                    sum(efectivo) as efectivo,
+                                    sum(cheque) as divisa,
+                                    sum(debito) as debito,
+                                    sum(otros) as otros, 
+                                    sum(cnt_divisa) as cntDivisa,
+                                    sum(mefectivo)  as efectivoUsu,
+                                    sum(mcheque) as divisaUsu,
+                                    sum(mtarjeta) as debitoUsu,
+                                    sum(motros) as otrosUsu, 
+                                    sum(cnt_divisa_usuario) as cntDivisaUsu
+                                FROM pos_arqueo as posArqueo
+                                join empresa_sucursal as empSuc on empSuc.codigo=posArqueo.codigo_sucursal
+                                where fecha>=@desde
+                                        and fecha<=@hasta
+                                group by posArqueo.codigo_sucursal";
+                    var sql = sql_1;
+                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>(sql, p1, p2).ToList();
+                    rt.Lista = ldata;
+                }
+            }
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = DtoLib.Enumerados.EnumResult.isError;
+            }
+            return rt;
+        }
     }
-
 }

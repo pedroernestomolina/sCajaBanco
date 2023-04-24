@@ -152,6 +152,20 @@
     </Compile>
     <Compile Include="Reportes\Utilidad\General\Gestion.cs" />
     <Compile Include="Sistema.cs" />
+    <Compile Include="src\Analisis\PorMetPago\data.cs" />
+    <Compile Include="src\Analisis\PorMetPago\dataTot.cs" />
+    <Compile Include="src\Analisis\PorMetPago\enumerados.cs" />
+    <Compile Include="src\Analisis\PorMetPago\Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Analisis\PorMetPago\Frm.Designer.cs">
+      <DependentUpon>Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Analisis\PorMetPago\IAnalMetPago.cs" />
+    <Compile Include="src\Analisis\PorMetPago\ILista.cs" />
+    <Compile Include="src\Analisis\PorMetPago\ImpAnalMetPago.cs" />
+    <Compile Include="src\Analisis\PorMetPago\ImpLista.cs" />
+    <Compile Include="src\IGestion.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +242,9 @@
     <EmbeddedResource Include="Reportes\Utilidad\UtGeneral.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\Analisis\PorMetPago\Frm.resx">
+      <DependentUpon>Frm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -290,6 +307,7 @@
     <Content Include="CambiosVersion.txt" />
     <Content Include="Conf.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Imagenes\administrador.png" />
     <Content Include="Imagenes\automatizacion.jpg" />

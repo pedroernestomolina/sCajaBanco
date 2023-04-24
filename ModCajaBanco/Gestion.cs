@@ -940,6 +940,42 @@ namespace ModCajaBanco
             }
         }
 
+        private src.Analisis.PorMetPago.IAnalMetPago _analisisMetPago;
+        public void AnalisisVentasPorMedioPago()
+        {
+            if (_analisisMetPago == null)
+            {
+                _analisisMetPago = new src.Analisis.PorMetPago.ImpAnalMetPago();
+            }
+            _analisisMetPago.Inicializa();
+            _analisisMetPago.Inicia();
+
+            //_filtroGestion.Inicializa();
+            //_filtroGestion.setHabilitarPorFecha(true);
+            //_filtroGestion.setHabilitarSucursal(false);
+            //_filtroGestion.setHabilitarDeposito(false);
+            //_filtroGestion.Inicia();
+            //if (_filtroGestion.IsFiltroOk)
+            //{
+            //    try
+            //    {
+            //        var filtro = new OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro()
+            //        {
+            //            desde = _filtroGestion.desdeFecha,
+            //            hasta = _filtroGestion.hastaFecha,
+            //        };
+            //        var r01 = Sistema.MyData.Reporte_Analisis_PorMediosPago(filtro);
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Helpers.Msg.Error(e.Message);
+            //        return;
+            //    }
+            //    //var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString();
+            //    //var rp1 = new Reportes.Analisis.VentaPorTasa.Gestion(r01.Lista, filtros);
+            //    //rp1.Generar();
+            //}
+        }
     }
 
 }

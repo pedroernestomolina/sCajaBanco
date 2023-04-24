@@ -59,6 +59,7 @@
             this.TSM_ANALISIS_Ventas_PROMEDIO = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_ANALISIS_Ventas_PRODUCTO = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_ANALISIS_Ventas_Diaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_ANALISIS_VENTAS_TASA_DIVISA = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.TSM_ANALISIS_Ventas_Por_Cierre = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
@@ -71,7 +72,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.L_VERSION = new System.Windows.Forms.Label();
-            this.TSM_ANALISIS_VENTAS_TASA_DIVISA = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -333,7 +334,8 @@
             this.toolStripMenuItem4,
             this.TSM_ANALISIS_Ventas_Por_Cierre,
             this.toolStripMenuItem5,
-            this.TSM_UTILIDAD_GENERAL});
+            this.TSM_UTILIDAD_GENERAL,
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO});
             this.TSM_ANALISIS_Ventas.Name = "TSM_ANALISIS_Ventas";
             this.TSM_ANALISIS_Ventas.Size = new System.Drawing.Size(152, 22);
             this.TSM_ANALISIS_Ventas.Text = "Ventas";
@@ -341,45 +343,52 @@
             // TSM_ANALISIS_Ventas_PROMEDIO
             // 
             this.TSM_ANALISIS_Ventas_PROMEDIO.Name = "TSM_ANALISIS_Ventas_PROMEDIO";
-            this.TSM_ANALISIS_Ventas_PROMEDIO.Size = new System.Drawing.Size(153, 22);
+            this.TSM_ANALISIS_Ventas_PROMEDIO.Size = new System.Drawing.Size(164, 22);
             this.TSM_ANALISIS_Ventas_PROMEDIO.Text = "Promedio";
             this.TSM_ANALISIS_Ventas_PROMEDIO.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_PROMEDIO_Click);
             // 
             // TSM_ANALISIS_Ventas_PRODUCTO
             // 
             this.TSM_ANALISIS_Ventas_PRODUCTO.Name = "TSM_ANALISIS_Ventas_PRODUCTO";
-            this.TSM_ANALISIS_Ventas_PRODUCTO.Size = new System.Drawing.Size(153, 22);
+            this.TSM_ANALISIS_Ventas_PRODUCTO.Size = new System.Drawing.Size(164, 22);
             this.TSM_ANALISIS_Ventas_PRODUCTO.Text = "Producto";
             this.TSM_ANALISIS_Ventas_PRODUCTO.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_PRODUCTO_Click);
             // 
             // TSM_ANALISIS_Ventas_Diaria
             // 
             this.TSM_ANALISIS_Ventas_Diaria.Name = "TSM_ANALISIS_Ventas_Diaria";
-            this.TSM_ANALISIS_Ventas_Diaria.Size = new System.Drawing.Size(153, 22);
+            this.TSM_ANALISIS_Ventas_Diaria.Size = new System.Drawing.Size(164, 22);
             this.TSM_ANALISIS_Ventas_Diaria.Text = "Diaria";
             this.TSM_ANALISIS_Ventas_Diaria.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_Diaria_Click);
+            // 
+            // TSM_ANALISIS_VENTAS_TASA_DIVISA
+            // 
+            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Name = "TSM_ANALISIS_VENTAS_TASA_DIVISA";
+            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Size = new System.Drawing.Size(164, 22);
+            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Text = "Por Tasa Divisa";
+            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_TASA_DIVISA_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(150, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(161, 6);
             // 
             // TSM_ANALISIS_Ventas_Por_Cierre
             // 
             this.TSM_ANALISIS_Ventas_Por_Cierre.Name = "TSM_ANALISIS_Ventas_Por_Cierre";
-            this.TSM_ANALISIS_Ventas_Por_Cierre.Size = new System.Drawing.Size(153, 22);
+            this.TSM_ANALISIS_Ventas_Por_Cierre.Size = new System.Drawing.Size(164, 22);
             this.TSM_ANALISIS_Ventas_Por_Cierre.Text = "Por Cierre";
             this.TSM_ANALISIS_Ventas_Por_Cierre.Click += new System.EventHandler(this.TSM_ANALISIS_Ventas_Por_Cierre_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(150, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(161, 6);
             // 
             // TSM_UTILIDAD_GENERAL
             // 
             this.TSM_UTILIDAD_GENERAL.Name = "TSM_UTILIDAD_GENERAL";
-            this.TSM_UTILIDAD_GENERAL.Size = new System.Drawing.Size(153, 22);
+            this.TSM_UTILIDAD_GENERAL.Size = new System.Drawing.Size(164, 22);
             this.TSM_UTILIDAD_GENERAL.Text = "Utilidad";
             this.TSM_UTILIDAD_GENERAL.Click += new System.EventHandler(this.TSM_UTILIDAD_GENERAL_Click);
             // 
@@ -483,12 +492,12 @@
             this.L_VERSION.Text = "Ver 1.0.0.0";
             this.L_VERSION.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // TSM_ANALISIS_VENTAS_TASA_DIVISA
+            // TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO
             // 
-            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Name = "TSM_ANALISIS_VENTAS_TASA_DIVISA";
-            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Size = new System.Drawing.Size(153, 22);
-            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Text = "Por Tasa Divisa";
-            this.TSM_ANALISIS_VENTAS_TASA_DIVISA.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_TASA_DIVISA_Click);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Size = new System.Drawing.Size(164, 22);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Text = "Por Medios Pago";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_Click);
             // 
             // Form1
             // 
@@ -566,6 +575,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem TSM_UTILIDAD_GENERAL;
         private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_VENTAS_TASA_DIVISA;
+        private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO;
 
     }
 

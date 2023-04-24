@@ -42,6 +42,8 @@
     <Compile Include="Enumerados.cs" />
     <Compile Include="LibCajaBanco\Deposito\Ficha.cs" />
     <Compile Include="LibCajaBanco\EmpresaGrupo\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPorCierre\Ficha.cs" />

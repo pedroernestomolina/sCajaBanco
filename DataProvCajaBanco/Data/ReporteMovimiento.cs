@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace DataProvCajaBanco.Data
 {
-
     public partial class DataProv: IData
     {
         public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
@@ -598,8 +597,6 @@ namespace DataProvCajaBanco.Data
 
             return rt;
         }
-
-
         // ANALISIS
         public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
             Reporte_Analisis_VentaPromedio(OOB.LibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
@@ -854,6 +851,51 @@ namespace DataProvCajaBanco.Data
             rt.Lista = list;
             return rt;
         }
+        //
+        public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha> 
+            Reporte_Analisis_PorMediosPago(OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro)
+        {
+            var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>();
+            var filtroDTO = new DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro()
+            {
+                desde = filtro.desde,
+                hasta = filtro.hasta,
+            };
+            var r01 = MyData.Reporte_Analisis_PorMediosPago(filtroDTO);
+            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            {
+                rt.Mensaje = r01.Mensaje;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+                return rt;
+            }
+            var list = new List<OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>();
+            if (r01.Lista != null)
+            {
+                if (r01.Lista.Count > 0)
+                {
+                    list = r01.Lista.Select(s =>
+                    {
+                        return new OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha()
+                        {
+                            autoSuc= s.autoSuc,
+                            cntDivisa = s.cntDivisa,
+                            cntDivisaUsu = s.cntDivisaUsu,
+                            codigoSuc = s.codigoSuc,
+                            debito = s.debito,
+                            debitoUsu = s.debitoUsu,
+                            descSuc = s.descSuc,
+                            divisa = s.divisa,
+                            divisaUsu = s.divisaUsu,
+                            efectivo = s.efectivo,
+                            efectivoUsu = s.efectivoUsu,
+                            otros = s.otros,
+                            otrosUsu = s.otrosUsu,
+                        };
+                    }).ToList();
+                }
+            }
+            rt.Lista = list;
+            return rt;
+        }
     }
-
 }

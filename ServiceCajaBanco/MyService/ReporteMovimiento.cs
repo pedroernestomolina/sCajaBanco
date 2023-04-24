@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ServiceCajaBanco.MyService
 {
-
     public partial class Service : IService
     {
-
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.ArqueoCajaPos.Ficha> 
             CajaBanco_ArqueoCajaPos(DtoLibCajaBanco.Reporte.Movimiento.Filtro filtro)
         {
@@ -67,8 +65,6 @@ namespace ServiceCajaBanco.MyService
         {
             return ServiceProv.Reporte_VentaPorCliente(filtro);
         }
-
-
         //ANALISIS
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Ficha> 
             Reporte_Analisis_VentaPromedio(DtoLibCajaBanco.Reporte.Analisis.VentaPromedio.Filtro filtro)
@@ -96,10 +92,16 @@ namespace ServiceCajaBanco.MyService
         {
             return ServiceProv.Reporte_Utilidad_General(filtro);
         }
-        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha> Reporte_Aalisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro)
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Ficha> 
+            Reporte_Aalisis_VentasPorTasa(DtoLibCajaBanco.Reporte.Analisis.VentaPorTasa.Filtro filtro)
         {
             return ServiceProv.Reporte_Analisis_VentasPorTasa(filtro);
         }
+        //
+        public DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha> 
+            Reporte_Analisis_PorMediosPago(DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro)
+        {
+            return ServiceProv.Reporte_Analisis_PorMediosPago(filtro);
+        }
     }
-
 }
