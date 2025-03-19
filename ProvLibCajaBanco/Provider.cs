@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace ProvLibCajaBanco
 {
-
-
     public partial class Provider : ILibCajaBanco.IProvider 
     {
-
         static EntityConnectionStringBuilder _cnCajBanco;
         private string _Instancia;
         private string _BaseDatos;
@@ -39,10 +36,11 @@ namespace ProvLibCajaBanco
             _cnCajBanco.ProviderConnectionString = "data source=" + _Instancia + ";initial catalog=" + _BaseDatos + ";user id=" + _Usuario + ";Password=" + _Password + ";Convert Zero Datetime=True;";
         }
 
-        public DtoLib.ResultadoEntidad<DateTime> FechaServidor()
+
+        public DtoLib.ResultadoEntidad<DateTime> 
+            FechaServidor()
         {
             var result = new DtoLib.ResultadoEntidad<DateTime>();
-
             try
             {
                 using (var ctx = new cajaBancoEntities(_cnCajBanco.ConnectionString))
@@ -56,10 +54,33 @@ namespace ProvLibCajaBanco
                 result.Mensaje = e.Message;
                 result.Result = DtoLib.Enumerados.EnumResult.isError;
             }
-
             return result;
         }
+        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Empresa.Entidad.Ficha> 
+            Sistema_Empresa_GetFicha()
+        {
+            var result = new DtoLib.ResultadoEntidad<DtoLibCajaBanco.Empresa.Entidad.Ficha>();
+            try
+            {
+                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+                {
+                    var sql = @"SELECT nombre, direccion, rif as cirif, telefono 
+                                FROM empresa
+                                WHERE auto='0000000001'";
+                    var ent = cnn.Database.SqlQuery<DtoLibCajaBanco.Empresa.Entidad.Ficha>(sql).FirstOrDefault();
 
+                    sql = @"select logo from empresa_extra";
+                    var _logo = cnn.Database.SqlQuery<byte[]>(sql).FirstOrDefault();
+                    ent.logo = _logo;
+                    result.Entidad = ent;
+                }
+            }
+            catch (Exception e)
+            {
+                result.Mensaje = e.Message;
+                result.Result = DtoLib.Enumerados.EnumResult.isError;
+            }
+            return result;
+        }
     }
-
 }

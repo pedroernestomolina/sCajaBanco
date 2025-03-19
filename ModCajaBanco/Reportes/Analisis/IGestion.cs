@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ModCajaBanco.Reportes.Analisis
 {
-
     public interface IGestion
     {
-
         DateTime DesdeFecha { get; }
         DateTime HastaFecha { get; }
         bool IsOk { get; }
@@ -21,7 +19,5 @@ namespace ModCajaBanco.Reportes.Analisis
         void setFechaDesde(DateTime fecha);
         void setFechaHasta(DateTime fecha);
         void Inicializar();
-
     }
-
 }

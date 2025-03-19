@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace ModCajaBanco
 {
-    
     public class Sistema
     {
-
         static public DataProvCajaBanco.Infra.IData MyData;
         static public OOB.LibCajaBanco.Usuario.Ficha UsuarioP;
+        static public OOB.LibCajaBanco.Empresa.Entidad.Ficha DatosEmpresa;
         static public string _Instancia { get; set; }
         static public string _BaseDatos { get; set; }
         public static bool _ActivarComoSucursal { get; set; }
-
     }
-
 }

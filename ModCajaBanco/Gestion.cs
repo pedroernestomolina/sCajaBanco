@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +10,8 @@ using System.Windows.Forms;
 
 namespace ModCajaBanco
 {
-    
     public class Gestion
     {
-
         private Reportes.Movimientos.Gestion _filtroGestion;
         private Reportes.Analisis.Gestion _analisisGestion;
         private Habladores.Gestion _gestionHab;
@@ -19,6 +19,7 @@ namespace ModCajaBanco
 
         public string Version { get { return "Ver. " + Application.ProductVersion; } }
         public string Host { get { return "Base Dato: " + Sistema._Instancia + "/" + Sistema._BaseDatos; } }
+        public System.Drawing.Image EmpresaLogo { get { return logo(); } }
 
 
         public Gestion()
@@ -28,12 +29,21 @@ namespace ModCajaBanco
             _gestionHab = new Habladores.Gestion();
         }
 
+
+        Form1 frm ;
         public void Inicia() 
         {
-            var frm = new Form1();
-            frm.setControlador(this);
-            frm.ShowDialog();
+            if (cargarData())
+            {
+                if (frm == null) 
+                {
+                    frm = new Form1();
+                    frm.setControlador(this);
+                }
+                frm.ShowDialog();
+            }
         }
+
 
         public void ArqueoCajaPos()
         {
@@ -976,6 +986,81 @@ namespace ModCajaBanco
             //    //rp1.Generar();
             //}
         }
-    }
 
+        public void AnalisisVentasAnuladas()
+        {
+            _filtroGestion.Inicializa();
+            _filtroGestion.setHabilitarSucursal(true);
+            _filtroGestion.setHabilitarPorFecha(true);
+            _filtroGestion.setHabilitarDeposito(false);
+            _filtroGestion.setHabilitarPorNumeroCierre(false);
+            _filtroGestion.Inicia();
+            if (_filtroGestion.IsFiltroOk)
+            {
+                try
+                {
+                    var sucursalNombre = "";
+                    var r00 = Sistema.MyData.Sucursal_GetFicha(_filtroGestion.autoSucursal);
+                    if (r00.Result == OOB.Enumerados.EnumResult.isError)
+                    {
+                        throw new Exception(r00.Mensaje);
+                    }
+                    var filtro = new OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro()
+                    {
+                        desde = _filtroGestion.desdeFecha,
+                        hasta = _filtroGestion.hastaFecha,
+                    };
+                    filtro.codSucursal = r00.Entidad.codigo;
+                    sucursalNombre = r00.Entidad.nombre;
+
+                    var r01 = Sistema.MyData.Reporte_Analisis_VentasAnuladas(filtro);
+                    if (r01.Result == OOB.Enumerados.EnumResult.isError)
+                    {
+                        throw new Exception(r01.Mensaje);
+                    }
+
+                    var filtros = "Desde: " + _filtroGestion.desdeFecha.ToShortDateString() + ", Hasta: " + _filtroGestion.hastaFecha.ToShortDateString() +
+                        Environment.NewLine + sucursalNombre;
+                    var rp1 = new Reportes.Analisis.VentasAnuladas.Gestion(r01.Entidad, filtros);
+                    rp1.Procesar();
+                }
+                catch (Exception e)
+                {
+                    Helpers.Msg.Error(e.Message);
+                }
+            }
+        }
+
+
+        private bool cargarData()
+        {
+            try
+            {
+                var r01 = Sistema.MyData.Sistema_Empresa_GetFicha();
+                if (r01.Result == OOB.Enumerados.EnumResult.isError )
+                {
+                    throw new Exception(r01.Mensaje);
+                }
+                Sistema.DatosEmpresa = r01.Entidad;
+                return true;
+            }
+            catch (Exception e)
+            {
+                Helpers.Msg.Error(e.Message);
+                return false;
+            }
+        }
+        private System.Drawing.Image logo()
+        {
+            if (Sistema.DatosEmpresa.logo.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(Sistema.DatosEmpresa.logo))
+                {
+                    Image image = Image.FromStream(ms);
+                    return image;
+                }
+            }
+            return null;
+        }
+    }
 }

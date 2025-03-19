@@ -69,7 +69,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.BT_LIMPIAR = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BT_REPORTE = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -630,7 +630,7 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.button2);
+            this.panel18.Controls.Add(this.BT_REPORTE);
             this.panel18.Location = new System.Drawing.Point(1, 61);
             this.panel18.Margin = new System.Windows.Forms.Padding(1);
             this.panel18.Name = "panel18";
@@ -638,15 +638,16 @@
             this.panel18.Size = new System.Drawing.Size(53, 58);
             this.panel18.TabIndex = 1;
             // 
-            // button2
+            // BT_REPORTE
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Image = global::ModCajaBanco.Properties.Resources.bt_imprimir_2;
-            this.button2.Location = new System.Drawing.Point(2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 54);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BT_REPORTE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BT_REPORTE.Image = global::ModCajaBanco.Properties.Resources.bt_imprimir_2;
+            this.BT_REPORTE.Location = new System.Drawing.Point(2, 2);
+            this.BT_REPORTE.Name = "BT_REPORTE";
+            this.BT_REPORTE.Size = new System.Drawing.Size(49, 54);
+            this.BT_REPORTE.TabIndex = 1;
+            this.BT_REPORTE.UseVisualStyleBackColor = true;
+            this.BT_REPORTE.Click += new System.EventHandler(this.BT_REPORTE_Click);
             // 
             // panel4
             // 
@@ -803,7 +804,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Button BT_LIMPIAR;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BT_REPORTE;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Panel panel19;

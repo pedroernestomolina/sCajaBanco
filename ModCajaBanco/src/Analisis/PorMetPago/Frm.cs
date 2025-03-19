@@ -569,9 +569,19 @@ namespace ModCajaBanco.src.Analisis.PorMetPago
                     break;
             }
         }
+        private void BT_REPORTE_Click(object sender, EventArgs e)
+        {
+            Reportes();
+        }
         private void BT_SALIR_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void Reportes()
+        {
+            _controlador.Reportes();
         }
     }
 }

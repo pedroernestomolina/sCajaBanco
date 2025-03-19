@@ -25,8 +25,9 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaPorCliente
 
         public void Generar()
         {
-            var _data = data.Where(w => w.telefono.Trim().Length >= 11).ToList();
-            var _lst = _data.GroupBy(g => new { g.entidad, g.ciRif, g.dirFiscal, g.telefono, g.sucNombre}).
+            //var _data = data.Where(w => w.telefono.Trim().Length >= 11).ToList();
+            var _data = data.Where(w => w.telefono.Trim().Length >= 0).ToList();
+            var _lst = _data.GroupBy(g => new { g.entidad, g.ciRif, g.dirFiscal, g.telefono, g.sucNombre }).
                 Select(s => 
                 {
                     var rg = new data(s.Key.entidad, s.Key.ciRif, s.Key.dirFiscal, s.Key.telefono, s.Key.sucNombre,
@@ -53,7 +54,7 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaPorCliente
 
             var Rds = new List<ReportDataSource>();
             var pmt = new List<ReportParameter>();
-            pmt.Add(new ReportParameter("FILTRO", filtros+", CLIENTES CON NUMEROS DE TELEFONOS"));
+            pmt.Add(new ReportParameter("FILTRO", filtros+", CLIENTES"));
             Rds.Add(new ReportDataSource("ResumenVentCliente", ds.Tables["ResumenVentCliente"]));
 
             var frp = new Reporte();

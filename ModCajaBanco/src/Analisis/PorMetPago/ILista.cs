@@ -12,6 +12,7 @@ namespace ModCajaBanco.src.Analisis.PorMetPago
     {
         BindingSource GetSource { get; }
         BindingSource GetTotales { get; }
+        List<data> GetLista { get; }
         void Inicializa();
         void setModoUsuario();
         void setModoSistema();

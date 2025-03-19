@@ -19,7 +19,7 @@ namespace DtoLibCajaBanco.Reporte.Analisis.VentaPromedio
         public string ano { get; set; }
         public int dias { get; set; }
         public decimal cntItemStock { get; set; }
-        public decimal costoStock { get; set; }
+        public decimal? costoStock { get; set; }
         public decimal bono { get; set; }
         public decimal bonoDivisa { get; set; }
     }

@@ -43,7 +43,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Fecha/Hora</Value>
+                              <Value>Entidad/Rif</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -582,23 +582,23 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="fechaHora1">
+                    <Textbox Name="entidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!fechaHora.Value</Value>
+                              <Value>=Fields!entidad.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>fechaHora1</rd:DefaultName>
+                      <rd:DefaultName>entidad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -623,7 +623,7 @@
                             <TextRun>
                               <Value>=Fields!documentoNombre.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2265,7 +2265,7 @@
         <Top>0.10583cm</Top>
         <Left>0.26458cm</Left>
         <Height>4.2cm</Height>
-        <Width>25.47625cm</Width>
+        <Width>25.47624cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2581,10 +2581,14 @@
           <DataField>totalRenglon</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="entidad">
+          <DataField>entidad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsMovimiento</rd:DataSetName>
-        <rd:SchemaPath>D:\Proyectos FoxSystem\CompraVentaFront\ModCajaBanco\Reportes\Movimientos\dsMovimiento.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\vFox\CajaBanco\sCajaBanco\ModCajaBanco\Reportes\Movimientos\dsMovimiento.xsd</rd:SchemaPath>
         <rd:TableName>ResumenVentDet</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

@@ -100,12 +100,14 @@
     </Compile>
     <Compile Include="Reportes\Analisis\Gestion.cs" />
     <Compile Include="Reportes\Analisis\IGestion.cs" />
+    <Compile Include="Reportes\Analisis\PorMetodosPago\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaDiaria\data.cs" />
     <Compile Include="Reportes\Analisis\VentaDiaria\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaPorCierre\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaPorTasa\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaProducto\Gestion.cs" />
     <Compile Include="Reportes\Analisis\VentaPromedio\Gestion.cs" />
+    <Compile Include="Reportes\Analisis\VentasAnuladas\Gestion.cs" />
     <Compile Include="Reportes\Hablador\dsHablador1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +187,9 @@
     <EmbeddedResource Include="Reportes\Analisis\FiltrarFrm.resx">
       <DependentUpon>FiltrarFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\PorMetodoPago.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Analisis\VentaDiaria.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -198,6 +203,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Analisis\VentaPromedio.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Analisis\VentasAnuladas.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Hablador\Hablador.rdlc">

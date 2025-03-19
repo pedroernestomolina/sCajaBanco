@@ -48,6 +48,7 @@
             this.Name = "Reporte";
             this.Padding = new System.Windows.Forms.Padding(2);
             this.Text = "Reporte";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Reporte_Load);
             this.ResumeLayout(false);
 

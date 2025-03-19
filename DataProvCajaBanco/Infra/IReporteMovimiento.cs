@@ -48,5 +48,8 @@ namespace DataProvCajaBanco.Infra
         // ANALISIS POR MEDIO DE PAGO 
         OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>
             Reporte_Analisis_PorMediosPago(OOB.LibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro);
+        // ANALISIS VENTAS NAULADAS
+        OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha>
+            Reporte_Analisis_VentasAnuladas(OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro filtro);
     }
 }

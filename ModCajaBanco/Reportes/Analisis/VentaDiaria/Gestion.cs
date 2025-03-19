@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 
 namespace ModCajaBanco.Reportes.Analisis.VentaDiaria
 {
-
-    public class Gestion : IGestion
+    public class Gestion: IGestion
     {
 
 
@@ -105,7 +104,5 @@ namespace ModCajaBanco.Reportes.Analisis.VentaDiaria
             _isOk = false;
             filtrar.Limpiar();
         }
-
     }
-
 }

@@ -103,5 +103,11 @@ namespace ServiceCajaBanco.MyService
         {
             return ServiceProv.Reporte_Analisis_PorMediosPago(filtro);
         }
+        //
+        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha> 
+            Reporte_Analisis_VentasAnuladas(DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro filtro)
+        {
+            return ServiceProv.Reporte_Analisis_VentasAnuladas(filtro);
+        }
     }
 }

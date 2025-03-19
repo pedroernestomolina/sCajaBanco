@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle
 {
-    
     public class Ficha
     {
-
         public string auto { get; set; }
         public string documento { get; set; }
         public DateTime fecha { get; set; }
@@ -25,7 +23,7 @@ namespace DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle
         public int signo { get; set; }
         public string documentoNombre { get; set; }
         public string hora { get; set; }
-
+        public string entidadNombre { get; set; }
+        public string entidadCiRif { get; set; }
     }
-
 }

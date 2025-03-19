@@ -26,6 +26,6 @@ namespace ModCajaBanco.src.Analisis.PorMetPago
 
         void ActivarBusqueda();
         void Limpiar();
-
+        void Reportes();
     }
 }

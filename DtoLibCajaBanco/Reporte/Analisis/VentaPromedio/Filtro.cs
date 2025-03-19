@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace DtoLibCajaBanco.Reporte.Analisis.VentaPromedio
 {
-    
     public class Filtro
     {
-
         public string codSucursal { get; set; }
         public DateTime desde { get; set; }
         public DateTime hasta { get; set; }
-
 
         public Filtro()
         {
@@ -22,7 +19,5 @@ namespace DtoLibCajaBanco.Reporte.Analisis.VentaPromedio
             desde = DateTime.Now.Date;
             hasta = DateTime.Now.Date;
         }
-
     }
-
 }

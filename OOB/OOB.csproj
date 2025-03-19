@@ -42,6 +42,7 @@
     <Compile Include="Enumerados.cs" />
     <Compile Include="LibCajaBanco\Deposito\Ficha.cs" />
     <Compile Include="LibCajaBanco\EmpresaGrupo\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Empresa\Entidad\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Ficha.cs" />
@@ -54,6 +55,10 @@
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaProducto\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPromedio\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaPromedio\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentasAnuladas\Detalle.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentasAnuladas\Documento.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentasAnuladas\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Reporte\Analisis\VentasAnuladas\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Habladores\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Habladores\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Movimiento\ArqueoCajaPos\Ficha.cs" />

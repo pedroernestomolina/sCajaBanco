@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle
 {
-    
     public class Ficha
     {
-
         public string auto { get; set; }
         public string documento { get; set; }
         public DateTime fecha { get; set; }
@@ -26,7 +24,8 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle
         public int signo { get; set; }
         public string documentoNombre { get; set; }
         public string decimales { get; set; }
-
+        public string entidadCiRif { get; set; }
+        public string entidadNombre { get; set; }
         public string CajaEstacion
         {
             get 
@@ -36,7 +35,5 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle
                 return rt;
             }
         }
-
     }
-
 }

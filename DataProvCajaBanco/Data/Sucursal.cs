@@ -15,33 +15,41 @@ namespace DataProvCajaBanco.Data
         public OOB.ResultadoLista<OOB.LibCajaBanco.Sucursal.Ficha> Sucursal_GetLista()
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Sucursal.Ficha>();
-
-            var r01 = MyData.Sucursal_GetLista();
-            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            //
+            try
             {
-                rt.Mensaje = r01.Mensaje;
-                rt.Result = OOB.Enumerados.EnumResult.isError;
+                var r01 = MyData.Sucursal_GetLista();
+                if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+                {
+                    throw new Exception(r01.Mensaje);
+                }
+                var list = new List<OOB.LibCajaBanco.Sucursal.Ficha>();
+                if (r01.Lista != null)
+                {
+                    if (r01.Lista.Count > 0)
+                    {
+                        list = r01.Lista.Select(s =>
+                        {
+                            return new OOB.LibCajaBanco.Sucursal.Ficha()
+                            {
+                                auto = s.auto,
+                                codigo = s.codigo,
+                                nombre = s.nombre,
+                                estatusActivo= s.estatusActivo,
+                            };
+                        }).ToList();
+                    }
+                }
+                rt.Lista = list;
+                //
                 return rt;
             }
-
-            var list = new List<OOB.LibCajaBanco.Sucursal.Ficha>();
-            if (r01.Lista != null)
+            catch (Exception e)
             {
-                if (r01.Lista.Count > 0)
-                {
-                    list = r01.Lista.Select(s =>
-                    {
-                        return new OOB.LibCajaBanco.Sucursal.Ficha()
-                        {
-                            auto = s.auto,
-                            codigo = s.codigo,
-                            nombre = s.nombre,
-                        };
-                    }).ToList();
-                }
+                rt.Mensaje = e.Message;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
             }
-            rt.Lista = list;
-
+            //
             return rt;
         }
 

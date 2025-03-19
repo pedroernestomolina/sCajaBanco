@@ -25,6 +25,7 @@ namespace ModCajaBanco
         {
             L_VERSION.Text = _controlador.Version;
             L_HOST.Text = _controlador.Host;
+            P_ICONO.BackgroundImage = _controlador.EmpresaLogo;
         }
 
         private void BT_SALIR_Click(object sender, EventArgs e)
@@ -47,7 +48,6 @@ namespace ModCajaBanco
         {
             ArqueoCajaPos();
         }
-
         private void ArqueoCajaPos()
         {
             _controlador.ArqueoCajaPos();
@@ -231,6 +231,15 @@ namespace ModCajaBanco
         private void AnalisisVentasPorMedioPago()
         {
             _controlador.AnalisisVentasPorMedioPago();
+        }
+
+        private void TSM_ANALISIS_VENTAS_ANULADAS_Click(object sender, EventArgs e)
+        {
+            AnalisisVentasAnuladas();
+        }
+        private void AnalisisVentasAnuladas()
+        {
+            _controlador.AnalisisVentasAnuladas();
         }
     }
 }

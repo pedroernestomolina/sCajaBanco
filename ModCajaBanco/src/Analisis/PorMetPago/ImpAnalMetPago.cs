@@ -169,5 +169,17 @@ namespace ModCajaBanco.src.Analisis.PorMetPago
         {
             return true;
         }
+
+
+        public void Reportes()
+        {
+            if (_lista.GetLista.Count > 0)
+            {
+                var _gestRep = new Reportes.Analisis.PorMetodosPago.Gestion();
+                _gestRep.setData(_lista.GetLista);
+                _gestRep.setFiltros("Desde La Fecha: " + _desde.ToShortDateString() + ", Hasta La Fecha: " + _hasta.ToShortDateString());
+                _gestRep.Generar();
+            }
+        }
     }
 }

@@ -15,39 +15,29 @@ namespace ProvLibCajaBanco
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Deposito.Resumen> Deposito_GetLista()
         {
             var result = new DtoLib.ResultadoLista<DtoLibCajaBanco.Deposito.Resumen>();
-
+            //
             try
             {
+                var lst = new List<DtoLibCajaBanco.Deposito.Resumen>();
                 using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
                 {
-                    var q = cnn.empresa_depositos.ToList();
-
-                    var list = new List<DtoLibCajaBanco.Deposito.Resumen>();
-                    if (q != null)
-                    {
-                        if (q.Count() > 0)
-                        {
-                            list = q.Select(s =>
-                            {
-                                var r = new DtoLibCajaBanco.Deposito.Resumen()
-                                {
-                                    auto = s.auto,
-                                    codigo = s.codigo,
-                                    nombre = s.nombre,
-                                };
-                                return r;
-                            }).ToList();
-                        }
-                    }
-                    result.Lista = list;
+                    var _sql = @"select 
+                                    dep.auto as auto, 
+                                    dep.codigo as codigo, 
+                                    dep.nombre as nombre, 
+                                    depExt.es_activo as estatusActivo 
+                                from empresa_depositos as dep
+                                join empresa_depositos_ext as depExt on depExt.auto_deposito=dep.auto";
+                    lst = cnn.Database.SqlQuery<DtoLibCajaBanco.Deposito.Resumen>(_sql).ToList();
                 }
+                result.Lista = lst;
             }
             catch (Exception e)
             {
                 result.Mensaje = e.Message;
                 result.Result = DtoLib.Enumerados.EnumResult.isError;
             }
-
+            //
             return result;
         }
 

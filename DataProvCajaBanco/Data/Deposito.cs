@@ -15,33 +15,39 @@ namespace DataProvCajaBanco.Data
         public OOB.ResultadoLista<OOB.LibCajaBanco.Deposito.Ficha> Deposito_GetLista()
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Deposito.Ficha>();
-
-            var r01 = MyData.Deposito_GetLista();
-            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            //
+            try
             {
-                rt.Mensaje = r01.Mensaje;
-                rt.Result = OOB.Enumerados.EnumResult.isError;
-                return rt;
-            }
-
-            var list = new List<OOB.LibCajaBanco.Deposito.Ficha>();
-            if (r01.Lista != null)
-            {
-                if (r01.Lista.Count > 0)
+                var r01 = MyData.Deposito_GetLista();
+                if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
                 {
-                    list = r01.Lista.Select(s =>
-                    {
-                        return new OOB.LibCajaBanco.Deposito.Ficha()
-                        {
-                            auto = s.auto,
-                            codigo = s.codigo,
-                            nombre = s.nombre,
-                        };
-                    }).ToList();
+                    throw new Exception(r01.Mensaje);
                 }
+                var list = new List<OOB.LibCajaBanco.Deposito.Ficha>();
+                if (r01.Lista != null)
+                {
+                    if (r01.Lista.Count > 0)
+                    {
+                        list = r01.Lista.Select(s =>
+                        {
+                            return new OOB.LibCajaBanco.Deposito.Ficha()
+                            {
+                                auto = s.auto,
+                                codigo = s.codigo,
+                                nombre = s.nombre,
+                                estatusActivo = s.estatusActivo,
+                            };
+                        }).ToList();
+                    }
+                }
+                rt.Lista = list;
             }
-            rt.Lista = list;
-
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+            }
+            //
             return rt;
         }
 

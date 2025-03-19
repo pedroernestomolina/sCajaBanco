@@ -85,16 +85,16 @@ namespace ModCajaBanco.Reportes.Movimientos
                 return false;
             }
             lSucursal.Clear();
-            lSucursal.AddRange(rt1.Lista.OrderBy(o=>o.nombre).ToList());
+            lSucursal.AddRange(rt1.Lista.Where(w=>w.IsActivo).OrderBy(o=>o.nombre).ToList());
 
-            var rt2 = Sistema.MyData.Deposito_GetLista ();
+            var rt2 = Sistema.MyData.Deposito_GetLista();
             if (rt2.Result == OOB.Enumerados.EnumResult.isError)
             {
                 Helpers.Msg.Error(rt2.Mensaje);
                 return false;
             }
             lDeposito.Clear();
-            lDeposito.AddRange(rt2.Lista.OrderBy(o=>o.nombre).ToList());
+            lDeposito.AddRange(rt2.Lista.Where(w=>w.IsActivo).OrderBy(o=>o.nombre).ToList());
 
             return rt;
         }

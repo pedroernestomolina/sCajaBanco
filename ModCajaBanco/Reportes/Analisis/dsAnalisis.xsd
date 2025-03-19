@@ -79,6 +79,48 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="VtaAnuladaDoc" msprop:Generator_TableClassName="VtaAnuladaDocDataTable" msprop:Generator_TableVarName="tableVtaAnuladaDoc" msprop:Generator_RowChangedName="VtaAnuladaDocRowChanged" msprop:Generator_TablePropName="VtaAnuladaDoc" msprop:Generator_RowDeletingName="VtaAnuladaDocRowDeleting" msprop:Generator_RowChangingName="VtaAnuladaDocRowChanging" msprop:Generator_RowEvHandlerName="VtaAnuladaDocRowChangeEventHandler" msprop:Generator_RowDeletedName="VtaAnuladaDocRowDeleted" msprop:Generator_RowClassName="VtaAnuladaDocRow" msprop:Generator_UserTableName="VtaAnuladaDoc" msprop:Generator_RowEvArgName="VtaAnuladaDocRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="docNum" msprop:Generator_ColumnVarNameInTable="columndocNum" msprop:Generator_ColumnPropNameInRow="docNum" msprop:Generator_ColumnPropNameInTable="docNumColumn" msprop:Generator_UserColumnName="docNum" type="xs:string" minOccurs="0" />
+              <xs:element name="docFecha" msprop:Generator_ColumnVarNameInTable="columndocFecha" msprop:Generator_ColumnPropNameInRow="docFecha" msprop:Generator_ColumnPropNameInTable="docFechaColumn" msprop:Generator_UserColumnName="docFecha" type="xs:string" minOccurs="0" />
+              <xs:element name="docEntidad" msprop:Generator_ColumnVarNameInTable="columndocEntidad" msprop:Generator_ColumnPropNameInRow="docEntidad" msprop:Generator_ColumnPropNameInTable="docEntidadColumn" msprop:Generator_UserColumnName="docEntidad" type="xs:string" minOccurs="0" />
+              <xs:element name="docReng" msprop:Generator_ColumnVarNameInTable="columndocReng" msprop:Generator_ColumnPropNameInRow="docReng" msprop:Generator_ColumnPropNameInTable="docRengColumn" msprop:Generator_UserColumnName="docReng" type="xs:string" minOccurs="0" />
+              <xs:element name="docTipo" msprop:Generator_ColumnVarNameInTable="columndocTipo" msprop:Generator_ColumnPropNameInRow="docTipo" msprop:Generator_ColumnPropNameInTable="docTipoColumn" msprop:Generator_UserColumnName="docTipo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VtaAnuladaDet" msprop:Generator_TableClassName="VtaAnuladaDetDataTable" msprop:Generator_TableVarName="tableVtaAnuladaDet" msprop:Generator_RowChangedName="VtaAnuladaDetRowChanged" msprop:Generator_TablePropName="VtaAnuladaDet" msprop:Generator_RowDeletingName="VtaAnuladaDetRowDeleting" msprop:Generator_RowChangingName="VtaAnuladaDetRowChanging" msprop:Generator_RowEvHandlerName="VtaAnuladaDetRowChangeEventHandler" msprop:Generator_RowDeletedName="VtaAnuladaDetRowDeleted" msprop:Generator_RowClassName="VtaAnuladaDetRow" msprop:Generator_UserTableName="VtaAnuladaDet" msprop:Generator_RowEvArgName="VtaAnuladaDetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="prdDesc" msprop:Generator_ColumnVarNameInTable="columnprdDesc" msprop:Generator_ColumnPropNameInRow="prdDesc" msprop:Generator_ColumnPropNameInTable="prdDescColumn" msprop:Generator_UserColumnName="prdDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="cntEmp" msprop:Generator_ColumnVarNameInTable="columncntEmp" msprop:Generator_ColumnPropNameInRow="cntEmp" msprop:Generator_ColumnPropNameInTable="cntEmpColumn" msprop:Generator_UserColumnName="cntEmp" type="xs:decimal" minOccurs="0" />
+              <xs:element name="contEmp" msprop:Generator_ColumnVarNameInTable="columncontEmp" msprop:Generator_ColumnPropNameInRow="contEmp" msprop:Generator_ColumnPropNameInTable="contEmpColumn" msprop:Generator_UserColumnName="contEmp" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cntUnd" msprop:Generator_ColumnVarNameInTable="columncntUnd" msprop:Generator_ColumnPropNameInRow="cntUnd" msprop:Generator_ColumnPropNameInTable="cntUndColumn" msprop:Generator_UserColumnName="cntUnd" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cntDocInvol" msprop:Generator_ColumnVarNameInTable="columncntDocInvol" msprop:Generator_ColumnPropNameInRow="cntDocInvol" msprop:Generator_ColumnPropNameInTable="cntDocInvolColumn" msprop:Generator_UserColumnName="cntDocInvol" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PorMetodoPago" msprop:Generator_TableClassName="PorMetodoPagoDataTable" msprop:Generator_TableVarName="tablePorMetodoPago" msprop:Generator_TablePropName="PorMetodoPago" msprop:Generator_RowDeletingName="PorMetodoPagoRowDeleting" msprop:Generator_RowChangingName="PorMetodoPagoRowChanging" msprop:Generator_RowEvHandlerName="PorMetodoPagoRowChangeEventHandler" msprop:Generator_RowDeletedName="PorMetodoPagoRowDeleted" msprop:Generator_UserTableName="PorMetodoPago" msprop:Generator_RowChangedName="PorMetodoPagoRowChanged" msprop:Generator_RowEvArgName="PorMetodoPagoRowChangeEvent" msprop:Generator_RowClassName="PorMetodoPagoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sucursal" msprop:Generator_ColumnVarNameInTable="columnsucursal" msprop:Generator_ColumnPropNameInRow="sucursal" msprop:Generator_ColumnPropNameInTable="sucursalColumn" msprop:Generator_UserColumnName="sucursal" type="xs:string" minOccurs="0" />
+              <xs:element name="montoMonLocal" msprop:Generator_ColumnVarNameInTable="columnmontoMonLocal" msprop:Generator_ColumnPropNameInRow="montoMonLocal" msprop:Generator_ColumnPropNameInTable="montoMonLocalColumn" msprop:Generator_UserColumnName="montoMonLocal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="montoMonDivisa" msprop:Generator_ColumnVarNameInTable="columnmontoMonDivisa" msprop:Generator_ColumnPropNameInRow="montoMonDivisa" msprop:Generator_ColumnPropNameInTable="montoMonDivisaColumn" msprop:Generator_UserColumnName="montoMonDivisa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="efectivoSist" msprop:Generator_ColumnVarNameInTable="columnefectivoSist" msprop:Generator_ColumnPropNameInRow="efectivoSist" msprop:Generator_ColumnPropNameInTable="efectivoSistColumn" msprop:Generator_UserColumnName="efectivoSist" type="xs:decimal" minOccurs="0" />
+              <xs:element name="efectivoUsu" msprop:Generator_ColumnVarNameInTable="columnefectivoUsu" msprop:Generator_ColumnPropNameInRow="efectivoUsu" msprop:Generator_ColumnPropNameInTable="efectivoUsuColumn" msprop:Generator_UserColumnName="efectivoUsu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tarjSist" msprop:Generator_ColumnVarNameInTable="columntarjSist" msprop:Generator_ColumnPropNameInRow="tarjSist" msprop:Generator_ColumnPropNameInTable="tarjSistColumn" msprop:Generator_UserColumnName="tarjSist" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tarjUsu" msprop:Generator_ColumnVarNameInTable="columntarjUsu" msprop:Generator_ColumnPropNameInRow="tarjUsu" msprop:Generator_ColumnPropNameInTable="tarjUsuColumn" msprop:Generator_UserColumnName="tarjUsu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="divisaSist" msprop:Generator_ColumnVarNameInTable="columndivisaSist" msprop:Generator_ColumnPropNameInRow="divisaSist" msprop:Generator_ColumnPropNameInTable="divisaSistColumn" msprop:Generator_UserColumnName="divisaSist" type="xs:decimal" minOccurs="0" />
+              <xs:element name="divisaUsu" msprop:Generator_ColumnVarNameInTable="columndivisaUsu" msprop:Generator_ColumnPropNameInRow="divisaUsu" msprop:Generator_ColumnPropNameInTable="divisaUsuColumn" msprop:Generator_UserColumnName="divisaUsu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cntDivisaSist" msprop:Generator_ColumnVarNameInTable="columncntDivisaSist" msprop:Generator_ColumnPropNameInRow="cntDivisaSist" msprop:Generator_ColumnPropNameInTable="cntDivisaSistColumn" msprop:Generator_UserColumnName="cntDivisaSist" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cntDivisaUsu" msprop:Generator_ColumnVarNameInTable="columncntDivisaUsu" msprop:Generator_ColumnPropNameInRow="cntDivisaUsu" msprop:Generator_ColumnPropNameInTable="cntDivisaUsuColumn" msprop:Generator_UserColumnName="cntDivisaUsu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tasaCambio" msprop:Generator_ColumnVarNameInTable="columntasaCambio" msprop:Generator_ColumnPropNameInRow="tasaCambio" msprop:Generator_ColumnPropNameInTable="tasaCambioColumn" msprop:Generator_UserColumnName="tasaCambio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="difMonLocal" msprop:Generator_ColumnVarNameInTable="columndifMonLocal" msprop:Generator_ColumnPropNameInRow="difMonLocal" msprop:Generator_ColumnPropNameInTable="difMonLocalColumn" msprop:Generator_UserColumnName="difMonLocal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="difMonDivisa" msprop:Generator_ColumnVarNameInTable="columndifMonDivisa" msprop:Generator_ColumnPropNameInRow="difMonDivisa" msprop:Generator_ColumnPropNameInTable="difMonDivisaColumn" msprop:Generator_UserColumnName="difMonDivisa" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

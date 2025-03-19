@@ -20,6 +20,7 @@ namespace ModCajaBanco.src.Analisis.PorMetPago
 
         public BindingSource GetSource { get { return _bs; } }
         public BindingSource GetTotales { get { return _bsTot; } }
+        public List<data> GetLista { get { return _bl.Where(w=>w.isChecked).ToList(); } }
 
 
         public ImpLista()

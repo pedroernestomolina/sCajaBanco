@@ -323,29 +323,42 @@ namespace ProvLibCajaBanco
             Reporte_VentaDetalle(DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha>();
-
+            //
             try
             {
                 using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
                 {
-                    var sql = "select v.auto, v.documento, v.fecha, v.usuario as usuarioNombre, v.signo, " +
-                        "v.documento_nombre as documentoNombre, v.codigo_usuario as usuarioCodigo, v.total, v.renglones, " +
-                        "vd.nombre as nombreProducto, vd.cantidad_und as cantidadUnd, vd.precio_und as precioUnd, " +
-                        "vd.total as totalRenglon, v.hora " +
-                        "from ventas as v join ventas_detalle as vd on vd.auto_documento=v.auto " +
-                        "where v.fecha>=@desde and v.fecha<=@hasta and v.codigo_sucursal=@codigoSucursal and v.estatus_anulado='0'";
-
                     var p1 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p2 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p3 = new MySql.Data.MySqlClient.MySqlParameter();
-
                     p1.ParameterName = "@desde";
                     p1.Value = filtro.desdeFecha;
                     p2.ParameterName = "@hasta";
                     p2.Value = filtro.hastaFecha;
                     p3.ParameterName = "@codigoSucursal";
                     p3.Value = filtro.codigoSucursal;
-
+                    var sql = @"select 
+                                    v.auto, 
+                                    v.documento, 
+                                    v.fecha, 
+                                    v.usuario as usuarioNombre, 
+                                    v.signo, 
+                                    v.documento_nombre as documentoNombre, 
+                                    v.codigo_usuario as usuarioCodigo, 
+                                    v.total, v.renglones, 
+                                    vd.nombre as nombreProducto,
+                                    vd.cantidad_und as cantidadUnd, 
+                                    vd.precio_und as precioUnd, 
+                                    vd.total as totalRenglon, 
+                                    v.hora,
+                                    v.razon_social as entidadNombre,
+                                    v.ci_rif as entidadCiRif
+                                from ventas as v 
+                                join ventas_detalle as vd on vd.auto_documento=v.auto 
+                                where v.fecha>=@desde 
+                                        and v.fecha<=@hasta 
+                                        and v.codigo_sucursal=@codigoSucursal 
+                                        and v.estatus_anulado='0'";
                     var list = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha>(sql, p1, p2, p3).ToList();
                     rt.Lista = list;
                 }
@@ -355,7 +368,7 @@ namespace ProvLibCajaBanco
                 rt.Mensaje = e.Message;
                 rt.Result = DtoLib.Enumerados.EnumResult.isError;
             }
-
+            //
             return rt;
         }
 
@@ -368,14 +381,19 @@ namespace ProvLibCajaBanco
             {
                 using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
                 {
-                    var sql_1 = "SELECT vd.codigo as codigoPrd, vd.nombre as nombrePrd, sum(vd.cantidad_und) as cantidad, " +
-                        "sum(vd.total) as totalMonto, v.documento_nombre as nombreDocumento, v.signo, " +
-                        "sum(vd.total/v.factor_cambio) as totalMontoDivisa ";
-                    var sql_2 = " FROM ventas_detalle as vd " +
-                        "join ventas as v on vd.auto_documento=v.auto ";
+                    var sql_1 = @"SELECT 
+                                    prd.codigo as codigoPrd, 
+                                    prd.nombre as nombrePrd, 
+                                    sum(vd.cantidad_und) as cantidad, 
+                                    sum(vd.total) as totalMonto, 
+                                    v.documento_nombre as nombreDocumento, 
+                                    v.signo, 
+                                    sum(vd.total/v.factor_cambio) as totalMontoDivisa ";
+                    var sql_2 = @" FROM ventas_detalle as vd 
+                        join ventas as v on vd.auto_documento=v.auto 
+                        join productos as prd on prd.auto=vd.auto_producto ";
                     var sql_3 = " where v.fecha>=@desde and v.fecha<=@hasta and v.estatus_anulado='0' ";
-                    var sql_4 = " group by vd.auto_producto, vd.codigo, vd.nombre, v.documento_nombre, v.signo ";
-
+                    var sql_4 = " group by vd.auto_producto, prd.codigo, prd.nombre, v.documento_nombre, v.signo ";
                     var p1 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p2 = new MySql.Data.MySqlClient.MySqlParameter();
                     var p3 = new MySql.Data.MySqlClient.MySqlParameter();
@@ -1186,6 +1204,71 @@ namespace ProvLibCajaBanco
                     var sql = sql_1;
                     var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>(sql, p1, p2).ToList();
                     rt.Lista = ldata;
+                }
+            }
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = DtoLib.Enumerados.EnumResult.isError;
+            }
+            return rt;
+        }
+        //
+        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha> 
+            Reporte_Analisis_VentasAnuladas(DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro filtro)
+        {
+            var rt = new DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha>();
+            try
+            {
+                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+                {
+                    var p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+                    var p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+                    var p3 = new MySql.Data.MySqlClient.MySqlParameter("@codSuc", filtro.codSucursal);
+                    var sql_1 = @"SELECT 
+                                    documento as docNumero, 
+                                    razon_social as docEntidad, 
+                                    fecha as docFecha, 
+                                    monto_divisa as docMontoDivisa, 
+                                    tipo as docTipo, 
+                                    documento_nombre as docNombre, 
+                                    renglones as docRenglones, 
+                                    hora as docHora 
+                                FROM `ventas` as v
+                                where fecha>=@desde and fecha<=@hasta
+                                    and tipo='01'
+                                    and codigo_sucursal=@codSuc
+                                    and estatus_anulado='1' 
+                                    ORDER BY documento desc";
+                    var sql = sql_1;
+                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Documento>(sql, p1, p2,p3).ToList();
+
+                    var xp1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+                    var xp2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+                    var xp3 = new MySql.Data.MySqlClient.MySqlParameter("@codSuc", filtro.codSucursal);
+                    sql_1 = @"SELECT 
+                                vd.auto_producto as autoPrd,
+                                vd.nombre as prdDesc, 
+                                sum(vd.cantidad) as cntEmp, 
+                                vd.contenido_empaque as contEmp, 
+                                sum(vd.cantidad_und) as cntUnd, 
+                                count(v.auto) as cntDocInvol
+                            FROM `ventas_detalle`as vd
+                            join ventas as v on vd.auto_documento=v.auto
+                            where v.fecha>=@desde and v.fecha<=@hasta
+                                and v.codigo_sucursal=@codSuc
+                                and v.estatus_anulado='1'
+                                and v.tipo='01'
+                            group by vd.auto_producto, vd.nombre, vd.contenido_empaque
+                            order by cntDocInvol desc, vd.nombre";
+                    sql = sql_1;
+                    var ldata2 = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Detalle>(sql, xp1, xp2, xp3).ToList();
+
+                    rt.Entidad = new DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha()
+                    {
+                        Documentos = ldata,
+                        Detalles = ldata2,
+                    };
                 }
             }
             catch (Exception e)

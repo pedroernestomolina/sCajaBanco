@@ -237,7 +237,7 @@ namespace DataProvCajaBanco.Data
             Reporte_ResumenVentaDetalle(OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Filtro filtro)
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Ficha>();
-
+            //
             var filtroDTO = new DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Filtro()
             {
                 codigoSucursal = filtro.codigoSucursal,
@@ -251,7 +251,6 @@ namespace DataProvCajaBanco.Data
                 rt.Result = OOB.Enumerados.EnumResult.isError;
                 return rt;
             }
-
             var list = new List<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle.Ficha>();
             if (r01.Lista != null)
             {
@@ -265,8 +264,8 @@ namespace DataProvCajaBanco.Data
                             cantidadUnd = s.cantidadUnd,
                             documento = s.documento,
                             fecha = s.fecha,
-                            hora= s.hora,
-                            decimales="2",
+                            hora = s.hora,
+                            decimales = "2",
                             nombreProducto = s.nombreProducto,
                             precioUnd = s.precioUnd,
                             renglones = s.renglones,
@@ -274,14 +273,16 @@ namespace DataProvCajaBanco.Data
                             totalRenglon = s.totalRenglon,
                             usuarioCodigo = s.usuarioCodigo,
                             usuarioNombre = s.usuarioNombre,
-                            signo=s.signo,
-                            documentoNombre=s.documentoNombre,
+                            signo = s.signo,
+                            documentoNombre = s.documentoNombre,
+                            entidadCiRif = s.entidadCiRif,
+                            entidadNombre = s.entidadNombre
                         };
                     }).ToList();
                 }
             }
             rt.Lista = list;
-
+            //
             return rt;
         }
         public OOB.ResultadoLista<OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaPorProducto.Ficha> 
@@ -635,7 +636,7 @@ namespace DataProvCajaBanco.Data
                             venta = s.venta,
                             ventaDivisa = s.ventaDivisa,
                             cntItemStock = s.cntItemStock,
-                            costoStock = s.costoStock,
+                            costoStock = s.costoStock.HasValue ? s.costoStock.Value: 0m,
                             bono = s.bono,
                             bonoDivisa = s.bonoDivisa,
                         };
@@ -895,6 +896,74 @@ namespace DataProvCajaBanco.Data
                 }
             }
             rt.Lista = list;
+            return rt;
+        }
+        //
+        public OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha> 
+            Reporte_Analisis_VentasAnuladas(OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro filtro)
+        {
+            var rt = new OOB.ResultadoEntidad<OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha>();
+            var filtroDTO = new DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro()
+            {
+                desde = filtro.desde,
+                hasta = filtro.hasta,
+                codSucursal = filtro.codSucursal,
+            };
+            var r01 = MyData.Reporte_Analisis_VentasAnuladas(filtroDTO);
+            if (r01.Result == DtoLib.Enumerados.EnumResult.isError)
+            {
+                rt.Mensaje = r01.Mensaje;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+                return rt;
+            }
+            var ldoc= new List<OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Documento>();
+            var ldet= new List<OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Detalle>();
+            if (r01.Entidad != null)
+            {
+                if (r01.Entidad.Documentos != null)
+                {
+                    if (r01.Entidad.Documentos.Count > 0)
+                    {
+                        ldoc= r01.Entidad.Documentos.Select(s =>
+                        {
+                            return new OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Documento()
+                            {
+                                docEntidad = s.docEntidad,
+                                docFecha = s.docFecha,
+                                docHora = s.docHora,
+                                docMontoDivisa = s.docMontoDivisa,
+                                docNombre = s.docNombre,
+                                docNumero = s.docNumero,
+                                docRenglones = s.docRenglones,
+                                docTipo = s.docTipo,
+                            };
+                        }).ToList();
+                    }
+                }
+                if (r01.Entidad.Detalles != null)
+                {
+                    if (r01.Entidad.Detalles.Count > 0)
+                    {
+                        ldet = r01.Entidad.Detalles.Select(s =>
+                        {
+                            return new OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Detalle()
+                            {
+                                autoPrd= s.autoPrd,
+                                cntDocInvol = s.cntDocInvol,
+                                cntEmp = s.cntEmp,
+                                cntUnd = s.cntUnd,
+                                contEmp = s.contEmp,
+                                prdDesc = s.prdDesc,
+                            };
+                        }).ToList();
+                    }
+                }
+            }
+            rt.Entidad = new OOB.LibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha()
+            {
+                Detalles = ldet,
+                Documentos = ldoc,
+            };
             return rt;
         }
     }

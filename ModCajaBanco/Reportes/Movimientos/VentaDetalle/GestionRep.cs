@@ -32,7 +32,7 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaDetalle
                 DataRow r = ds.Tables["ResumenVentDet"].NewRow();
                 r["fechaHora"] = it.fecha.ToShortDateString() + ", " + it.hora;
                 r["documentoNro"] = it.documento;
-                r["documentoNombre"] = it.documentoNombre;
+                r["documentoNombre"] = it.documentoNombre + Environment.NewLine + it.fecha.ToShortDateString() + ", " + it.hora; 
                 r["usuarioEstacion"] = it.usuarioCodigo.Trim() + "(" + it.usuarioNombre.Trim() + "), " + Environment.NewLine + it.CajaEstacion;
                 r["renglones"] = it.renglones.ToString("n0");
                 r["total"] = it.total * it.signo;
@@ -40,6 +40,7 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaDetalle
                 r["cantidad"] = it.cantidadUnd.ToString("n"+it.decimales);
                 r["precio"] = it.precioUnd;
                 r["totalRenglon"] = it.totalRenglon*it.signo;
+                r["entidad"] = it.entidadCiRif+ Environment.NewLine+ it.entidadNombre;
                 ds.Tables["ResumenVentDet"].Rows.Add(r);
             }
 

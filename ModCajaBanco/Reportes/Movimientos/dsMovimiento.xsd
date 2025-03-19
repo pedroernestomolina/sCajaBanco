@@ -82,6 +82,7 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="totalRenglon" msprop:Generator_ColumnVarNameInTable="columntotalRenglon" msprop:Generator_ColumnPropNameInRow="totalRenglon" msprop:Generator_ColumnPropNameInTable="totalRenglonColumn" msprop:Generator_UserColumnName="totalRenglon" type="xs:decimal" minOccurs="0" />
+              <xs:element name="entidad" msprop:Generator_ColumnVarNameInTable="columnentidad" msprop:Generator_ColumnPropNameInRow="entidad" msprop:Generator_ColumnPropNameInTable="entidadColumn" msprop:Generator_UserColumnName="entidad" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -90,7 +91,7 @@
             <xs:sequence>
               <xs:element name="codigoPrd" msprop:Generator_ColumnVarNameInTable="columncodigoPrd" msprop:Generator_ColumnPropNameInRow="codigoPrd" msprop:Generator_ColumnPropNameInTable="codigoPrdColumn" msprop:Generator_UserColumnName="codigoPrd" type="xs:string" minOccurs="0" />
               <xs:element name="nombrePrd" msprop:Generator_ColumnVarNameInTable="columnnombrePrd" msprop:Generator_ColumnPropNameInRow="nombrePrd" msprop:Generator_ColumnPropNameInTable="nombrePrdColumn" msprop:Generator_UserColumnName="nombrePrd" type="xs:string" minOccurs="0" />
-              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
               <xs:element name="totalMonto" msprop:Generator_ColumnVarNameInTable="columntotalMonto" msprop:Generator_ColumnPropNameInRow="totalMonto" msprop:Generator_ColumnPropNameInTable="totalMontoColumn" msprop:Generator_UserColumnName="totalMonto" type="xs:decimal" minOccurs="0" />
               <xs:element name="tipoDocumento" msprop:Generator_ColumnVarNameInTable="columntipoDocumento" msprop:Generator_ColumnPropNameInRow="tipoDocumento" msprop:Generator_ColumnPropNameInTable="tipoDocumentoColumn" msprop:Generator_UserColumnName="tipoDocumento" type="xs:string" minOccurs="0" />
               <xs:element name="totalMontoDivisa" msprop:Generator_ColumnVarNameInTable="columntotalMontoDivisa" msprop:Generator_ColumnPropNameInRow="totalMontoDivisa" msprop:Generator_ColumnPropNameInTable="totalMontoDivisaColumn" msprop:Generator_UserColumnName="totalMontoDivisa" type="xs:decimal" minOccurs="0" />

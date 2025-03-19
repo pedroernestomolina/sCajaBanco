@@ -49,5 +49,8 @@ namespace ILibCajaBanco
         // ANALISIS POR MEDIO DE PAGO 
         DtoLib.ResultadoLista<DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Ficha>
             Reporte_Analisis_PorMediosPago(DtoLibCajaBanco.Reporte.Analisis.PorMedioPago.Filtro filtro);
+        // ANALISIS VENTAS NAULADAS
+        DtoLib.ResultadoEntidad<DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Ficha>
+            Reporte_Analisis_VentasAnuladas(DtoLibCajaBanco.Reporte.Analisis.VentasAnuladas.Filtro filtro);
     }
 }
