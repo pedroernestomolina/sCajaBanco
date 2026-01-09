@@ -55,7 +55,10 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria
                 var rt = 0;
                 if (medioPagoCod == "02")
                 {
-                    rt = int.Parse(loteNro);
+                    decimal _mnt=0m;
+                    decimal.TryParse(loteNro, out _mnt);
+                    rt = decimal.ToInt32(_mnt);
+                    //rt = int.Parse(loteNro);
                 }
                 else
                 {
@@ -72,7 +75,7 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.CobranzaDiaria
                 var rt = 0.0m;
                 if (medioPagoCod == "02")
                 {
-                    rt = decimal.Parse(refNro);
+                    rt = (refNro.Trim()!="" ? decimal.Parse(refNro): 0m);
                 }
                 return rt;
             }

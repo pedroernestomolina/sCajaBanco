@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace DtoLibCajaBanco.Reporte.Utilidad.General
 {
-    
     public class Filtro
     {
         public DateTime desde { get; set; }
         public DateTime hasta { get; set; }
+        public string codSuc { get; set; }
     }
-
 }

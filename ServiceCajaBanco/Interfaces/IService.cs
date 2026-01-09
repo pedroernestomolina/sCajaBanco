@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace ServiceCajaBanco.Interfaces
 {
-    public interface IService: ISucursal, IUsuario, IReporteMovimiento, IDeposito, IEmpresaGrupo
+    public interface IService: ISucursal, 
+        IUsuario, 
+        IReporteMovimiento, 
+        IDeposito, 
+        IEmpresaGrupo,
+        IConsulta, 
+        IMoneda
     {
         DtoLib.ResultadoEntidad<DateTime> 
             FechaServidor();

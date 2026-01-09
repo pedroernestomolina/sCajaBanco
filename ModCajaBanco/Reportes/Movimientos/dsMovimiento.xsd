@@ -83,6 +83,8 @@
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="totalRenglon" msprop:Generator_ColumnVarNameInTable="columntotalRenglon" msprop:Generator_ColumnPropNameInRow="totalRenglon" msprop:Generator_ColumnPropNameInTable="totalRenglonColumn" msprop:Generator_UserColumnName="totalRenglon" type="xs:decimal" minOccurs="0" />
               <xs:element name="entidad" msprop:Generator_ColumnVarNameInTable="columnentidad" msprop:Generator_ColumnPropNameInRow="entidad" msprop:Generator_ColumnPropNameInTable="entidadColumn" msprop:Generator_UserColumnName="entidad" type="xs:string" minOccurs="0" />
+              <xs:element name="montoDivisa" msprop:Generator_ColumnVarNameInTable="columnmontoDivisa" msprop:Generator_ColumnPropNameInRow="montoDivisa" msprop:Generator_ColumnPropNameInTable="montoDivisaColumn" msprop:Generator_UserColumnName="montoDivisa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="esAnulado" msprop:Generator_ColumnVarNameInTable="columnesAnulado" msprop:Generator_ColumnPropNameInRow="esAnulado" msprop:Generator_ColumnPropNameInTable="esAnuladoColumn" msprop:Generator_UserColumnName="esAnulado" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

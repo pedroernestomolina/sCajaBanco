@@ -276,7 +276,9 @@ namespace DataProvCajaBanco.Data
                             signo = s.signo,
                             documentoNombre = s.documentoNombre,
                             entidadCiRif = s.entidadCiRif,
-                            entidadNombre = s.entidadNombre
+                            entidadNombre = s.entidadNombre,
+                            isAnulado = s.estatusAnulado.Trim().ToUpper()=="1",
+                            montoDivisa= s.montoDivisa,
                         };
                     }).ToList();
                 }
@@ -785,6 +787,7 @@ namespace DataProvCajaBanco.Data
             {
                 desde = filtro.desde,
                 hasta = filtro.hasta,
+                codSuc= filtro.codigoSucursal,
             };
             var r01 = MyData.Reporte_Utilidad_General(filtroDTO);
             if (r01.Result == DtoLib.Enumerados.EnumResult.isError)

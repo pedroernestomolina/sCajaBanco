@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataProvCajaBanco.Infra
 {
-    public interface IData: ISucursal, IUsuario, IReporteMovimiento, IDeposito, IEmpresaGrupo
+    public interface IData: ISucursal, 
+        IUsuario, 
+        IReporteMovimiento, 
+        IDeposito, 
+        IEmpresaGrupo,
+        IConsulta
     {
         OOB.ResultadoEntidad<DateTime> 
             FechaServidor();

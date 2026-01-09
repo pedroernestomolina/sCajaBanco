@@ -226,11 +226,11 @@ namespace ModCajaBanco
 
         private void TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_Click(object sender, EventArgs e)
         {
-            AnalisisVentasPorMedioPago();
+            //AnalisisVentasPorMedioPago();
         }
         private void AnalisisVentasPorMedioPago()
         {
-            _controlador.AnalisisVentasPorMedioPago();
+            //_controlador.AnalisisVentasPorMedioPago();
         }
 
         private void TSM_ANALISIS_VENTAS_ANULADAS_Click(object sender, EventArgs e)
@@ -240,6 +240,33 @@ namespace ModCajaBanco
         private void AnalisisVentasAnuladas()
         {
             _controlador.AnalisisVentasAnuladas();
+        }
+
+        private void TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL_Click(object sender, EventArgs e)
+        {
+            VentasProductoDivisaPagoEnMonLocal();
+        }
+        private void VentasProductoDivisaPagoEnMonLocal()
+        {
+            _controlador.VentasProductoDivisaPagoEnMonLocal();
+        }
+
+        private void TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW_Click(object sender, EventArgs e)
+        {
+            AnalisisVentasPorMedioPagoNew();
+        }
+        private void TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL_Click(object sender, EventArgs e)
+        {
+            AnalisisVentasPorMedioPagoActual();
+        }
+        //
+        private void AnalisisVentasPorMedioPagoNew()
+        {
+            _controlador.AnalisisVentasPorMedioPagoNew();
+        }
+        private void AnalisisVentasPorMedioPagoActual()
+        {
+            _controlador.AnalisisVentasPorMedioPagoActual();
         }
     }
 }

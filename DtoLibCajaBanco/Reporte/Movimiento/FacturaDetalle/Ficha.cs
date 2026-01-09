@@ -25,5 +25,7 @@ namespace DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle
         public string hora { get; set; }
         public string entidadNombre { get; set; }
         public string entidadCiRif { get; set; }
+        public string estatusAnulado { get; set; }
+        public decimal montoDivisa { get; set; }
     }
 }

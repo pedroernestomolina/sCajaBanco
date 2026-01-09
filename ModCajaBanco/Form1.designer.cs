@@ -65,7 +65,12 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.TSM_UTILIDAD_GENERAL = new System.Windows.Forms.ToolStripMenuItem();
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMediosPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.variosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.TSM_ANALISIS_VENTAS_ANULADAS = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -342,7 +347,9 @@
             this.toolStripMenuItem5,
             this.TSM_UTILIDAD_GENERAL,
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO,
-            this.toolStripMenuItem6});
+            this.porMediosPagoToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.variosToolStripMenuItem});
             this.TSM_ANALISIS_Ventas.Name = "TSM_ANALISIS_Ventas";
             this.TSM_ANALISIS_Ventas.Size = new System.Drawing.Size(161, 22);
             this.TSM_ANALISIS_Ventas.Text = "Ventas";
@@ -404,12 +411,52 @@
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO";
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Size = new System.Drawing.Size(164, 22);
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Text = "Por Medios Pago";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Visible = false;
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_Click);
+            // 
+            // porMediosPagoToolStripMenuItem
+            // 
+            this.porMediosPagoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW,
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL});
+            this.porMediosPagoToolStripMenuItem.Name = "porMediosPagoToolStripMenuItem";
+            this.porMediosPagoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.porMediosPagoToolStripMenuItem.Text = "Por Medios Pago";
+            // 
+            // TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW
+            // 
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Size = new System.Drawing.Size(152, 22);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Text = "New";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW_Click);
+            // 
+            // TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL
+            // 
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Size = new System.Drawing.Size(152, 22);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Text = "Actual";
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(161, 6);
+            // 
+            // variosToolStripMenuItem
+            // 
+            this.variosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL});
+            this.variosToolStripMenuItem.Name = "variosToolStripMenuItem";
+            this.variosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.variosToolStripMenuItem.Text = "Varios";
+            this.variosToolStripMenuItem.Visible = false;
+            // 
+            // TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL
+            // 
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL.Name = "TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL";
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL.Size = new System.Drawing.Size(281, 22);
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL.Text = "Venta Productos Divisa Con Pago en Bs";
+            this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL.Click += new System.EventHandler(this.TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -616,6 +663,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_VENTAS_ANULADAS;
         private System.Windows.Forms.Panel P_ICONO;
+        private System.Windows.Forms.ToolStripMenuItem variosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL;
+        private System.Windows.Forms.ToolStripMenuItem porMediosPagoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW;
+        private System.Windows.Forms.ToolStripMenuItem TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL;
 
     }
 

@@ -1952,6 +1952,10 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             private global::System.Data.DataColumn columnentidad;
             
+            private global::System.Data.DataColumn columnmontoDivisa;
+            
+            private global::System.Data.DataColumn columnesAnulado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ResumenVentDetDataTable() {
@@ -2075,6 +2079,22 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn montoDivisaColumn {
+                get {
+                    return this.columnmontoDivisa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn esAnuladoColumn {
+                get {
+                    return this.columnesAnulado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2110,7 +2130,7 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ResumenVentDetRow AddResumenVentDetRow(string fechaHora, string documentoNro, string documentoNombre, string usuarioestacion, decimal total, string renglones, string nombrePrd, string cantidad, decimal precio, decimal totalRenglon, string entidad) {
+            public ResumenVentDetRow AddResumenVentDetRow(string fechaHora, string documentoNro, string documentoNombre, string usuarioestacion, decimal total, string renglones, string nombrePrd, string cantidad, decimal precio, decimal totalRenglon, string entidad, decimal montoDivisa, string esAnulado) {
                 ResumenVentDetRow rowResumenVentDetRow = ((ResumenVentDetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fechaHora,
@@ -2123,7 +2143,9 @@ namespace ModCajaBanco.Reportes.Movimientos {
                         cantidad,
                         precio,
                         totalRenglon,
-                        entidad};
+                        entidad,
+                        montoDivisa,
+                        esAnulado};
                 rowResumenVentDetRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowResumenVentDetRow);
                 return rowResumenVentDetRow;
@@ -2157,6 +2179,8 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 this.columnprecio = base.Columns["precio"];
                 this.columntotalRenglon = base.Columns["totalRenglon"];
                 this.columnentidad = base.Columns["entidad"];
+                this.columnmontoDivisa = base.Columns["montoDivisa"];
+                this.columnesAnulado = base.Columns["esAnulado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2184,6 +2208,10 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 base.Columns.Add(this.columntotalRenglon);
                 this.columnentidad = new global::System.Data.DataColumn("entidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentidad);
+                this.columnmontoDivisa = new global::System.Data.DataColumn("montoDivisa", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmontoDivisa);
+                this.columnesAnulado = new global::System.Data.DataColumn("esAnulado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnesAnulado);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6348,6 +6376,38 @@ namespace ModCajaBanco.Reportes.Movimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal montoDivisa {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableResumenVentDet.montoDivisaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'montoDivisa\' in table \'ResumenVentDet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenVentDet.montoDivisaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string esAnulado {
+                get {
+                    try {
+                        return ((string)(this[this.tableResumenVentDet.esAnuladoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'esAnulado\' in table \'ResumenVentDet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenVentDet.esAnuladoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfechaHoraNull() {
                 return this.IsNull(this.tableResumenVentDet.fechaHoraColumn);
             }
@@ -6476,6 +6536,30 @@ namespace ModCajaBanco.Reportes.Movimientos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetentidadNull() {
                 this[this.tableResumenVentDet.entidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmontoDivisaNull() {
+                return this.IsNull(this.tableResumenVentDet.montoDivisaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmontoDivisaNull() {
+                this[this.tableResumenVentDet.montoDivisaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsesAnuladoNull() {
+                return this.IsNull(this.tableResumenVentDet.esAnuladoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetesAnuladoNull() {
+                this[this.tableResumenVentDet.esAnuladoColumn] = global::System.Convert.DBNull;
             }
         }
         

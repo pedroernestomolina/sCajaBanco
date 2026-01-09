@@ -903,7 +903,7 @@ namespace ModCajaBanco
         {
             _filtroGestion.Inicializa();
             _filtroGestion.setHabilitarPorFecha(true);
-            _filtroGestion.setHabilitarSucursal(false);
+            _filtroGestion.setHabilitarSucursal(true);
             _filtroGestion.setHabilitarDeposito(false);
             _filtroGestion.Inicia();
             if (_filtroGestion.IsFiltroOk)
@@ -913,6 +913,17 @@ namespace ModCajaBanco
                     desde = _filtroGestion.desdeFecha,
                     hasta = _filtroGestion.hastaFecha,
                 };
+                if (_filtroGestion.autoSucursal != "")
+                {
+                    var r00 = Sistema.MyData.Sucursal_GetFicha(_filtroGestion.autoSucursal);
+                    if (r00.Result == OOB.Enumerados.EnumResult.isError)
+                    {
+                        Helpers.Msg.Error(r00.Mensaje);
+                        return;
+                    }
+                    filtro.codigoSucursal = r00.Entidad.codigo;
+                }
+
                 var r01 = Sistema.MyData.Reporte_Utilidad_General(filtro);
                 if (r01.Result == OOB.Enumerados.EnumResult.isError)
                 {
@@ -949,16 +960,24 @@ namespace ModCajaBanco
                 rp1.Generar();
             }
         }
+        
 
+        /*
         private src.Analisis.PorMetPago.IAnalMetPago _analisisMetPago;
+        private src.Consulta.PorMetodoPago.vm.IConsulta _consultaPorMetPago;
         public void AnalisisVentasPorMedioPago()
         {
-            if (_analisisMetPago == null)
+            //if (_analisisMetPago == null)
+            //{
+            //    _analisisMetPago = new src.Analisis.PorMetPago.ImpAnalMetPago();
+            //}
+            //_analisisMetPago.Inicializa();
+            //_analisisMetPago.Inicia();
+            if (_consultaPorMetPago == null)
             {
-                _analisisMetPago = new src.Analisis.PorMetPago.ImpAnalMetPago();
+                _consultaPorMetPago = new src.Consulta.PorMetodoPago.vm.ConsultaImpl();
             }
-            _analisisMetPago.Inicializa();
-            _analisisMetPago.Inicia();
+            _consultaPorMetPago.Invoke();
 
             //_filtroGestion.Inicializa();
             //_filtroGestion.setHabilitarPorFecha(true);
@@ -986,6 +1005,29 @@ namespace ModCajaBanco
             //    //rp1.Generar();
             //}
         }
+         */ 
+
+
+        private src.Consulta.PorMetodoPago.vm.IConsulta _consultaPorMetPago;
+        public void AnalisisVentasPorMedioPagoNew()
+        {
+            if (_consultaPorMetPago == null) 
+            {
+                _consultaPorMetPago = new src.Consulta.PorMetodoPago.vm.ConsultaImpl();
+            }
+            _consultaPorMetPago.Invoke();
+        }
+        private src.Analisis.PorMetPago.IAnalMetPago _analisisMetPago;
+        public void AnalisisVentasPorMedioPagoActual()
+        {
+            if (_analisisMetPago == null)
+            {
+                _analisisMetPago = new src.Analisis.PorMetPago.ImpAnalMetPago();
+            }
+            _analisisMetPago.Inicializa();
+            _analisisMetPago.Inicia();
+        }
+
 
         public void AnalisisVentasAnuladas()
         {
@@ -1028,6 +1070,32 @@ namespace ModCajaBanco
                 {
                     Helpers.Msg.Error(e.Message);
                 }
+            }
+        }
+
+
+        private src.Consulta.VentaProductoDivisaPagoEnMonLocal.vm.IConsulta _ventaProductoDivisaPagoMonLocal;
+        public void VentasProductoDivisaPagoEnMonLocal()
+        {
+            _filtroGestion.Inicializa();
+            _filtroGestion.setHabilitarPorFecha(true);
+            _filtroGestion.setHabilitarSucursal(true);
+            _filtroGestion.setHabilitarDeposito(false);
+            _filtroGestion.Inicia();
+            if (_filtroGestion.IsFiltroOk)
+            {
+                if (_ventaProductoDivisaPagoMonLocal==null)
+                {
+                    _ventaProductoDivisaPagoMonLocal=new src.Consulta.VentaProductoDivisaPagoEnMonLocal.vm.ConsultaImpl();
+                }
+                var filtro = new src.Consulta.VentaProductoDivisaPagoEnMonLocal.vm.Filtro()
+                {
+                    desde = _filtroGestion.desdeFecha,
+                    hasta = _filtroGestion.hastaFecha,
+                    idSucursal = _filtroGestion.autoSucursal,
+                };
+                _ventaProductoDivisaPagoMonLocal.setFiltro(filtro);
+                _ventaProductoDivisaPagoMonLocal.Invoke();
             }
         }
 

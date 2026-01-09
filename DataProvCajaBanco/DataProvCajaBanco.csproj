@@ -39,12 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Consulta.cs" />
     <Compile Include="Data\DataProv.cs" />
     <Compile Include="Data\Deposito.cs" />
     <Compile Include="Data\EmpresaGrupo.cs" />
     <Compile Include="Data\ReporteMovimiento.cs" />
     <Compile Include="Data\Sucursal.cs" />
     <Compile Include="Data\Usuario.cs" />
+    <Compile Include="Infra\IConsulta.cs" />
     <Compile Include="Infra\IData.cs" />
     <Compile Include="Infra\IDeposito.cs" />
     <Compile Include="Infra\IEmpresaGrupo.cs" />

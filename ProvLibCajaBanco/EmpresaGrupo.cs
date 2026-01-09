@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace ProvLibCajaBanco
 {
- 
     public partial class Provider : ILibCajaBanco.IProvider 
     {
 

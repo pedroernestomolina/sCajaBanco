@@ -39,12 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IConsulta.cs" />
     <Compile Include="Interfaces\IDeposito.cs" />
     <Compile Include="Interfaces\IEmpresaGrupo.cs" />
+    <Compile Include="Interfaces\IMoneda.cs" />
     <Compile Include="Interfaces\IReporteMovimiento.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Interfaces\ISucursal.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="MyService\Consulta.cs" />
     <Compile Include="MyService\Deposito.cs" />
     <Compile Include="MyService\EmpresaGrupo.cs" />
     <Compile Include="MyService\ReporteMovimiento.cs" />

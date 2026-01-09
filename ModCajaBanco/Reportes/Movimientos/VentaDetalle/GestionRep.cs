@@ -39,7 +39,17 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaDetalle
                 r["nombrePrd"] = it.nombreProducto ;
                 r["cantidad"] = it.cantidadUnd.ToString("n"+it.decimales);
                 r["precio"] = it.precioUnd;
-                r["totalRenglon"] = it.totalRenglon*it.signo;
+                r["montoDivisa"] = it.montoDivisa;
+                r["esAnulado"] = "";
+                if (it.isAnulado)
+                {
+                    r["totalRenglon"] = 0m;
+                    r["esAnulado"] = "ANULADO";
+                }
+                else
+                {
+                    r["totalRenglon"] = it.totalRenglon * it.signo;
+                }
                 r["entidad"] = it.entidadCiRif+ Environment.NewLine+ it.entidadNombre;
                 ds.Tables["ResumenVentDet"].Rows.Add(r);
             }

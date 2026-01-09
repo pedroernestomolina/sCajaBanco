@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace OOB.LibCajaBanco.Reporte.Utilidad.General
 {
-    
     public class Filtro
     {
         public DateTime desde { get; set; }
         public DateTime hasta { get; set; }
+        public string codigoSucursal { get; set; }
     }
-
 }

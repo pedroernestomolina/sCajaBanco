@@ -40,6 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerados.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Arqueo\PorMedioPago\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Arqueo\PorMedioPago\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Consulta\baseFiltro.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\DocDetalle.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Filtro.cs" />
+    <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\MedioPago.cs" />
     <Compile Include="LibCajaBanco\Deposito\Ficha.cs" />
     <Compile Include="LibCajaBanco\EmpresaGrupo\Ficha.cs" />
     <Compile Include="LibCajaBanco\Empresa\Entidad\Ficha.cs" />

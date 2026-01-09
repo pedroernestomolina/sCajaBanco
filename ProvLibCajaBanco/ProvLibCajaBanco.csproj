@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta.cs" />
     <Compile Include="Deposito.cs" />
     <Compile Include="EmpresaGrupo.cs" />
+    <Compile Include="Moneda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="ReporteMovimiento.cs" />

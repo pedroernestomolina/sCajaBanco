@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ServiceCajaBanco.MyService
 {
-
     public partial class Service : IService
     {
-
         public DtoLib.ResultadoLista<DtoLibCajaBanco.Deposito.Resumen> Deposito_GetLista()
         {
             return ServiceProv.Deposito_GetLista();

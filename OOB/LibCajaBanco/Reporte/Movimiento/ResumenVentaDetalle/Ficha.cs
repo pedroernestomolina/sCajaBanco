@@ -35,5 +35,7 @@ namespace OOB.LibCajaBanco.Reporte.Movimiento.ResumenVentaDetalle
                 return rt;
             }
         }
+        public bool isAnulado { get; set; }
+        public decimal montoDivisa { get; set; }
     }
 }

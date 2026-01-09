@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataProvCajaBanco.Data
 {
-    
     public partial class DataProv: IData
     {
-
         public OOB.ResultadoLista<OOB.LibCajaBanco.Deposito.Ficha> Deposito_GetLista()
         {
             var rt = new OOB.ResultadoLista<OOB.LibCajaBanco.Deposito.Ficha>();

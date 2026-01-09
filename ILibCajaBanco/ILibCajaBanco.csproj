@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IConsultas.cs" />
     <Compile Include="IDeposito.cs" />
     <Compile Include="IEmpresaGrupo.cs" />
+    <Compile Include="IMoneda.cs" />
     <Compile Include="IProvider.cs" />
     <Compile Include="IReporteMovimiento.cs" />
     <Compile Include="ISucursal.cs" />

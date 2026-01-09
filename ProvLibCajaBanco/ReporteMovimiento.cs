@@ -352,13 +352,14 @@ namespace ProvLibCajaBanco
                                     vd.total as totalRenglon, 
                                     v.hora,
                                     v.razon_social as entidadNombre,
-                                    v.ci_rif as entidadCiRif
+                                    v.ci_rif as entidadCiRif,
+                                    v.estatus_anulado as estatusAnulado,
+                                    v.monto_divisa as montoDivisa
                                 from ventas as v 
                                 join ventas_detalle as vd on vd.auto_documento=v.auto 
                                 where v.fecha>=@desde 
                                         and v.fecha<=@hasta 
-                                        and v.codigo_sucursal=@codigoSucursal 
-                                        and v.estatus_anulado='0'";
+                                        and v.codigo_sucursal=@codigoSucursal";
                     var list = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Movimiento.FacturaDetalle.Ficha>(sql, p1, p2, p3).ToList();
                     rt.Lista = list;
                 }
@@ -1091,8 +1092,7 @@ namespace ProvLibCajaBanco
                 {
                     var p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
                     var p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
-
-
+                    var p3 = new MySql.Data.MySqlClient.MySqlParameter();
                     var sql_1 = @"select 
                                     c1.codSuc,
                                     c1.nombreSuc,
@@ -1121,11 +1121,17 @@ namespace ProvLibCajaBanco
                                             join empresa_sucursal as eSuc on eSuc.codigo=v.codigo_sucursal
                                             where fecha>=@desde
                                             and fecha<=@hasta
-                                            and estatus_anulado='0'
+                                            and estatus_anulado='0' 
                                         group by codigo_sucursal
                                     ) as c1";
+                    if (filtro.codSuc != null && filtro.codSuc != "")
+                    {
+                        sql_1 += " where c1.codSuc=@codSuc ";
+                        p3.ParameterName = "@codSuc";
+                        p3.Value = filtro.codSuc;
+                    }
                     var sql = sql_1 ;
-                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>(sql, p1, p2).ToList();
+                    var ldata = cnn.Database.SqlQuery<DtoLibCajaBanco.Reporte.Utilidad.General.Ficha>(sql, p1, p2, p3).ToList();
                     rt.Lista = ldata;
                 }
             }

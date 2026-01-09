@@ -48,8 +48,8 @@ namespace ModCajaBanco.Reportes.Movimientos.CobranzaDiaria
 
                     if (xg.medioPagoCod == "02")
                     {
-                        r["cnt"] = decimal.Parse(xg.loteNro);
-                        r["tasa"] = decimal.Parse(xg.refNro);
+                        r["cnt"] = (xg.loteNro.Trim()!="" ? decimal.Parse(xg.loteNro): 0m);
+                        r["tasa"] = (xg.refNro.Trim()!="" ? decimal.Parse(xg.refNro): 0m);
                     }
                     else 
                     {

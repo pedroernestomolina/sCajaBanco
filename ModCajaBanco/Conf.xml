@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuracion>
   <Servidor>
-    <Instancia>10.10.100.155</Instancia>
+    <Instancia>192.168.9.50</Instancia>
     <Catalogo>zufu</Catalogo>
     <ActivarComoSucursal>no</ActivarComoSucursal>
   </Servidor>
