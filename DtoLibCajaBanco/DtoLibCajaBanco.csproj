@@ -45,7 +45,6 @@
     <Compile Include="Consulta\Ventas\ProductoDivisaPagoEnMonLocal\DocDetalle.cs" />
     <Compile Include="Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Ficha.cs" />
     <Compile Include="Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Filtro.cs" />
-    <Compile Include="Consulta\Ventas\ProductoDivisaPagoEnMonLocal\MedioPago.cs" />
     <Compile Include="Deposito\Ficha.cs" />
     <Compile Include="Deposito\Resumen.cs" />
     <Compile Include="EmpresaGrupo\Ficha.cs" />

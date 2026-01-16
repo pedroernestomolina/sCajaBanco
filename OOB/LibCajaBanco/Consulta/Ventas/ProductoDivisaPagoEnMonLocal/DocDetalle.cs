@@ -9,18 +9,22 @@ namespace OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal
 {
     public class DocDetalle
     {
-        public string idDocVta { get; set; }
-        public string entidad { get; set; }
-        public DateTime fecha { get; set; }
-        public decimal importeDoc { get; set; }
-        public decimal importeDocDivisa { get; set; }
-        public decimal factorCambio { get; set; }
+        public string idDoc { get; set; }
+        public string docNumero { get; set; }
+        public DateTime fechaEmision { get; set; }
+        public string entidadNombre { get; set; }
+        public string entidadCiRif { get; set; }
+        public decimal montoDivisa { get; set; }
+        public string idRecibo { get; set; }
         public string nombrePrd { get; set; }
-        public decimal cant { get; set; }
-        public string empq { get; set; }
-        public int contEmp { get; set; }
-        public bool isProductoDivisa { get; set; }
-        public decimal importeItem { get; set; }
-        public decimal importeItemDivisa { get; set; }
+        public decimal cantidad { get; set; }
+        public string empqNombre { get; set; }
+        public decimal empqCont { get; set; }
+        public bool isPrdDivisa { get; set; }
+        public string codigoMp { get; set; }
+        public string nombreMp { get; set; }
+        public string codigoMonRecibe { get; set; }
+        public decimal montoMonRecibe { get; set; }
+        public decimal montoMonRecibeMonRef { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 <Configuracion>
   <Servidor>
     <Instancia>192.168.9.50</Instancia>
-    <Catalogo>zufu</Catalogo>
+    <Catalogo>zufu26</Catalogo>
     <ActivarComoSucursal>no</ActivarComoSucursal>
   </Servidor>
 </Configuracion>

@@ -91,10 +91,6 @@ namespace DataProvCajaBanco.Data
                 {
                     throw new Exception("DATA NO CARGADA");
                 }
-                if (rst.Entidad.mediosPago == null)
-                {
-                    throw new Exception("DATA NO CARGADA");
-                }
                 var _lstDocDet = new List<OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.DocDetalle>();
                 if (rst.Entidad.docDetalle.Count > 0)
                 {
@@ -102,44 +98,77 @@ namespace DataProvCajaBanco.Data
                     {
                         return new OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.DocDetalle()
                         {
-                            cant = s.cant,
-                            contEmp = s.contEmp,
-                            empq = s.empq,
-                            entidad = s.entidad,
-                            isProductoDivisa = s.estatusDivisaProducto.Trim().ToUpper() == "1",
-                            factorCambio = s.factorCambio,
-                            fecha = s.fecha,
-                            idDocVta = s.idDocVta,
-                            importeDoc = s.importeDoc,
-                            importeDocDivisa = s.importeDocDivisa,
-                            importeItem = s.importeItem,
-                            importeItemDivisa = s.importeItemDivisa,
-                            nombrePrd = s.nombrePrd,
-                        };
-                    }).ToList();
-                }
-                var _lstMedPago = new List<OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.MedioPago>();
-                if (rst.Entidad.mediosPago.Count > 0)
-                {
-                    _lstMedPago = rst.Entidad.mediosPago.Select(s =>
-                    {
-                        return new OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.MedioPago()
-                        {
-                            codigoMonedaRecibe = s.codigoMonedaRecibe,
-                            idDocVta = s.idDocVta,
-                            idMedioPago = s.idMedioPago,
+                            cantidad = s.cantidad,
+                            codigoMonRecibe = s.codigoMonRecibe,
+                            codigoMp = s.codigoMp,
+                            docNumero = s.docNumero,
+                            empqCont = s.empqCont,
+                            empqNombre = s.empqNombre,
+                            entidadCiRif = s.entidadCiRif,
+                            entidadNombre = s.entidadNombre,
+                            fechaEmision = s.fechaEmision,
+                            idDoc = s.idDoc,
                             idRecibo = s.idRecibo,
-                            montoMonedaRecibe = s.montoMonedaRecibe,
-                            montoMonedaReferencia = s.montoMonedaReferencia,
-                            nombreMedioPago = s.nombreMedioPago,
-                            simboloMonedaRecibe = s.simboloMonedaRecibe,
+                            isPrdDivisa = s.estatusPrdDivisa.Trim().ToUpper() == "1",
+                            montoDivisa = s.montoDivisa,
+                            montoMonRecibe = s.montoMonRecibe,
+                            montoMonRecibeMonRef = s.montoMonRecibeMonRef,
+                            nombreMp = s.nombreMp,
+                            nombrePrd = s.nombrePrd,
                         };
                     }).ToList();
                 }
                 rt.Entidad = new OOB.LibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha()
                 {
                     docDetalle = _lstDocDet,
-                    mediosPago = _lstMedPago,
+                };
+            }
+            catch (Exception e)
+            {
+                rt.Mensaje = e.Message;
+                rt.Result = OOB.Enumerados.EnumResult.isError;
+            }
+            //
+            return rt;
+        }
+        public OOB.ResultadoEntidad<OOB.LibCajaBanco.Moneda.Entidad.Ficha> 
+            Consulta_GetMonedaLocal()
+        {
+            var rt = new OOB.ResultadoEntidad<OOB.LibCajaBanco.Moneda.Entidad.Ficha>();
+            //
+            try
+            {
+                var rst = MyData.Configuracion_MonedaLocal();
+                if (rst.Result == DtoLib.Enumerados.EnumResult.isError)
+                {
+                    throw new Exception(rst.Mensaje);
+                }
+                if (rst.Entidad == null)
+                {
+                    throw new Exception("DATA NO CARGADA");
+                }
+                var id = 0;
+                if (!int.TryParse(rst.Entidad, out id))
+                {
+                    throw new Exception("PROBLEMA AL CONVERTIR ID DE MONEDA LOCAL");
+                }
+                var rst2 = MyData.Moneda_GetFichaById(id);
+                if (rst2.Result == DtoLib.Enumerados.EnumResult.isError)
+                {
+                    throw new Exception(rst2.Mensaje);
+                }
+                if (rst2.Entidad == null)
+                {
+                    throw new Exception("DATA NO CARGADA");
+                }
+                var s = rst2.Entidad;
+                rt.Entidad = new OOB.LibCajaBanco.Moneda.Entidad.Ficha()
+                {
+                    codigo = s.codigo,
+                    id = s.id,
+                    nombre = s.nombre,
+                    simbolo = s.simbolo,
+                    tasaRespectoMonReferencia = s.tasaRespectoMonReferencia,
                 };
             }
             catch (Exception e)

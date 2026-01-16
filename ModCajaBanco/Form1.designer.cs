@@ -169,6 +169,7 @@
             this.L_HOST.Size = new System.Drawing.Size(360, 48);
             this.L_HOST.TabIndex = 3;
             this.L_HOST.Text = "label2";
+            this.L_HOST.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuStrip1
             // 
@@ -426,14 +427,14 @@
             // TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW
             // 
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW";
-            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Size = new System.Drawing.Size(152, 22);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Size = new System.Drawing.Size(108, 22);
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Text = "New";
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_NEW_Click);
             // 
             // TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL
             // 
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Name = "TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL";
-            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Size = new System.Drawing.Size(152, 22);
+            this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Size = new System.Drawing.Size(108, 22);
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Text = "Actual";
             this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL.Click += new System.EventHandler(this.TSM_ANALISIS_VENTAS_POR_MEDIO_PAGO_ACTUAL_Click);
             // 
@@ -449,7 +450,6 @@
             this.variosToolStripMenuItem.Name = "variosToolStripMenuItem";
             this.variosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.variosToolStripMenuItem.Text = "Varios";
-            this.variosToolStripMenuItem.Visible = false;
             // 
             // TSM_VENTA_PRODUCTO_DIVISA_PAGO_MONEDA_LOCAL
             // 

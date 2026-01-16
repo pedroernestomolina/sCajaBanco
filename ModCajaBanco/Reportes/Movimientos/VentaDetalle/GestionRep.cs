@@ -65,7 +65,5 @@ namespace ModCajaBanco.Reportes.Movimientos.VentaDetalle
             frp.Path = pt;
             frp.ShowDialog();
         }
-
     }
-
 }

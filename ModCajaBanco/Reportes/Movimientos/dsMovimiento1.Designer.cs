@@ -48,6 +48,16 @@ namespace ModCajaBanco.Reportes.Movimientos {
         
         private ResumenVentClienteDataTable tableResumenVentCliente;
         
+        private VentaPrdDivisaPagadoMonLocalDataTable tableVentaPrdDivisaPagadoMonLocal;
+        
+        private VentaPrdDivisaPagMonLocal_DetalleDataTable tableVentaPrdDivisaPagMonLocal_Detalle;
+        
+        private VentaPrdDivisaPagMonLocal_MPDataTable tableVentaPrdDivisaPagMonLocal_MP;
+        
+        private global::System.Data.DataRelation relationVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle;
+        
+        private global::System.Data.DataRelation relationRel_VentaPrdDivisaPagadoMonLocal_MP;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -111,6 +121,15 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 }
                 if ((ds.Tables["ResumenVentCliente"] != null)) {
                     base.Tables.Add(new ResumenVentClienteDataTable(ds.Tables["ResumenVentCliente"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagadoMonLocal"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagadoMonLocalDataTable(ds.Tables["VentaPrdDivisaPagadoMonLocal"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagMonLocal_Detalle"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagMonLocal_DetalleDataTable(ds.Tables["VentaPrdDivisaPagMonLocal_Detalle"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagMonLocal_MP"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagMonLocal_MPDataTable(ds.Tables["VentaPrdDivisaPagMonLocal_MP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -252,6 +271,36 @@ namespace ModCajaBanco.Reportes.Movimientos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VentaPrdDivisaPagadoMonLocalDataTable VentaPrdDivisaPagadoMonLocal {
+            get {
+                return this.tableVentaPrdDivisaPagadoMonLocal;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VentaPrdDivisaPagMonLocal_DetalleDataTable VentaPrdDivisaPagMonLocal_Detalle {
+            get {
+                return this.tableVentaPrdDivisaPagMonLocal_Detalle;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VentaPrdDivisaPagMonLocal_MPDataTable VentaPrdDivisaPagMonLocal_MP {
+            get {
+                return this.tableVentaPrdDivisaPagMonLocal_MP;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -352,6 +401,15 @@ namespace ModCajaBanco.Reportes.Movimientos {
                 }
                 if ((ds.Tables["ResumenVentCliente"] != null)) {
                     base.Tables.Add(new ResumenVentClienteDataTable(ds.Tables["ResumenVentCliente"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagadoMonLocal"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagadoMonLocalDataTable(ds.Tables["VentaPrdDivisaPagadoMonLocal"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagMonLocal_Detalle"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagMonLocal_DetalleDataTable(ds.Tables["VentaPrdDivisaPagMonLocal_Detalle"]));
+                }
+                if ((ds.Tables["VentaPrdDivisaPagMonLocal_MP"] != null)) {
+                    base.Tables.Add(new VentaPrdDivisaPagMonLocal_MPDataTable(ds.Tables["VentaPrdDivisaPagMonLocal_MP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -458,6 +516,26 @@ namespace ModCajaBanco.Reportes.Movimientos {
                     this.tableResumenVentCliente.InitVars();
                 }
             }
+            this.tableVentaPrdDivisaPagadoMonLocal = ((VentaPrdDivisaPagadoMonLocalDataTable)(base.Tables["VentaPrdDivisaPagadoMonLocal"]));
+            if ((initTable == true)) {
+                if ((this.tableVentaPrdDivisaPagadoMonLocal != null)) {
+                    this.tableVentaPrdDivisaPagadoMonLocal.InitVars();
+                }
+            }
+            this.tableVentaPrdDivisaPagMonLocal_Detalle = ((VentaPrdDivisaPagMonLocal_DetalleDataTable)(base.Tables["VentaPrdDivisaPagMonLocal_Detalle"]));
+            if ((initTable == true)) {
+                if ((this.tableVentaPrdDivisaPagMonLocal_Detalle != null)) {
+                    this.tableVentaPrdDivisaPagMonLocal_Detalle.InitVars();
+                }
+            }
+            this.tableVentaPrdDivisaPagMonLocal_MP = ((VentaPrdDivisaPagMonLocal_MPDataTable)(base.Tables["VentaPrdDivisaPagMonLocal_MP"]));
+            if ((initTable == true)) {
+                if ((this.tableVentaPrdDivisaPagMonLocal_MP != null)) {
+                    this.tableVentaPrdDivisaPagMonLocal_MP.InitVars();
+                }
+            }
+            this.relationVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle = this.Relations["VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle"];
+            this.relationRel_VentaPrdDivisaPagadoMonLocal_MP = this.Relations["Rel_VentaPrdDivisaPagadoMonLocal_MP"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,6 +570,28 @@ namespace ModCajaBanco.Reportes.Movimientos {
             base.Tables.Add(this.tableCobranzaDiariaMov);
             this.tableResumenVentCliente = new ResumenVentClienteDataTable();
             base.Tables.Add(this.tableResumenVentCliente);
+            this.tableVentaPrdDivisaPagadoMonLocal = new VentaPrdDivisaPagadoMonLocalDataTable();
+            base.Tables.Add(this.tableVentaPrdDivisaPagadoMonLocal);
+            this.tableVentaPrdDivisaPagMonLocal_Detalle = new VentaPrdDivisaPagMonLocal_DetalleDataTable();
+            base.Tables.Add(this.tableVentaPrdDivisaPagMonLocal_Detalle);
+            this.tableVentaPrdDivisaPagMonLocal_MP = new VentaPrdDivisaPagMonLocal_MPDataTable();
+            base.Tables.Add(this.tableVentaPrdDivisaPagMonLocal_MP);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle", new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn});
+            this.tableVentaPrdDivisaPagMonLocal_Detalle.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            this.relationVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle = new global::System.Data.DataRelation("VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle", new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn}, false);
+            this.Relations.Add(this.relationVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle);
+            this.relationRel_VentaPrdDivisaPagadoMonLocal_MP = new global::System.Data.DataRelation("Rel_VentaPrdDivisaPagadoMonLocal_MP", new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVentaPrdDivisaPagMonLocal_MP.idDocColumn}, false);
+            this.Relations.Add(this.relationRel_VentaPrdDivisaPagadoMonLocal_MP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,6 +663,24 @@ namespace ModCajaBanco.Reportes.Movimientos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeResumenVentCliente() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVentaPrdDivisaPagadoMonLocal() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVentaPrdDivisaPagMonLocal_Detalle() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVentaPrdDivisaPagMonLocal_MP() {
             return false;
         }
         
@@ -656,6 +774,15 @@ namespace ModCajaBanco.Reportes.Movimientos {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ResumenVentClienteRowChangeEventHandler(object sender, ResumenVentClienteRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void VentaPrdDivisaPagadoMonLocalRowChangeEventHandler(object sender, VentaPrdDivisaPagadoMonLocalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void VentaPrdDivisaPagMonLocal_DetalleRowChangeEventHandler(object sender, VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void VentaPrdDivisaPagMonLocal_MPRowChangeEventHandler(object sender, VentaPrdDivisaPagMonLocal_MPRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5048,6 +5175,952 @@ namespace ModCajaBanco.Reportes.Movimientos {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VentaPrdDivisaPagadoMonLocalDataTable : global::System.Data.TypedTableBase<VentaPrdDivisaPagadoMonLocalRow> {
+            
+            private global::System.Data.DataColumn columnidDoc;
+            
+            private global::System.Data.DataColumn columndocNumero;
+            
+            private global::System.Data.DataColumn columnfechaEmision;
+            
+            private global::System.Data.DataColumn columnentidadNombre;
+            
+            private global::System.Data.DataColumn columnentidadCiRif;
+            
+            private global::System.Data.DataColumn columnmontoDivisa;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalDataTable() {
+                this.TableName = "VentaPrdDivisaPagadoMonLocal";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagadoMonLocalDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected VentaPrdDivisaPagadoMonLocalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idDocColumn {
+                get {
+                    return this.columnidDoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn docNumeroColumn {
+                get {
+                    return this.columndocNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaEmisionColumn {
+                get {
+                    return this.columnfechaEmision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn entidadNombreColumn {
+                get {
+                    return this.columnentidadNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn entidadCiRifColumn {
+                get {
+                    return this.columnentidadCiRif;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn montoDivisaColumn {
+                get {
+                    return this.columnmontoDivisa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow this[int index] {
+                get {
+                    return ((VentaPrdDivisaPagadoMonLocalRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagadoMonLocalRowChangeEventHandler VentaPrdDivisaPagadoMonLocalRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagadoMonLocalRowChangeEventHandler VentaPrdDivisaPagadoMonLocalRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagadoMonLocalRowChangeEventHandler VentaPrdDivisaPagadoMonLocalRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagadoMonLocalRowChangeEventHandler VentaPrdDivisaPagadoMonLocalRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVentaPrdDivisaPagadoMonLocalRow(VentaPrdDivisaPagadoMonLocalRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow AddVentaPrdDivisaPagadoMonLocalRow(string idDoc, string docNumero, System.DateTime fechaEmision, string entidadNombre, string entidadCiRif, decimal montoDivisa) {
+                VentaPrdDivisaPagadoMonLocalRow rowVentaPrdDivisaPagadoMonLocalRow = ((VentaPrdDivisaPagadoMonLocalRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        idDoc,
+                        docNumero,
+                        fechaEmision,
+                        entidadNombre,
+                        entidadCiRif,
+                        montoDivisa};
+                rowVentaPrdDivisaPagadoMonLocalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVentaPrdDivisaPagadoMonLocalRow);
+                return rowVentaPrdDivisaPagadoMonLocalRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VentaPrdDivisaPagadoMonLocalDataTable cln = ((VentaPrdDivisaPagadoMonLocalDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VentaPrdDivisaPagadoMonLocalDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidDoc = base.Columns["idDoc"];
+                this.columndocNumero = base.Columns["docNumero"];
+                this.columnfechaEmision = base.Columns["fechaEmision"];
+                this.columnentidadNombre = base.Columns["entidadNombre"];
+                this.columnentidadCiRif = base.Columns["entidadCiRif"];
+                this.columnmontoDivisa = base.Columns["montoDivisa"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidDoc = new global::System.Data.DataColumn("idDoc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidDoc);
+                this.columndocNumero = new global::System.Data.DataColumn("docNumero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndocNumero);
+                this.columnfechaEmision = new global::System.Data.DataColumn("fechaEmision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaEmision);
+                this.columnentidadNombre = new global::System.Data.DataColumn("entidadNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentidadNombre);
+                this.columnentidadCiRif = new global::System.Data.DataColumn("entidadCiRif", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentidadCiRif);
+                this.columnmontoDivisa = new global::System.Data.DataColumn("montoDivisa", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmontoDivisa);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidDoc}, false));
+                this.columnidDoc.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow NewVentaPrdDivisaPagadoMonLocalRow() {
+                return ((VentaPrdDivisaPagadoMonLocalRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VentaPrdDivisaPagadoMonLocalRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VentaPrdDivisaPagadoMonLocalRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VentaPrdDivisaPagadoMonLocalRowChanged != null)) {
+                    this.VentaPrdDivisaPagadoMonLocalRowChanged(this, new VentaPrdDivisaPagadoMonLocalRowChangeEvent(((VentaPrdDivisaPagadoMonLocalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VentaPrdDivisaPagadoMonLocalRowChanging != null)) {
+                    this.VentaPrdDivisaPagadoMonLocalRowChanging(this, new VentaPrdDivisaPagadoMonLocalRowChangeEvent(((VentaPrdDivisaPagadoMonLocalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VentaPrdDivisaPagadoMonLocalRowDeleted != null)) {
+                    this.VentaPrdDivisaPagadoMonLocalRowDeleted(this, new VentaPrdDivisaPagadoMonLocalRowChangeEvent(((VentaPrdDivisaPagadoMonLocalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VentaPrdDivisaPagadoMonLocalRowDeleting != null)) {
+                    this.VentaPrdDivisaPagadoMonLocalRowDeleting(this, new VentaPrdDivisaPagadoMonLocalRowChangeEvent(((VentaPrdDivisaPagadoMonLocalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVentaPrdDivisaPagadoMonLocalRow(VentaPrdDivisaPagadoMonLocalRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMovimiento ds = new dsMovimiento();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VentaPrdDivisaPagadoMonLocalDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VentaPrdDivisaPagMonLocal_DetalleDataTable : global::System.Data.TypedTableBase<VentaPrdDivisaPagMonLocal_DetalleRow> {
+            
+            private global::System.Data.DataColumn columnidDoc;
+            
+            private global::System.Data.DataColumn columnproducto;
+            
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columnempq;
+            
+            private global::System.Data.DataColumn columnempqCont;
+            
+            private global::System.Data.DataColumn columnisPrdDivisa;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleDataTable() {
+                this.TableName = "VentaPrdDivisaPagMonLocal_Detalle";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagMonLocal_DetalleDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected VentaPrdDivisaPagMonLocal_DetalleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idDocColumn {
+                get {
+                    return this.columnidDoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn productoColumn {
+                get {
+                    return this.columnproducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn empqColumn {
+                get {
+                    return this.columnempq;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn empqContColumn {
+                get {
+                    return this.columnempqCont;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn isPrdDivisaColumn {
+                get {
+                    return this.columnisPrdDivisa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRow this[int index] {
+                get {
+                    return ((VentaPrdDivisaPagMonLocal_DetalleRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_DetalleRowChangeEventHandler VentaPrdDivisaPagMonLocal_DetalleRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_DetalleRowChangeEventHandler VentaPrdDivisaPagMonLocal_DetalleRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_DetalleRowChangeEventHandler VentaPrdDivisaPagMonLocal_DetalleRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_DetalleRowChangeEventHandler VentaPrdDivisaPagMonLocal_DetalleRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVentaPrdDivisaPagMonLocal_DetalleRow(VentaPrdDivisaPagMonLocal_DetalleRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRow AddVentaPrdDivisaPagMonLocal_DetalleRow(VentaPrdDivisaPagadoMonLocalRow parentVentaPrdDivisaPagadoMonLocalRowByVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle, string producto, string cantidad, string empq, string empqCont, bool isPrdDivisa) {
+                VentaPrdDivisaPagMonLocal_DetalleRow rowVentaPrdDivisaPagMonLocal_DetalleRow = ((VentaPrdDivisaPagMonLocal_DetalleRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        producto,
+                        cantidad,
+                        empq,
+                        empqCont,
+                        isPrdDivisa};
+                if ((parentVentaPrdDivisaPagadoMonLocalRowByVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle != null)) {
+                    columnValuesArray[0] = parentVentaPrdDivisaPagadoMonLocalRowByVentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle[0];
+                }
+                rowVentaPrdDivisaPagMonLocal_DetalleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVentaPrdDivisaPagMonLocal_DetalleRow);
+                return rowVentaPrdDivisaPagMonLocal_DetalleRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VentaPrdDivisaPagMonLocal_DetalleDataTable cln = ((VentaPrdDivisaPagMonLocal_DetalleDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VentaPrdDivisaPagMonLocal_DetalleDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidDoc = base.Columns["idDoc"];
+                this.columnproducto = base.Columns["producto"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columnempq = base.Columns["empq"];
+                this.columnempqCont = base.Columns["empqCont"];
+                this.columnisPrdDivisa = base.Columns["isPrdDivisa"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidDoc = new global::System.Data.DataColumn("idDoc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidDoc);
+                this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproducto);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columnempq = new global::System.Data.DataColumn("empq", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnempq);
+                this.columnempqCont = new global::System.Data.DataColumn("empqCont", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnempqCont);
+                this.columnisPrdDivisa = new global::System.Data.DataColumn("isPrdDivisa", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisPrdDivisa);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRow NewVentaPrdDivisaPagMonLocal_DetalleRow() {
+                return ((VentaPrdDivisaPagMonLocal_DetalleRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VentaPrdDivisaPagMonLocal_DetalleRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VentaPrdDivisaPagMonLocal_DetalleRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VentaPrdDivisaPagMonLocal_DetalleRowChanged != null)) {
+                    this.VentaPrdDivisaPagMonLocal_DetalleRowChanged(this, new VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent(((VentaPrdDivisaPagMonLocal_DetalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VentaPrdDivisaPagMonLocal_DetalleRowChanging != null)) {
+                    this.VentaPrdDivisaPagMonLocal_DetalleRowChanging(this, new VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent(((VentaPrdDivisaPagMonLocal_DetalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VentaPrdDivisaPagMonLocal_DetalleRowDeleted != null)) {
+                    this.VentaPrdDivisaPagMonLocal_DetalleRowDeleted(this, new VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent(((VentaPrdDivisaPagMonLocal_DetalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VentaPrdDivisaPagMonLocal_DetalleRowDeleting != null)) {
+                    this.VentaPrdDivisaPagMonLocal_DetalleRowDeleting(this, new VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent(((VentaPrdDivisaPagMonLocal_DetalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVentaPrdDivisaPagMonLocal_DetalleRow(VentaPrdDivisaPagMonLocal_DetalleRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMovimiento ds = new dsMovimiento();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VentaPrdDivisaPagMonLocal_DetalleDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VentaPrdDivisaPagMonLocal_MPDataTable : global::System.Data.TypedTableBase<VentaPrdDivisaPagMonLocal_MPRow> {
+            
+            private global::System.Data.DataColumn columnidDoc;
+            
+            private global::System.Data.DataColumn columnmedioPago;
+            
+            private global::System.Data.DataColumn columncodigoMon;
+            
+            private global::System.Data.DataColumn columnmontoMonRecibe;
+            
+            private global::System.Data.DataColumn columnmontoMonRecibeMonRef;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPDataTable() {
+                this.TableName = "VentaPrdDivisaPagMonLocal_MP";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagMonLocal_MPDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected VentaPrdDivisaPagMonLocal_MPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idDocColumn {
+                get {
+                    return this.columnidDoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn medioPagoColumn {
+                get {
+                    return this.columnmedioPago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn codigoMonColumn {
+                get {
+                    return this.columncodigoMon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn montoMonRecibeColumn {
+                get {
+                    return this.columnmontoMonRecibe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn montoMonRecibeMonRefColumn {
+                get {
+                    return this.columnmontoMonRecibeMonRef;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRow this[int index] {
+                get {
+                    return ((VentaPrdDivisaPagMonLocal_MPRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_MPRowChangeEventHandler VentaPrdDivisaPagMonLocal_MPRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_MPRowChangeEventHandler VentaPrdDivisaPagMonLocal_MPRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_MPRowChangeEventHandler VentaPrdDivisaPagMonLocal_MPRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VentaPrdDivisaPagMonLocal_MPRowChangeEventHandler VentaPrdDivisaPagMonLocal_MPRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVentaPrdDivisaPagMonLocal_MPRow(VentaPrdDivisaPagMonLocal_MPRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRow AddVentaPrdDivisaPagMonLocal_MPRow(VentaPrdDivisaPagadoMonLocalRow parentVentaPrdDivisaPagadoMonLocalRowByRel_VentaPrdDivisaPagadoMonLocal_MP, string medioPago, string codigoMon, decimal montoMonRecibe, decimal montoMonRecibeMonRef) {
+                VentaPrdDivisaPagMonLocal_MPRow rowVentaPrdDivisaPagMonLocal_MPRow = ((VentaPrdDivisaPagMonLocal_MPRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        medioPago,
+                        codigoMon,
+                        montoMonRecibe,
+                        montoMonRecibeMonRef};
+                if ((parentVentaPrdDivisaPagadoMonLocalRowByRel_VentaPrdDivisaPagadoMonLocal_MP != null)) {
+                    columnValuesArray[0] = parentVentaPrdDivisaPagadoMonLocalRowByRel_VentaPrdDivisaPagadoMonLocal_MP[0];
+                }
+                rowVentaPrdDivisaPagMonLocal_MPRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVentaPrdDivisaPagMonLocal_MPRow);
+                return rowVentaPrdDivisaPagMonLocal_MPRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VentaPrdDivisaPagMonLocal_MPDataTable cln = ((VentaPrdDivisaPagMonLocal_MPDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VentaPrdDivisaPagMonLocal_MPDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidDoc = base.Columns["idDoc"];
+                this.columnmedioPago = base.Columns["medioPago"];
+                this.columncodigoMon = base.Columns["codigoMon"];
+                this.columnmontoMonRecibe = base.Columns["montoMonRecibe"];
+                this.columnmontoMonRecibeMonRef = base.Columns["montoMonRecibeMonRef"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidDoc = new global::System.Data.DataColumn("idDoc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidDoc);
+                this.columnmedioPago = new global::System.Data.DataColumn("medioPago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmedioPago);
+                this.columncodigoMon = new global::System.Data.DataColumn("codigoMon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigoMon);
+                this.columnmontoMonRecibe = new global::System.Data.DataColumn("montoMonRecibe", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmontoMonRecibe);
+                this.columnmontoMonRecibeMonRef = new global::System.Data.DataColumn("montoMonRecibeMonRef", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmontoMonRecibeMonRef);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRow NewVentaPrdDivisaPagMonLocal_MPRow() {
+                return ((VentaPrdDivisaPagMonLocal_MPRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VentaPrdDivisaPagMonLocal_MPRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VentaPrdDivisaPagMonLocal_MPRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VentaPrdDivisaPagMonLocal_MPRowChanged != null)) {
+                    this.VentaPrdDivisaPagMonLocal_MPRowChanged(this, new VentaPrdDivisaPagMonLocal_MPRowChangeEvent(((VentaPrdDivisaPagMonLocal_MPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VentaPrdDivisaPagMonLocal_MPRowChanging != null)) {
+                    this.VentaPrdDivisaPagMonLocal_MPRowChanging(this, new VentaPrdDivisaPagMonLocal_MPRowChangeEvent(((VentaPrdDivisaPagMonLocal_MPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VentaPrdDivisaPagMonLocal_MPRowDeleted != null)) {
+                    this.VentaPrdDivisaPagMonLocal_MPRowDeleted(this, new VentaPrdDivisaPagMonLocal_MPRowChangeEvent(((VentaPrdDivisaPagMonLocal_MPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VentaPrdDivisaPagMonLocal_MPRowDeleting != null)) {
+                    this.VentaPrdDivisaPagMonLocal_MPRowDeleting(this, new VentaPrdDivisaPagMonLocal_MPRowChangeEvent(((VentaPrdDivisaPagMonLocal_MPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVentaPrdDivisaPagMonLocal_MPRow(VentaPrdDivisaPagMonLocal_MPRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMovimiento ds = new dsMovimiento();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VentaPrdDivisaPagMonLocal_MPDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ArqueoVentaPosRow : global::System.Data.DataRow {
@@ -8336,6 +9409,586 @@ namespace ModCajaBanco.Reportes.Movimientos {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VentaPrdDivisaPagadoMonLocalRow : global::System.Data.DataRow {
+            
+            private VentaPrdDivisaPagadoMonLocalDataTable tableVentaPrdDivisaPagadoMonLocal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagadoMonLocalRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVentaPrdDivisaPagadoMonLocal = ((VentaPrdDivisaPagadoMonLocalDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string idDoc {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idDoc\' in table \'VentaPrdDivisaPagadoMonLocal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string docNumero {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagadoMonLocal.docNumeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'docNumero\' in table \'VentaPrdDivisaPagadoMonLocal\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.docNumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaEmision {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVentaPrdDivisaPagadoMonLocal.fechaEmisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fechaEmision\' in table \'VentaPrdDivisaPagadoMonLocal\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.fechaEmisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string entidadNombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagadoMonLocal.entidadNombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'entidadNombre\' in table \'VentaPrdDivisaPagadoMonLocal\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.entidadNombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string entidadCiRif {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagadoMonLocal.entidadCiRifColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'entidadCiRif\' in table \'VentaPrdDivisaPagadoMonLocal\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.entidadCiRifColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal montoDivisa {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVentaPrdDivisaPagadoMonLocal.montoDivisaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'montoDivisa\' in table \'VentaPrdDivisaPagadoMonLocal\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagadoMonLocal.montoDivisaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidDocNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidDocNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.idDocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdocNumeroNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.docNumeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdocNumeroNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.docNumeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfechaEmisionNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.fechaEmisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfechaEmisionNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.fechaEmisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsentidadNombreNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.entidadNombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetentidadNombreNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.entidadNombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsentidadCiRifNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.entidadCiRifColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetentidadCiRifNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.entidadCiRifColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmontoDivisaNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagadoMonLocal.montoDivisaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmontoDivisaNull() {
+                this[this.tableVentaPrdDivisaPagadoMonLocal.montoDivisaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRow[] GetVentaPrdDivisaPagMonLocal_DetalleRows() {
+                if ((this.Table.ChildRelations["VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle"] == null)) {
+                    return new VentaPrdDivisaPagMonLocal_DetalleRow[0];
+                }
+                else {
+                    return ((VentaPrdDivisaPagMonLocal_DetalleRow[])(base.GetChildRows(this.Table.ChildRelations["VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRow[] GetVentaPrdDivisaPagMonLocal_MPRows() {
+                if ((this.Table.ChildRelations["Rel_VentaPrdDivisaPagadoMonLocal_MP"] == null)) {
+                    return new VentaPrdDivisaPagMonLocal_MPRow[0];
+                }
+                else {
+                    return ((VentaPrdDivisaPagMonLocal_MPRow[])(base.GetChildRows(this.Table.ChildRelations["Rel_VentaPrdDivisaPagadoMonLocal_MP"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VentaPrdDivisaPagMonLocal_DetalleRow : global::System.Data.DataRow {
+            
+            private VentaPrdDivisaPagMonLocal_DetalleDataTable tableVentaPrdDivisaPagMonLocal_Detalle;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagMonLocal_DetalleRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVentaPrdDivisaPagMonLocal_Detalle = ((VentaPrdDivisaPagMonLocal_DetalleDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string idDoc {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idDoc\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string producto {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.productoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'producto\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.productoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cantidad {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string empq {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'empq\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string empqCont {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqContColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'empqCont\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqContColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool isPrdDivisa {
+                get {
+                    try {
+                        return ((bool)(this[this.tableVentaPrdDivisaPagMonLocal_Detalle.isPrdDivisaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isPrdDivisa\' in table \'VentaPrdDivisaPagMonLocal_Detalle\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_Detalle.isPrdDivisaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow VentaPrdDivisaPagadoMonLocalRow {
+                get {
+                    return ((VentaPrdDivisaPagadoMonLocalRow)(this.GetParentRow(this.Table.ParentRelations["VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["VentaPrdDivisaPagadoMonLocal_VentaPrdDivisaPagMonLocal_Detalle"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidDocNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidDocNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.idDocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsproductoNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.productoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetproductoNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.productoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsempqNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.empqColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetempqNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsempqContNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.empqContColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetempqContNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.empqContColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsisPrdDivisaNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_Detalle.isPrdDivisaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetisPrdDivisaNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_Detalle.isPrdDivisaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VentaPrdDivisaPagMonLocal_MPRow : global::System.Data.DataRow {
+            
+            private VentaPrdDivisaPagMonLocal_MPDataTable tableVentaPrdDivisaPagMonLocal_MP;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VentaPrdDivisaPagMonLocal_MPRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVentaPrdDivisaPagMonLocal_MP = ((VentaPrdDivisaPagMonLocal_MPDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string idDoc {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_MP.idDocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idDoc\' in table \'VentaPrdDivisaPagMonLocal_MP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_MP.idDocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string medioPago {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_MP.medioPagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'medioPago\' in table \'VentaPrdDivisaPagMonLocal_MP\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_MP.medioPagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string codigoMon {
+                get {
+                    try {
+                        return ((string)(this[this.tableVentaPrdDivisaPagMonLocal_MP.codigoMonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigoMon\' in table \'VentaPrdDivisaPagMonLocal_MP\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_MP.codigoMonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal montoMonRecibe {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'montoMonRecibe\' in table \'VentaPrdDivisaPagMonLocal_MP\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal montoMonRecibeMonRef {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeMonRefColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'montoMonRecibeMonRef\' in table \'VentaPrdDivisaPagMonLocal_M" +
+                                "P\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeMonRefColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow VentaPrdDivisaPagadoMonLocalRow {
+                get {
+                    return ((VentaPrdDivisaPagadoMonLocalRow)(this.GetParentRow(this.Table.ParentRelations["Rel_VentaPrdDivisaPagadoMonLocal_MP"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Rel_VentaPrdDivisaPagadoMonLocal_MP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidDocNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_MP.idDocColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidDocNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_MP.idDocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmedioPagoNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_MP.medioPagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmedioPagoNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_MP.medioPagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscodigoMonNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_MP.codigoMonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcodigoMonNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_MP.codigoMonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmontoMonRecibeNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmontoMonRecibeNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmontoMonRecibeMonRefNull() {
+                return this.IsNull(this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeMonRefColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmontoMonRecibeMonRefNull() {
+                this[this.tableVentaPrdDivisaPagMonLocal_MP.montoMonRecibeMonRefColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8729,6 +10382,108 @@ namespace ModCajaBanco.Reportes.Movimientos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ResumenVentClienteRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class VentaPrdDivisaPagadoMonLocalRowChangeEvent : global::System.EventArgs {
+            
+            private VentaPrdDivisaPagadoMonLocalRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRowChangeEvent(VentaPrdDivisaPagadoMonLocalRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagadoMonLocalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent : global::System.EventArgs {
+            
+            private VentaPrdDivisaPagMonLocal_DetalleRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRowChangeEvent(VentaPrdDivisaPagMonLocal_DetalleRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_DetalleRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class VentaPrdDivisaPagMonLocal_MPRowChangeEvent : global::System.EventArgs {
+            
+            private VentaPrdDivisaPagMonLocal_MPRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRowChangeEvent(VentaPrdDivisaPagMonLocal_MPRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VentaPrdDivisaPagMonLocal_MPRow Row {
                 get {
                     return this.eventRow;
                 }

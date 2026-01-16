@@ -16,6 +16,7 @@ namespace ModCajaBanco.src.Consulta.VentaProductoDivisaPagoEnMonLocal.vm
         //
         public ConsultaImpl()
         {
+            _uc = new Domain.UseCase.UseCaseImpl();
         }
         void setFechaDesde(DateTime fecha)
         {
@@ -39,8 +40,12 @@ namespace ModCajaBanco.src.Consulta.VentaProductoDivisaPagoEnMonLocal.vm
         {
             try
             {
-                _uc.ObtenerMonedaLocal();
-                var data = _uc.ConsultarVentasProductoDivisaConPagoEnMonLocal(_desde, _hasta, _idSucursal, "VES");
+                var _sucursal = _uc.ObtenerSucursal(_idSucursal);
+                var _monLocal= _uc.ObtenerMonedaLocal();
+                var _data = _uc.ConsultarVentasProductoDivisaConPagoEnMonLocal(_desde, _hasta, _sucursal.codigo, _monLocal.codigo);
+                var _rep = new Reportes.Movimientos.VentaPrdDivisaPagadoMonLocal.GestionRep();
+                _rep.setData(_data);
+                _rep.Generar();
             }
             catch (Exception e)
             {

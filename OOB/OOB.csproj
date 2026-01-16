@@ -46,10 +46,10 @@
     <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\DocDetalle.cs" />
     <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Ficha.cs" />
     <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\Filtro.cs" />
-    <Compile Include="LibCajaBanco\Consulta\Ventas\ProductoDivisaPagoEnMonLocal\MedioPago.cs" />
     <Compile Include="LibCajaBanco\Deposito\Ficha.cs" />
     <Compile Include="LibCajaBanco\EmpresaGrupo\Ficha.cs" />
     <Compile Include="LibCajaBanco\Empresa\Entidad\Ficha.cs" />
+    <Compile Include="LibCajaBanco\Moneda\Entidad\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Ficha.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\PorMedioPago\Filtro.cs" />
     <Compile Include="LibCajaBanco\Reporte\Analisis\VentaDiaria\Ficha.cs" />

@@ -68,7 +68,7 @@ namespace ProvLibCajaBanco
             //
             return rt;
         }
-        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha> 
+        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha>
             Consulta_Ventas_ProductoDivisaPagoEnMonLocal(DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Filtro filtro)
         {
             var rt = new DtoLib.ResultadoEntidad<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha>();
@@ -81,82 +81,48 @@ namespace ProvLibCajaBanco
                     var _p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
                     var _p3 = new MySql.Data.MySqlClient.MySqlParameter("@codigoSuc", filtro.codigoSuc);
                     var _p4 = new MySql.Data.MySqlClient.MySqlParameter("@codigoMon", filtro.codigoMon);
-                    var _sql_1 = @"select    
-                                        doc.idDocVta,
-                                        mp.auto_recibo as idRecibo,
-	                                    mp.auto_medio_pago as idMedioPago,
-                                        mp.medio as nombreMedioPago,
-                                        mp.codigo_mon_recibe as codigoMonedaRecibe,
-                                        mp.simbolo_mon_recibe as simboloMonedaRecibe,
-                                        mp.monto_mon_recibe as montoMonedaRecibe,
-                                        mp.monto_mon_referencia as montoMonedaReferencia
-                                    from (
-                                        SELECT DISTINCT
-	                                        v.auto as idDocVta,
-                                            v.auto_recibo as idRecibo
-                                        FROM ventas_detalle as vd
-                                        join ventas as v on v.auto=vd.auto_documento
-                                        join cxc_recibos as rec on rec.auto= v.auto_recibo 
-                                        join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
-                                        where
-	                                        vd.estatus_divisa_prd='1' and
-                                            v.fecha>=@desde and 
-                                            v.fecha<=@hasta and 
-                                            v.codigo_sucursal=@codigoSuc and 
-                                            v.estatus_anulado='0' and 
-                                            v.tipo='01' and 
-                                            mp.codigo_mon_recibe=@codigoMon
-                                        ) as doc
-                                    join cxc_recibos as rec on rec.auto= doc.idRecibo
-                                    join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
-                                    where mp.monto_mon_recibe>0";
+                    var _sql_1 = @"select DISTINCT
+                                        s.*, 
+                                        mp.codigo as codigoMp,
+                                        mp.medio as nombreMp,  
+                                        mp.codigo_mon_recibe as codigoMonRecibe,
+                                        mp.monto_mon_recibe as montoMonRecibe,
+                                        mp.monto_mon_referencia as montoMonRecibeMonRef
+                                    from 
+                                        (
+                                            SELECT 
+                                                v.auto as idDoc,
+                                                v.documento as docNumero,
+                                                v.fecha as fechaEmision,
+                                                v.razon_social as entidadNombre,
+                                                v.ci_rif as entidadCiRif,
+                                                v.monto_divisa as montoDivisa,
+                                                v.auto_recibo as idRecibo,    
+                                                vd.nombre as nombrePrd,
+                                                vd.cantidad as cantidad,
+                                                vd.empaque as empqNombre,
+                                                vd.contenido_empaque as empqCont,
+                                                vd.estatus_divisa_prd as estatusPrdDivisa
+                                            FROM ventas as v
+                                            join ventas_detalle as vd on vd.auto_documento=v.auto 
+                                            join cxc_medio_pago as mp on mp.auto_recibo=v.auto_recibo and mp.codigo_mon_recibe=@codigoMon
+                                            where v.fecha>=@desde AND
+                                            v.fecha<=@hasta AND
+                                            v.tipo='01' AND
+                                            v.estatus_anulado='0' AND
+                                            v.codigo_sucursal=@codigoSuc AND 
+                                            v.auto IN (
+                                                SELECT DISTINCT auto_documento 
+                                                FROM ventas_detalle 
+                                                WHERE estatus_divisa_prd = '1')
+                                        ) as s
+                                    join cxc_medio_pago as mp on mp.auto_recibo=s.idRecibo";
                     var _sql = _sql_1;
-                    var _lstMedioPago = cnn.Database.SqlQuery<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.MedioPago>(_sql, _p1, _p2, _p3, _p4).ToList();
-                    //
-                    _p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
-                    _p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
-                    _p3 = new MySql.Data.MySqlClient.MySqlParameter("@codigoSuc", filtro.codigoSuc);
-                    _p4 = new MySql.Data.MySqlClient.MySqlParameter("@codigoMon", filtro.codigoMon);
-                    _sql_1 = @"SELECT 
-                                    v.auto as idDocVta,
-                                    v.razon_social as entidad,
-                                    v.fecha as fecha,
-                                    v.total importeDoc,
-                                    v.monto_divisa as importeDocDivisa,
-                                    v.factor_cambio as factorCambio,
-                                    vd.nombre as nombrePrd,
-                                    vd.cantidad as cant,
-                                    vd.empaque as empq,
-                                    vd.contenido_empaque as contEmp,
-                                    vd.estatus_divisa_prd as estatusDivisaProducto,
-                                    vd.total_neto as importeItem,
-                                    vd.total_neto/v.factor_cambio as importeItemDivisa
-                                from
-                                    (
-                                        SELECT DISTINCT
-	                                        v.auto
-                                        FROM ventas_detalle as vd
-                                        join ventas as v on v.auto=vd.auto_documento
-                                        join cxc_recibos as rec on rec.auto= v.auto_recibo 
-                                        join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
-                                        where
-	                                        vd.estatus_divisa_prd='1' and 
-                                            v.fecha>=@desde and 
-                                            v.fecha<=@hasta and 
-                                            v.codigo_sucursal=@codigoSuc and 
-                                            v.estatus_anulado='0' and 
-                                            v.tipo='01' and 
-                                            mp.codigo_mon_recibe=@codigoMon
-                                    ) as doc
-                                join ventas as v on v.auto=doc.auto
-                                join ventas_detalle as vd on vd.auto_documento=v.auto";
-                    _sql = _sql_1;
-                    var _lstDocDetalle = cnn.Database.SqlQuery<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.DocDetalle>(_sql, _p1, _p2, _p3, _p4).ToList();
+                    var _lst= cnn.Database.SqlQuery<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.DocDetalle>(_sql, _p1, _p2, _p3, _p4).ToList();
                     //
                     rt.Entidad = new DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha()
                     {
-                        docDetalle = _lstDocDetalle,
-                        mediosPago = _lstMedioPago
+                        docDetalle = _lst,
                     };
                 }
             }
@@ -200,3 +166,103 @@ namespace ProvLibCajaBanco
         }
     }
 }
+//        public DtoLib.ResultadoEntidad<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha> 
+//            Consulta_Ventas_ProductoDivisaPagoEnMonLocal(DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Filtro filtro)
+//        {
+//            var rt = new DtoLib.ResultadoEntidad<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha>();
+//            //
+//            try
+//            {
+//                using (var cnn = new cajaBancoEntities(_cnCajBanco.ConnectionString))
+//                {
+//                    var _p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+//                    var _p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+//                    var _p3 = new MySql.Data.MySqlClient.MySqlParameter("@codigoSuc", filtro.codigoSuc);
+//                    var _p4 = new MySql.Data.MySqlClient.MySqlParameter("@codigoMon", filtro.codigoMon);
+//                    var _sql_1 = @"select    
+//                                        doc.idDocVta,
+//                                        mp.auto_recibo as idRecibo,
+//	                                    mp.auto_medio_pago as idMedioPago,
+//                                        mp.medio as nombreMedioPago,
+//                                        mp.codigo_mon_recibe as codigoMonedaRecibe,
+//                                        mp.simbolo_mon_recibe as simboloMonedaRecibe,
+//                                        mp.monto_mon_recibe as montoMonedaRecibe,
+//                                        mp.monto_mon_referencia as montoMonedaReferencia
+//                                    from (
+//                                        SELECT DISTINCT
+//	                                        v.auto as idDocVta,
+//                                            v.auto_recibo as idRecibo
+//                                        FROM ventas_detalle as vd
+//                                        join ventas as v on v.auto=vd.auto_documento
+//                                        join cxc_recibos as rec on rec.auto= v.auto_recibo 
+//                                        join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
+//                                        where
+//	                                        vd.estatus_divisa_prd='1' and
+//                                            v.fecha>=@desde and 
+//                                            v.fecha<=@hasta and 
+//                                            v.codigo_sucursal=@codigoSuc and 
+//                                            v.estatus_anulado='0' and 
+//                                            v.tipo='01' and 
+//                                            mp.codigo_mon_recibe=@codigoMon
+//                                        ) as doc
+//                                    join cxc_recibos as rec on rec.auto= doc.idRecibo
+//                                    join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
+//                                    where mp.monto_mon_recibe>0";
+//                    var _sql = _sql_1;
+//                    var _lstMedioPago = cnn.Database.SqlQuery<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.MedioPago>(_sql, _p1, _p2, _p3, _p4).ToList();
+//                    //
+//                    _p1 = new MySql.Data.MySqlClient.MySqlParameter("@desde", filtro.desde);
+//                    _p2 = new MySql.Data.MySqlClient.MySqlParameter("@hasta", filtro.hasta);
+//                    _p3 = new MySql.Data.MySqlClient.MySqlParameter("@codigoSuc", filtro.codigoSuc);
+//                    _p4 = new MySql.Data.MySqlClient.MySqlParameter("@codigoMon", filtro.codigoMon);
+//                    _sql_1 = @"SELECT 
+//                                    v.auto as idDocVta,
+//                                    v.razon_social as entidad,
+//                                    v.fecha as fecha,
+//                                    v.total importeDoc,
+//                                    v.monto_divisa as importeDocDivisa,
+//                                    v.factor_cambio as factorCambio,
+//                                    vd.nombre as nombrePrd,
+//                                    vd.cantidad as cant,
+//                                    vd.empaque as empq,
+//                                    vd.contenido_empaque as contEmp,
+//                                    vd.estatus_divisa_prd as estatusDivisaProducto,
+//                                    vd.total_neto as importeItem,
+//                                    vd.total_neto/v.factor_cambio as importeItemDivisa
+//                                from
+//                                    (
+//                                        SELECT DISTINCT
+//	                                        v.auto
+//                                        FROM ventas_detalle as vd
+//                                        join ventas as v on v.auto=vd.auto_documento
+//                                        join cxc_recibos as rec on rec.auto= v.auto_recibo 
+//                                        join cxc_medio_pago as mp on mp.auto_recibo=rec.auto
+//                                        where
+//	                                        vd.estatus_divisa_prd='1' and 
+//                                            v.fecha>=@desde and 
+//                                            v.fecha<=@hasta and 
+//                                            v.codigo_sucursal=@codigoSuc and 
+//                                            v.estatus_anulado='0' and 
+//                                            v.tipo='01' and 
+//                                            mp.codigo_mon_recibe=@codigoMon
+//                                    ) as doc
+//                                join ventas as v on v.auto=doc.auto
+//                                join ventas_detalle as vd on vd.auto_documento=v.auto";
+//                    _sql = _sql_1;
+//                    var _lstDocDetalle = cnn.Database.SqlQuery<DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.DocDetalle>(_sql, _p1, _p2, _p3, _p4).ToList();
+//                    //
+//                    rt.Entidad = new DtoLibCajaBanco.Consulta.Ventas.ProductoDivisaPagoEnMonLocal.Ficha()
+//                    {
+//                        docDetalle = _lstDocDetalle,
+//                        mediosPago = _lstMedioPago
+//                    };
+//                }
+//            }
+//            catch (Exception e)
+//            {
+//                rt.Mensaje = e.Message;
+//                rt.Result = DtoLib.Enumerados.EnumResult.isError;
+//            }
+//            //
+//            return rt;
+//        }

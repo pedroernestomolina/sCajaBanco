@@ -144,6 +144,13 @@
     <Compile Include="Reportes\Movimientos\VentaPorCliente\data.cs" />
     <Compile Include="Reportes\Movimientos\VentaPorCliente\GestionRep.cs" />
     <Compile Include="Reportes\Movimientos\VentaPorProducto\GestionRep.cs" />
+    <Compile Include="Reportes\Movimientos\VentaPrdDivisaPagadoMonLocal\Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\VentaPrdDivisaPagadoMonLocal\Frm.Designer.cs">
+      <DependentUpon>Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Movimientos\VentaPrdDivisaPagadoMonLocal\GestionRep.cs" />
     <Compile Include="Reportes\Movimientos\VentaProductoSucursal\GestionRep.cs" />
     <Compile Include="Reportes\Reporte.cs">
       <SubType>Form</SubType>
@@ -182,6 +189,8 @@
     <Compile Include="src\Consulta\PorMetodoPago\vm\ConsultaImpl.cs" />
     <Compile Include="src\Consulta\PorMetodoPago\vm\IConsulta.cs" />
     <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\Domain\Models\Data.cs" />
+    <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\Domain\Models\Moneda.cs" />
+    <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\Domain\Models\Sucursal.cs" />
     <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\Domain\UseCase\IUseCase.cs" />
     <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\Domain\UseCase\UseCaseImpl.cs" />
     <Compile Include="src\Consulta\VentaProductoDivisaPagoEnMonLocal\vm\ConsultaImpl.cs" />
@@ -262,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Movimientos\ResumenVentCliente.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Movimientos\VentaPrdDivisaPagadoMonLocal\Frm.resx">
+      <DependentUpon>Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>

@@ -9,8 +9,11 @@ namespace ModCajaBanco.src.Consulta.VentaProductoDivisaPagoEnMonLocal.Domain.Use
 {
     public interface IUseCase
     {
-        Models.Data
+        List<Models.Data>
             ConsultarVentasProductoDivisaConPagoEnMonLocal(DateTime desde, DateTime hasta, string codigoSuc, string codigoMon);
-        void ObtenerMonedaLocal();
+        Models.Moneda
+            ObtenerMonedaLocal();
+        Models.Sucursal
+            ObtenerSucursal(string id);
     }
 }
