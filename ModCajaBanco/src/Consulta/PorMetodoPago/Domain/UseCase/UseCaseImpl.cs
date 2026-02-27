@@ -11,7 +11,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.Domain.UseCase
     public class UseCaseImpl: IUseCase
     {
         public DataTable
-            CargarArqueoPorMetodosPago(DateTime desd, DateTime hast)
+            CargarArqueoPorMetodosPago(DateTime desd, DateTime hast, bool isModoDetalle=false)
         {
             try
             {
@@ -42,19 +42,23 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.Domain.UseCase
                 dt.Columns.Add("DIFERENCIA", typeof(decimal));
                 //
                 var diffTotal = 0m;
-                var grpSuc = lst.GroupBy(r => new { r.codigoSuc, r.nombreSuc, r.cierreNro, r.fecha }).ToList();
+                var grpSuc = lst.GroupBy(r => new { r.codigoSuc, r.nombreSuc, cierreNro = 0, fecha = DateTime.Now.Date }).Select(s => new { key = s.Key, lista =s.ToList()}).ToList();
+                if (isModoDetalle)
+                {
+                    grpSuc = lst.GroupBy(r => new { r.codigoSuc, r.nombreSuc, r.cierreNro, r.fecha }).Select(s => new { key = s.Key, lista = s.ToList() }).ToList();
+                }
                 foreach (var suc in grpSuc) 
                 {
                     var diff = 0m;
                     DataRow dr = dt.NewRow();
-                    dr["Sucursal"] = suc.Key.nombreSuc+", "+suc.Key.fecha.ToShortDateString()+", #"+suc.Key.cierreNro.ToString().Trim();
-                    foreach (var item in suc) 
+                    dr["Sucursal"] = suc.key.nombreSuc+", "+suc.key.fecha.ToShortDateString()+", #"+suc.key.cierreNro.ToString().Trim();
+                    foreach (var item in suc.lista.GroupBy(g => new { g.codigoMP, g.descMP, g.simboloMon }).Select(s => new { key = s.Key, lista=s.ToList()}).ToList())
                     {
-                        var cbase = item.descMP + " (" + item.simboloMon + ") ";
+                        var cbase = item.key.descMP + " (" + item.key.simboloMon + ") ";
                         //dr[cbase + "Importe Bs"] = item.montoMonLocal;
-                        dr[cbase + "Segun Sistema"] = item.montoSS;
-                        dr[cbase + "Segun Usuario"] = item.montoSU;
-                        diff += (item.importeSegunSistema-item.importeSegunUsuario);
+                        dr[cbase + "Segun Sistema"] = item.lista.Sum(s=> s.montoSS);
+                        dr[cbase + "Segun Usuario"] = item.lista.Sum(s => s.montoSU);
+                        diff += (item.lista.Sum(s=> s.importeSegunSistema) - item.lista.Sum(s=>s.importeSegunUsuario));
                     }
                     dr["DIFERENCIA"] = diff;
                     dt.Rows.Add(dr);

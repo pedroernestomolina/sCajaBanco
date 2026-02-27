@@ -76,6 +76,8 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.BT_SALIR = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.CHB_MODO_DETALLE = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,6 +111,7 @@
             this.panel15.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -498,6 +501,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.panel20, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(439, 0);
             this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
@@ -702,6 +706,30 @@
             this.BT_SALIR.UseVisualStyleBackColor = true;
             this.BT_SALIR.Click += new System.EventHandler(this.BT_SALIR_Click);
             // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.CHB_MODO_DETALLE);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(1, 1);
+            this.panel20.Margin = new System.Windows.Forms.Padding(1);
+            this.panel20.Name = "panel20";
+            this.panel20.Padding = new System.Windows.Forms.Padding(2);
+            this.panel20.Size = new System.Drawing.Size(328, 30);
+            this.panel20.TabIndex = 1;
+            // 
+            // CHB_MODO_DETALLE
+            // 
+            this.CHB_MODO_DETALLE.AutoSize = true;
+            this.CHB_MODO_DETALLE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CHB_MODO_DETALLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHB_MODO_DETALLE.Location = new System.Drawing.Point(2, 2);
+            this.CHB_MODO_DETALLE.Name = "CHB_MODO_DETALLE";
+            this.CHB_MODO_DETALLE.Size = new System.Drawing.Size(324, 26);
+            this.CHB_MODO_DETALLE.TabIndex = 0;
+            this.CHB_MODO_DETALLE.Text = "Visualizar En Modo Detalle";
+            this.CHB_MODO_DETALLE.UseVisualStyleBackColor = true;
+            this.CHB_MODO_DETALLE.CheckedChanged += new System.EventHandler(this.CHB_MODO_DETALLE_CheckedChanged);
+            // 
             // Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -748,6 +776,8 @@
             this.panel15.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -801,5 +831,7 @@
         private System.Windows.Forms.DataGridView DGV_A1;
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.CheckBox CHB_MODO_DETALLE;
     }
 }

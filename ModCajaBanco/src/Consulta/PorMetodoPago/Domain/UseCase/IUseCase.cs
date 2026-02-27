@@ -11,7 +11,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.Domain.UseCase
     public interface IUseCase
     {
         DataTable 
-            CargarArqueoPorMetodosPago(DateTime desde, DateTime hasta);
+            CargarArqueoPorMetodosPago(DateTime desde, DateTime hasta, bool isModoDetalle=false);
         DateTime 
             CargarFechaServidor();
     }

@@ -18,9 +18,11 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vm
         private DateTime _hasta;
         private BindingSource _bs;
         private Domain.UseCase.IUseCase _uc;
+        private bool _isModoDetalle;
         //
         public DateTime Get_Desde { get { return _desde; } }
         public DateTime Get_Hasta { get { return _hasta; } }
+        public bool Get_IsModoDetalle { get { return _isModoDetalle; } }
         public object Get_DataSource { get { return _bs; } }
         //
         public ConsultaImpl()
@@ -30,6 +32,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vm
             _hasta = DateTime.Now.Date;
             _bs = new BindingSource();
             _uc = new Domain.UseCase.UseCaseImpl();
+            _isModoDetalle = false;
         }
         public void Invoke()
         {
@@ -41,6 +44,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vm
             _bs.DataSource = null;
             _desde = DateTime.Now.Date;
             _hasta = DateTime.Now.Date;
+            _isModoDetalle = false;
         }
         private vista.Frm frm;
         public void Inicia()
@@ -69,7 +73,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vm
         {
             try
             {
-                _bs.DataSource = _uc.CargarArqueoPorMetodosPago(_desde, _hasta);
+                _bs.DataSource = _uc.CargarArqueoPorMetodosPago(_desde, _hasta, _isModoDetalle);
             }
             catch (Exception e)
             {
@@ -144,6 +148,10 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vm
             {
                 Helpers.Msg.Error(e.Message);
             }
+        }
+        public void setIsModoDetalle(bool modo)
+        {
+            _isModoDetalle = modo;
         }
     }
 }

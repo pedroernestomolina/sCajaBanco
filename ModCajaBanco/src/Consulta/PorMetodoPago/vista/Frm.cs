@@ -85,6 +85,7 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vista
             DGV.DataSource = _controlador.Get_DataSource;
             DTP_DESDE.Value = _controlador.Get_Desde;
             DTP_HASTA.Value = _controlador.Get_Hasta;
+            CHB_MODO_DETALLE.Checked = _controlador.Get_IsModoDetalle;
         }
         private void DTP_DESDE_Leave(object sender, EventArgs e)
         {
@@ -117,6 +118,12 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vista
         private void BT_BUSCAR_Click(object sender, EventArgs e)
         {
             _controlador.AccionBuscar();
+            //
+            DGV.AutoGenerateColumns = true;
+            DGV.AllowUserToAddRows = true;
+            DGV.AllowUserToDeleteRows = true;
+            //
+            DGV.DataSource = _controlador.Get_DataSource;
             InicializaDGV();
         }
         private void BT_LIMPIAR_Click(object sender, EventArgs e)
@@ -197,6 +204,11 @@ namespace ModCajaBanco.src.Consulta.PorMetodoPago.vista
                     col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
+        }
+
+        private void CHB_MODO_DETALLE_CheckedChanged(object sender, EventArgs e)
+        {
+            _controlador.setIsModoDetalle(CHB_MODO_DETALLE.Checked);
         }
     }
 }
